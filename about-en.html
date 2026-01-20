@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Az Orta | Kerem Bilginer</title>
+    <meta name="description" content="Az Orta Restaurant - About MasterChef Türkiye Finalist Kerem Bilginer.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index-en.html" class="nav-brand">
+                <img src="images/logo.png" alt="Az Orta" class="nav-logo">
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index-en.html" class="nav-link">Home</a></li>
+                <li><a href="about-en.html" class="nav-link">About</a></li>
+                <li><a href="menu-en.html" class="nav-link">Menu</a></li>
+                <li><a href="contact-en.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="language-switcher">
+                <a href="about.html" class="lang-link">TR</a>
+                <span class="lang-separator">|</span>
+                <a href="about-en.html" class="lang-link active">EN</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about" class="about" style="padding-top: 120px;">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Chef</h2>
+                <p class="section-subtitle">MasterChef Türkiye Finalist</p>
+            </div>
+            <div class="about-content">
+                <div class="chef-image-container">
+                    <img src="images/Kerem.jpeg" 
+                         alt="Kerem Bilginer - MasterChef Türkiye Finalist, Head Chef" 
+                         class="chef-image"
+                         onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'500\' viewBox=\'0 0 400 500\'%3E%3Crect width=\'400\' height=\'500\' fill=\'%23f5f5f5\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' text-anchor=\'middle\' dominant-baseline=\'middle\' fill=\'%23666\' font-family=\'Inter, sans-serif\' font-size=\'18\'%3ELoading Image...%3C/text%3E%3C/svg%3E';">
+                </div>
+                <div class="chef-info">
+                    <h3 class="chef-name">Kerem Bilginer</h3>
+                    <p class="chef-title">Head Chef & Founder</p>
+                    <p class="chef-description">
+                        Kerem Bilginer, one of the finalists of MasterChef Türkiye, 
+                        brought Az Orta to life with his passion for culinary arts and creative approach. 
+                        In every dish, he combines traditional flavors with modern techniques 
+                        to deliver an unforgettable gastronomic experience.
+                    </p>
+                    <div class="chef-achievement">
+                        <span class="achievement-badge">🏆</span>
+                        <span>MasterChef Türkiye Finalist</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Az Orta Restaurant. All rights reserved.</p>
+            <p class="footer-credit">MasterChef Türkiye Finalist Kerem Bilginer</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
