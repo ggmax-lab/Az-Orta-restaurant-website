@@ -5,24 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hakkımızda - Az Orta | Kerem Bilginer</title>
     <meta name="description" content="Az Orta Restaurant - MasterChef Türkiye Finalisti Kerem Bilginer hakkında bilgiler.">
+    <link rel="icon" type="image/png" href="Images/logo.png">
+    <link rel="apple-touch-icon" href="Images/logo.png">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
+    <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
     <nav class="navbar">
         <div class="container">
             <a href="index.html" class="nav-brand">
-                <img src="images/logo.png" alt="Az Orta" class="nav-logo">
+                <img src="Images/logo.png" alt="Az Orta" class="nav-logo" width="120" height="50" loading="eager">
             </a>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="index.html" class="nav-link">Ana Sayfa</a></li>
-                <li><a href="about.html" class="nav-link">Hakkımızda</a></li>
+                <li><a href="about.html" class="nav-link active">Hakkımızda</a></li>
                 <li><a href="menu.html" class="nav-link">Menü</a></li>
                 <li><a href="contact.html" class="nav-link">İletişim</a></li>
             </ul>
+            <a href="tel:+905552009999" class="cta-button-nav cta-call">Bizi Arayın</a>
+            <a href="menu.html" class="cta-button-nav">Menüyü Gör</a>
             <div class="language-switcher">
                 <a href="about.html" class="lang-link active">TR</a>
                 <span class="lang-separator">|</span>
@@ -36,28 +40,39 @@
         </div>
     </nav>
 
-    <!-- About Section -->
-    <section id="about" class="about" style="padding-top: 120px;">
+    <!-- About Hero -->
+    <section class="about-hero">
+        <img src="Images/about-banner.png" alt="Az Orta" class="about-hero-banner" loading="eager">
+        <div class="about-hero-overlay">
+            <p class="about-hero-tagline">Hikayemiz</p>
+        </div>
+        <a href="#about" class="scroll-indicator scroll-indicator-about" aria-label="Scroll down">
+            <span></span>
+        </a>
+    </section>
+
+    <!-- Chef Section -->
+    <section id="about" class="about" style="padding-top: 80px;">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header reveal">
                 <h2 class="section-title">Şefimiz</h2>
                 <p class="section-subtitle">MasterChef Türkiye Finalisti</p>
             </div>
             <div class="about-content">
-                <div class="chef-image-container">
-                    <img src="images/Kerem.jpeg" 
+                <div class="chef-image-container reveal">
+                    <img src="Images/Kerem.jpeg" 
                          alt="Kerem Bilginer - MasterChef Türkiye Finalisti, Baş Şef" 
                          class="chef-image"
+                         loading="lazy"
                          onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'500\' viewBox=\'0 0 400 500\'%3E%3Crect width=\'400\' height=\'500\' fill=\'%23f5f5f5\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' text-anchor=\'middle\' dominant-baseline=\'middle\' fill=\'%23666\' font-family=\'Inter, sans-serif\' font-size=\'18\'%3EResim Yükleniyor...%3C/text%3E%3C/svg%3E';">
                 </div>
-                <div class="chef-info">
+                <div class="chef-info reveal">
                     <h3 class="chef-name">Kerem Bilginer</h3>
                     <p class="chef-title">Baş Şef & Kurucu</p>
                     <p class="chef-description">
-                        MasterChef Türkiye'nin finalistlerinden biri olan Kerem Bilginer, 
-                        mutfak sanatına olan tutkusu ve yaratıcı yaklaşımıyla Az Orta'yı hayata geçirdi. 
-                        Her tabakta, geleneksel lezzetleri modern tekniklerle buluşturarak 
-                        unutulmaz bir gastronomi deneyimi sunuyor.
+                        MasterChef Türkiye finalisti Kerem Bilginer, açık ateş mangal tutkusu ile Az Orta'yı hayata geçirdi. 
+                        Közde ızgara tekniği, el işi marineler ve geleneksel ocakbaşı kültürünü 
+                        modern bir dokunuşla bir araya getirerek, Maslak'ta gerçek bir ateş başı deneyimi sunuyor.
                     </p>
                     <div class="chef-achievement">
                         <span class="achievement-badge">🏆</span>
@@ -68,11 +83,85 @@
         </div>
     </section>
 
+    <!-- The Beginning - Main Story Focus -->
+    <section class="about-beginning">
+        <div class="container">
+            <div class="about-beginning-header reveal">
+                <span class="about-beginning-year">2025</span>
+                <h2 class="about-beginning-title">Kuruluş</h2>
+                <p class="about-beginning-subtitle">Az Orta'nın hikayesi burada başladı</p>
+            </div>
+            <div class="about-beginning-content">
+                <div class="about-beginning-text reveal">
+                    <p class="about-beginning-lead">Az Orta, açık ateş Türk mangal konsepti ile MasterChef finalisti Kerem Bilginer tarafından Maslak'ta hayata geçirildi.</p>
+                    <p>Közde ızgara geleneğini ocakbaşı samimiyetiyle buluşturuyoruz. Her köfte ve şiş, mangal ateşinde el işi marinelerle pişiriliyor — misafirlerimize gerçek bir ateş başı sofrası sunuyoruz.</p>
+                </div>
+                <div class="about-beginning-photos">
+                    <div class="about-photo-placeholder about-photo-placeholder--featured reveal">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                        <span>Açılış fotoğrafı</span>
+                    </div>
+                    <div class="about-photo-placeholder about-photo-placeholder--featured reveal">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14"/></svg>
+                        <span>Açılış günü</span>
+                    </div>
+                    <div class="about-photo-placeholder about-photo-placeholder--featured reveal">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16"/></svg>
+                        <span>İlk misafirler</span>
+                    </div>
+                    <div class="about-photo-placeholder about-photo-placeholder--featured reveal">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                        <span>Ekip ve açılış</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Today / Supporting Story -->
+    <section class="about-story">
+        <div class="container">
+            <div class="about-timeline">
+                <div class="timeline-item timeline-item--compact reveal">
+                    <div class="timeline-marker">Bugün</div>
+                    <div class="timeline-content">
+                        <h3>Az Orta Ailesi</h3>
+                        <p>Misafirlerimizin gülümsemesi ve tekrar gelişleri bize her gün ilham veriyor.</p>
+                        <div class="timeline-photo-grid timeline-photo-grid--compact">
+                            <div class="about-photo-placeholder reveal">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                                <span>Ekip fotoğrafı</span>
+                            </div>
+                            <div class="about-photo-placeholder reveal">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16"/></svg>
+                                <span>Restoran iç mekan</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy -->
+    <section class="about-philosophy">
+        <div class="container">
+            <div class="philosophy-content reveal">
+                <blockquote class="philosophy-quote">
+                    "Açık ateşte közde ızgara — geleneksel ocakbaşı lezzetlerini 
+                    her lokmada hissettirmek."
+                </blockquote>
+                <p class="philosophy-attribution">— Az Orta Felsefesi</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 Az Orta Restaurant. Tüm hakları saklıdır.</p>
+            <p>&copy; 2025 Az Orta Restaurant. Tüm hakları saklıdır.</p>
             <p class="footer-credit">MasterChef Türkiye Finalisti Kerem Bilginer</p>
+            <p class="footer-designed">Designed by Max-Aslaner</p>
         </div>
     </footer>
 

@@ -4,25 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu - Az Orta</title>
-    <meta name="description" content="Az Orta Restaurant menu - Carefully prepared delicacies.">
+    <meta name="description" content="Az Orta menu - Charcoal-grilled skewers & köfte over open fire. Turkish grill flavours.">
+    <link rel="icon" type="image/png" href="Images/logo.png">
+    <link rel="apple-touch-icon" href="Images/logo.png">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
+    <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
     <nav class="navbar">
         <div class="container">
             <a href="index-en.html" class="nav-brand">
-                <img src="images/logo.png" alt="Az Orta" class="nav-logo">
+                <img src="Images/logo.png" alt="Az Orta" class="nav-logo" width="120" height="50" loading="eager">
             </a>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="index-en.html" class="nav-link">Home</a></li>
                 <li><a href="about-en.html" class="nav-link">About</a></li>
-                <li><a href="menu-en.html" class="nav-link">Menu</a></li>
+                <li><a href="menu-en.html" class="nav-link active">Menu</a></li>
                 <li><a href="contact-en.html" class="nav-link">Contact</a></li>
             </ul>
+            <a href="tel:+905552009999" class="cta-button-nav cta-call">Call Us</a>
+            <a href="contact-en.html" class="cta-button-nav">Find Location</a>
             <div class="language-switcher">
                 <a href="menu.html" class="lang-link">TR</a>
                 <span class="lang-separator">|</span>
@@ -38,18 +42,128 @@
 
     <!-- Menu Section -->
     <section id="menu" class="menu" style="padding-top: 120px;">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Our Menu</h2>
-                <p class="section-subtitle">Carefully Prepared Delicacies</p>
+        <div class="menu-video-hero">
+            <video class="menu-hero-video" autoplay loop muted playsinline preload="auto"
+                   poster="Images/menu1.jpg"
+                   aria-label="Az Orta open fire grill">
+                <source src="Videos/restaurant-edit.mp4" type="video/mp4">
+            </video>
+            <div class="menu-video-overlay"></div>
+            <div class="menu-hero-content menu-video-content">
+                <h1>Main Menus</h1>
+                <p>Charcoal-grilled skewers & köfte — Fire-grilled menus served with 1 salad and 1 drink</p>
             </div>
-            <div class="menu-grid">
-                <div class="menu-category">
-                    <h3 class="category-title">Drinks</h3>
+            <button type="button" class="menu-video-volume-btn" id="menuVolumeBtn" aria-label="Unmute" title="Toggle sound" data-label-muted="Unmute" data-label-unmuted="Mute">
+                <svg class="icon-muted" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>
+                </svg>
+                <svg class="icon-unmuted" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:none">
+                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                </svg>
+            </button>
+            <a href="https://www.instagram.com/p/DR-H0wvDLdp/" target="_blank" rel="noopener noreferrer" class="menu-video-instagram-link" aria-label="Watch on Instagram">@az.orta</a>
+        </div>
+        <div class="container">
+            <section class="menu-mains-section">
+                <div class="menu-mains-header">
+                    <span class="menu-mains-label">Charcoal Grilled</span>
+                    <h2 class="menu-mains-title">Main Menus</h2>
+                    <p class="menu-mains-subtitle">Every menu served with 1 salad and 1 drink</p>
+                </div>
+                <div class="menu-mains-grid">
+                    <div class="menu-mains-card">
+                        <div class="menu-img-placeholder">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                            <span>Photo</span>
+                        </div>
+                        <div class="menu-mains-card-body">
+                            <span class="menu-item-badge popular">Popular</span>
+                            <h3 class="menu-mains-name">Delight Chicken Skewer Menu <span class="menu-item-size">(200g)</span></h3>
+                            <p class="menu-mains-description">Your Salad Choice + Drink / +1 Chicken Skewer 100₺</p>
+                            <span class="menu-mains-price">450₺</span>
+                        </div>
+                    </div>
+                    <div class="menu-mains-card">
+                        <div class="menu-img-placeholder">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                            <span>Photo</span>
+                        </div>
+                        <div class="menu-mains-card-body">
+                            <h3 class="menu-mains-name">Meatball Skewer Menu <span class="menu-item-size">(150g)</span></h3>
+                            <p class="menu-mains-description">Your Salad Choice + Drink / +1 Meatball Skewer 120₺</p>
+                            <span class="menu-mains-price">490₺</span>
+                        </div>
+                    </div>
+                    <div class="menu-mains-card">
+                        <img src="Images/lamb-skewer.png" alt="Thracian Lamb Skewer Menu" class="menu-item-img" loading="lazy">
+                        <div class="menu-mains-card-body">
+                            <h3 class="menu-mains-name">Thracian Lamb Skewer Menu <span class="menu-item-size">(150g)</span></h3>
+                            <p class="menu-mains-description">Your Salad Choice + Drink / +1 Lamb Skewer 180₺</p>
+                            <span class="menu-mains-price">650₺</span>
+                        </div>
+                    </div>
+                    <div class="menu-mains-card">
+                        <div class="menu-img-placeholder">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                            <span>Photo</span>
+                        </div>
+                        <div class="menu-mains-card-body">
+                            <span class="menu-item-badge popular">Popular</span>
+                            <h3 class="menu-mains-name">Az Orta Menu <span class="menu-item-size">(250g)</span></h3>
+                            <p class="menu-mains-description">Salad + Drink / 2 Chicken, 1 Meatball, 1 Lamb Skewer</p>
+                            <span class="menu-mains-price">600₺</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="menu-section-divider"><span></span></div>
+            <h2 class="menu-section-title menu-section-title-sides">Salads, Desserts & Drinks</h2>
+
+            <div class="menu-grid menu-sides-grid">
+                <div class="menu-category menu-category-compact">
+                    <div class="menu-category-header">
+                        <h3 class="category-title">Salads <span class="menu-size-option">(half / full)</span></h3>
+                    </div>
                     <div class="menu-items">
                         <div class="menu-item">
                             <div class="menu-item-header">
-                                <h4 class="menu-item-name">Extra Shaken Burnt Ayran <span class="menu-item-size">(300ml)</span></h4>
+                                <h4 class="menu-item-name">Antalya Piyazı</h4>
+                                <span class="menu-item-price">120₺ / 240₺</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h4 class="menu-item-name">Istanbul Salad</h4>
+                                <span class="menu-item-price">120₺ / 240₺</span>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="Images/salads.png" alt="Salads" class="menu-category-img menu-category-img-bottom" loading="lazy">
+                </div>
+                <div class="menu-category menu-category-compact">
+                    <div class="menu-category-header">
+                        <h3 class="category-title">Dessert</h3>
+                    </div>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h4 class="menu-item-name">Saye</h4>
+                                <span class="menu-item-price">100₺</span>
+                            </div>
+                            <p class="menu-item-description">Semolina Halva with Tahini Sauce and Walnuts</p>
+                        </div>
+                    </div>
+                    <img src="Images/dessert.png" alt="Saye - Semolina Halva with Tahini Sauce and Walnuts" class="menu-category-img menu-category-img-bottom menu-category-img-dessert" loading="lazy">
+                </div>
+                <div class="menu-category menu-category-compact">
+                    <div class="menu-category-header">
+                        <h3 class="category-title">Drinks</h3>
+                    </div>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h4 class="menu-item-name">Extra Shaken Burnt Ayran <span class="menu-item-size">(300ml)</span> <span class="menu-item-badge spicy">Spicy</span></h4>
                                 <span class="menu-item-price">90₺</span>
                             </div>
                         </div>
@@ -85,73 +199,18 @@
                         </div>
                     </div>
                 </div>
-                <div class="menu-category">
-                    <h3 class="category-title">Dessert</h3>
-                    <div class="menu-items">
-                        <div class="menu-item">
-                            <div class="menu-item-header">
-                                <h4 class="menu-item-name">Saye</h4>
-                                <span class="menu-item-price">100₺</span>
-                            </div>
-                            <p class="menu-item-description">Semolina Halva with Tahini Sauce and Walnuts</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="menu-category">
-                    <h3 class="category-title">Salads <span class="menu-size-option">(half / full)</span></h3>
-                    <div class="menu-items">
-                        <div class="menu-item">
-                            <div class="menu-item-header">
-                                <h4 class="menu-item-name">Antalya Piyazı</h4>
-                                <span class="menu-item-price">120₺ / 240₺</span>
-                            </div>
-                        </div>
-                        <div class="menu-item">
-                            <div class="menu-item-header">
-                                <h4 class="menu-item-name">Istanbul Salad</h4>
-                                <span class="menu-item-price">120₺ / 240₺</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="menu-category">
-                    <h3 class="category-title">Az Orta Menu</h3>
-                    <p class="category-description">All menus are served with 1 Salad and 1 Drink.</p>
-                    <div class="menu-items">
-                        <div class="menu-item">
-                            <div class="menu-item-header">
-                                <h4 class="menu-item-name">Delight Chicken Skewer Menu <span class="menu-item-size">(200g)</span></h4>
-                                <span class="menu-item-price">450₺</span>
-                            </div>
-                            <p class="menu-item-description">Your Salad Choice + Drink / +1 Chicken Skewer 100₺</p>
-                        </div>
-                        <div class="menu-item">
-                            <div class="menu-item-header">
-                                <h4 class="menu-item-name">Meatball Skewer Menu <span class="menu-item-size">(150g)</span></h4>
-                                <span class="menu-item-price">490₺</span>
-                            </div>
-                            <p class="menu-item-description">Your Salad Choice + Drink / +1 Meatball Skewer 120₺</p>
-                        </div>
-                        <div class="menu-item">
-                            <div class="menu-item-header">
-                                <h4 class="menu-item-name">Thracian Lamb Skewer Menu <span class="menu-item-size">(150g)</span></h4>
-                                <span class="menu-item-price">650₺</span>
-                            </div>
-                            <p class="menu-item-description">Your Salad Choice + Drink / +1 Lamb Skewer 180₺</p>
-                        </div>
-                        <div class="menu-item">
-                            <div class="menu-item-header">
-                                <h4 class="menu-item-name">Az Orta Menu <span class="menu-item-size">(250g)</span></h4>
-                                <span class="menu-item-price">600₺</span>
-                            </div>
-                            <p class="menu-item-description">Your Salad Choice + Drink / Served with 2 Chicken Skewers, 1 Meatball Skewer and 1 Lamb Skewer.</p>
-                        </div>
-                    </div>
-                </div>
             </div>
             <div class="menu-note">
                 <p><strong>Important Note:</strong> Only additional skewers from the same product group can be added to menus. Changes or additions with different product groups are not possible. Additions to the Az Orta menu are not possible.</p>
                 <p style="margin-top: 15px;">VAT is included in our prices. Menu Update Date: 17.11.2025</p>
+            </div>
+            <div class="menu-cta-section">
+                <h2>Ready to Order?</h2>
+                <p>Visit us to try our delicious dishes</p>
+                <div class="menu-cta-buttons">
+                    <a href="contact-en.html" class="btn btn-primary">Find Location</a>
+                    <a href="tel:+905552009999" class="btn btn-secondary">Call Us</a>
+                </div>
             </div>
         </div>
     </section>
@@ -159,8 +218,9 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 Az Orta Restaurant. All rights reserved.</p>
+            <p>&copy; 2025 Az Orta Restaurant. All rights reserved.</p>
             <p class="footer-credit">MasterChef Türkiye Finalist Kerem Bilginer</p>
+            <p class="footer-designed">Designed by Max-Aslaner</p>
         </div>
     </footer>
 
