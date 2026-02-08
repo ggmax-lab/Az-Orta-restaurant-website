@@ -100,11 +100,13 @@ function setupScrollIndicator(selector) {
 setupScrollIndicator('.scroll-indicator-about');
 setupScrollIndicator('.hero .scroll-indicator');
 
-// Sticky View Menu (mobile): show only when hero View Menu button has scrolled out of view
+// Sticky View Menu (mobile): hidden at top; show only when hero View Menu button has scrolled out of view
 function setupStickyCtaWhenPastHeroButton() {
     const heroMenuBtn = document.querySelector('.hero .btn-hero-menu');
     const stickyCta = document.querySelector('.sticky-cta-mobile');
     if (!heroMenuBtn || !stickyCta) return;
+
+    stickyCta.classList.remove('sticky-cta-visible');
 
     function updateStickyCta() {
         const rect = heroMenuBtn.getBoundingClientRect();
