@@ -100,6 +100,26 @@ function setupScrollIndicator(selector) {
 setupScrollIndicator('.scroll-indicator-about');
 setupScrollIndicator('.hero .scroll-indicator');
 
+// Sticky View Menu (mobile): show only when hero View Menu button has scrolled out of view
+function setupStickyCtaWhenPastHeroButton() {
+    const heroMenuBtn = document.querySelector('.hero .btn-hero-menu');
+    const stickyCta = document.querySelector('.sticky-cta-mobile');
+    if (!heroMenuBtn || !stickyCta) return;
+
+    function updateStickyCta() {
+        const rect = heroMenuBtn.getBoundingClientRect();
+        if (rect.top < 0) {
+            stickyCta.classList.add('sticky-cta-visible');
+        } else {
+            stickyCta.classList.remove('sticky-cta-visible');
+        }
+    }
+    updateStickyCta();
+    window.addEventListener('scroll', updateStickyCta, { passive: true });
+    window.addEventListener('resize', updateStickyCta);
+}
+document.addEventListener('DOMContentLoaded', setupStickyCtaWhenPastHeroButton);
+
 // Scroll reveal animation - unified observer
 const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
