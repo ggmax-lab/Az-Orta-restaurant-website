@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Az Orta</title>
+    <meta name="description" content="Az Orta menu - Charcoal-grilled skewers & köfte over open fire. Turkish grill flavours.">
+    <link rel="icon" type="image/png" href="Images/logo.png">
+    <link rel="apple-touch-icon" href="Images/logo.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index-en.html" class="nav-brand">
+                <img src="Images/logo.png" alt="Az Orta" class="nav-logo" width="65" height="65" loading="eager">
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index-en.html" class="nav-link">Home</a></li>
+                <li><a href="about-en.html" class="nav-link">About</a></li>
+                <li><a href="menu-en.html" class="nav-link active">Menu</a></li>
+                <li><a href="contact-en.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="language-switcher">
+                <a href="menu.html" class="lang-link">TR</a>
+                <span class="lang-separator">|</span>
+                <a href="menu-en.html" class="lang-link active">EN</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu" style="padding-top: 120px;">
+        <div class="menu-video-hero">
+            <video class="menu-hero-video" autoplay loop muted playsinline preload="auto"
+                   poster="Images/menu1.jpg"
+                   aria-label="Az Orta open fire grill">
+                <source src="videos/restaurant-edit.mp4" type="video/mp4">
+            </video>
+            <div class="menu-video-overlay"></div>
+            <div class="menu-hero-content menu-video-content">
+                <h1>Main Menus</h1>
+                <p>Charcoal-grilled skewers & köfte — Fire-grilled menus served with 1 salad and 1 drink</p>
+            </div>
+            <button type="button" class="menu-video-volume-btn" id="menuVolumeBtn" aria-label="Unmute" title="Toggle sound" data-label-muted="Unmute" data-label-unmuted="Mute">
+                <svg class="icon-muted" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>
+                </svg>
+                <svg class="icon-unmuted" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:none">
+                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                </svg>
+            </button>
+            <a href="https://www.instagram.com/p/DR-H0wvDLdp/" target="_blank" rel="noopener noreferrer" class="menu-video-instagram-link" aria-label="Watch on Instagram">@az.orta</a>
+        </div>
+        <div class="container">
+            <section class="menu-mains-section">
+                <div class="menu-mains-header">
+                    <span class="menu-mains-label">Charcoal Grilled</span>
+                    <h2 class="menu-mains-title">Main Menus</h2>
+                    <p class="menu-mains-subtitle">Every menu served with 1 salad and 1 drink</p>
+                </div>
+                <div class="menu-mains-grid">
+                    <div class="menu-mains-card">
+                        <img src="Images/chicken-skewer-menu.png" alt="Delight Chicken Skewer Menu" class="menu-item-img" loading="lazy">
+                        <div class="menu-mains-card-body">
+                            <span class="menu-item-badge popular">Popular</span>
+                            <h3 class="menu-mains-name">Delight Chicken Skewer Menu <span class="menu-item-size">(200g)</span></h3>
+                            <p class="menu-mains-description">Your Salad Choice + Drink / +1 Chicken Skewer 100₺</p>
+                            <div class="menu-item-allergens">
+                                <span class="allergen-badge" title="Cereals Containing Gluten">🌾</span>
+                                <span class="allergen-badge" title="Dairy Products">🥛</span>
+                            </div>
+                            <span class="menu-mains-price">450₺</span>
+                        </div>
+                    </div>
+                    <div class="menu-mains-card">
+                        <img src="Images/meatball-menu.png" alt="Meatball Skewer Menu" class="menu-item-img" loading="lazy">
+                        <div class="menu-mains-card-body">
+                            <h3 class="menu-mains-name">Meatball Skewer Menu <span class="menu-item-size">(150g)</span></h3>
+                            <p class="menu-mains-description">Your Salad Choice + Drink / +1 Meatball Skewer 120₺</p>
+                            <div class="menu-item-allergens">
+                                <span class="allergen-badge" title="Cereals Containing Gluten">🌾</span>
+                            </div>
+                            <span class="menu-mains-price">490₺</span>
+                        </div>
+                    </div>
+                    <div class="menu-mains-card">
+                        <img src="Images/lamb-skewer.png" alt="Thracian Lamb Skewer Menu" class="menu-item-img" loading="lazy">
+                        <div class="menu-mains-card-body">
+                            <h3 class="menu-mains-name">Thracian Lamb Skewer Menu <span class="menu-item-size">(150g)</span></h3>
+                            <p class="menu-mains-description">Your Salad Choice + Drink / +1 Lamb Skewer 180₺</p>
+                            <div class="menu-item-allergens">
+                                <span class="allergen-badge" title="Cereals Containing Gluten">🌾</span>
+                                <span class="allergen-badge" title="Dairy Products">🥛</span>
+                            </div>
+                            <span class="menu-mains-price">650₺</span>
+                        </div>
+                    </div>
+                    <div class="menu-mains-card">
+                        <img src="Images/az-orta-menu.png" alt="Az Orta Menu" class="menu-item-img" loading="lazy">
+                        <div class="menu-mains-card-body">
+                            <span class="menu-item-badge popular">Popular</span>
+                            <h3 class="menu-mains-name">Az Orta Menu <span class="menu-item-size">(250g)</span></h3>
+                            <p class="menu-mains-description">Salad + Drink / 2 Chicken, 1 Meatball, 1 Lamb Skewer</p>
+                            <div class="menu-item-allergens">
+                                <span class="allergen-badge" title="Cereals Containing Gluten">🌾</span>
+                                <span class="allergen-badge" title="Dairy Products">🥛</span>
+                            </div>
+                            <span class="menu-mains-price">600₺</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="menu-section-divider"><span></span></div>
+            <h2 class="menu-section-title menu-section-title-sides">Salads, Desserts & Drinks</h2>
+
+            <div class="menu-grid menu-sides-grid">
+                <div class="menu-category menu-category-compact">
+                    <div class="menu-category-header">
+                        <h3 class="category-title">Salads <span class="menu-size-option">(half / full)</span></h3>
+                    </div>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h4 class="menu-item-name">Antalya Piyazı</h4>
+                                <span class="menu-item-price">120₺ / 240₺</span>
+                            </div>
+                            <div class="menu-item-allergens">
+                                <span class="allergen-badge" title="Sesame Seed Products">🌰</span>
+                                <span class="allergen-badge" title="Egg Products">🥚</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h4 class="menu-item-name">Istanbul Salad</h4>
+                                <span class="menu-item-price">120₺ / 240₺</span>
+                            </div>
+                            <div class="menu-item-allergens">
+                                <span class="allergen-badge" title="Soybean Products">🫛</span>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="Images/salads.png" alt="Salads" class="menu-category-img menu-category-img-bottom" loading="lazy">
+                </div>
+                <div class="menu-category menu-category-compact">
+                    <div class="menu-category-header">
+                        <h3 class="category-title">Dessert</h3>
+                    </div>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h4 class="menu-item-name">Saye</h4>
+                                <span class="menu-item-price">100₺</span>
+                            </div>
+                            <p class="menu-item-description">Semolina Halva with Tahini Sauce and Walnuts</p>
+                            <div class="menu-item-allergens">
+                                <span class="allergen-badge" title="Cereals Containing Gluten">🌾</span>
+                                <span class="allergen-badge" title="Dairy Products">🥛</span>
+                                <span class="allergen-badge" title="Sesame Seed Products">🌰</span>
+                                <span class="allergen-badge" title="Tree Nuts">🥜</span>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="Images/dessert.png" alt="Saye - Semolina Halva with Tahini Sauce and Walnuts" class="menu-category-img menu-category-img-bottom menu-category-img-dessert" loading="lazy">
+                </div>
+                <div class="menu-category menu-category-compact">
+                    <div class="menu-category-header">
+                        <h3 class="category-title">Drinks</h3>
+                    </div>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h4 class="menu-item-name">Extra Shaken Burnt Ayran <span class="menu-item-size">(300ml)</span> <span class="menu-item-badge spicy">Spicy</span></h4>
+                                <span class="menu-item-price">90₺</span>
+                            </div>
+                            <div class="menu-item-allergens">
+                                <span class="allergen-badge" title="Dairy Products">🥛</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h4 class="menu-item-name">Coca Cola / Zero <span class="menu-item-size">(300ml)</span></h4>
+                                <span class="menu-item-price">80₺</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h4 class="menu-item-name">Fanta / Sprite <span class="menu-item-size">(300ml)</span></h4>
+                                <span class="menu-item-price">80₺</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h4 class="menu-item-name">Plain Ayran <span class="menu-item-size">(245ml)</span></h4>
+                                <span class="menu-item-price">80₺</span>
+                            </div>
+                            <div class="menu-item-allergens">
+                                <span class="allergen-badge" title="Dairy Products">🥛</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h4 class="menu-item-name">Mineral Water <span class="menu-item-size">(200ml)</span></h4>
+                                <span class="menu-item-price">40₺</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h4 class="menu-item-name">Water <span class="menu-item-size">(500ml)</span></h4>
+                                <span class="menu-item-price">30₺</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Allergen Information Section -->
+            <div class="menu-allergen-section">
+                <h3 class="allergen-section-title">Allergen Information</h3>
+                <div class="allergen-legend">
+                    <div class="allergen-item">
+                        <span class="allergen-symbol">🌾</span>
+                        <span class="allergen-name">Cereals Containing Gluten</span>
+                    </div>
+                    <div class="allergen-item">
+                        <span class="allergen-symbol">🥛</span>
+                        <span class="allergen-name">Dairy Products</span>
+                    </div>
+                    <div class="allergen-item">
+                        <span class="allergen-symbol">🥚</span>
+                        <span class="allergen-name">Egg Products</span>
+                    </div>
+                    <div class="allergen-item">
+                        <span class="allergen-symbol">🌰</span>
+                        <span class="allergen-name">Sesame Seed Products</span>
+                    </div>
+                    <div class="allergen-item">
+                        <span class="allergen-symbol">🫛</span>
+                        <span class="allergen-name">Soybean Products</span>
+                    </div>
+                    <div class="allergen-item">
+                        <span class="allergen-symbol">🥜</span>
+                        <span class="allergen-name">Tree Nuts</span>
+                    </div>
+                </div>
+                <div class="allergen-disclaimer">
+                    <p><strong>Important:</strong> Our products may contain allergens. If you have allergies, please consult our staff. There is a risk of cross-contamination in the kitchen.</p>
+                </div>
+            </div>
+            <div class="menu-note">
+                <p><strong>Important Note:</strong> Only additional skewers from the same product group can be added to menus. Changes or additions with different product groups are not possible. Additions to the Az Orta menu are not possible.</p>
+                <p style="margin-top: 15px;">VAT is included in our prices. Menu Update Date: 17.11.2025</p>
+                <div class="menu-pdf-download" style="margin-top: 24px; padding-top: 24px; border-top: 1px solid rgba(194, 65, 12, 0.1);">
+                    <a href="pdfs/az-orta-menu.pdf" download="az-orta-menu.pdf" class="btn-pdf-download">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        Download Menu as PDF
+                    </a>
+                </div>
+            </div>
+            <div class="menu-cta-section">
+                <h2>Ready to Order?</h2>
+                <p>Visit us to try our delicious dishes</p>
+                <div class="menu-cta-buttons">
+                    <a href="contact-en.html" class="btn btn-primary">Find Location</a>
+                    <a href="tel:+905552009999" class="btn btn-secondary">Call Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Az Orta Restaurant. All rights reserved.</p>
+            <p class="footer-credit">MasterChef Türkiye 2024 Finalist Kerem Bilginer</p>
+            <p class="footer-designed">Designed by Max-Aslaner</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
