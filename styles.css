@@ -57,7 +57,7 @@ html {
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Urbanist', sans-serif;
     color: var(--text-color);
     line-height: 1.6;
     overflow-x: hidden;
@@ -101,7 +101,7 @@ body.page-loaded {
 }
 
 h1, h2, h3, h4 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Urbanist', sans-serif;
     font-weight: 600;
 }
 
@@ -159,6 +159,7 @@ h1, h2, h3, h4 {
 }
 
 .nav-link {
+    font-family: 'Urbanist', sans-serif;
     text-decoration: none;
     color: rgba(255, 255, 255, 0.88);
     font-weight: 500;
@@ -470,6 +471,7 @@ h1, h2, h3, h4 {
 }
 
 .hero-subtitle {
+    font-family: 'Urbanist', sans-serif;
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
     font-weight: 300;
@@ -479,6 +481,7 @@ h1, h2, h3, h4 {
 }
 
 .hero-tagline {
+    font-family: 'Urbanist', sans-serif;
     font-size: 0.95rem;
     font-weight: 600;
     letter-spacing: var(--letter-wide);
@@ -491,6 +494,7 @@ h1, h2, h3, h4 {
 }
 
 .hero-description {
+    font-family: 'Urbanist', sans-serif;
     font-size: 1.2rem;
     font-weight: 400;
     opacity: 0.95;
@@ -508,6 +512,7 @@ h1, h2, h3, h4 {
 }
 
 .btn {
+    font-family: 'Urbanist', sans-serif;
     padding: 16px 32px;
     border-radius: var(--radius-md);
     text-decoration: none;
@@ -822,6 +827,7 @@ h1, h2, h3, h4 {
 }
 
 .section-title {
+    font-family: 'Urbanist', sans-serif;
     font-size: 3rem;
     color: var(--dark-color);
     margin-bottom: 1rem;
@@ -870,6 +876,7 @@ h1, h2, h3, h4 {
 }
 
 .chef-name {
+    font-family: 'Urbanist', sans-serif;
     font-size: 2.5rem;
     color: var(--dark-color);
     margin-bottom: 0.5rem;
@@ -943,7 +950,7 @@ h1, h2, h3, h4 {
 }
 
 .about-hero-subtitle {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Urbanist', sans-serif;
     font-size: 1.15rem;
     font-weight: 600;
     letter-spacing: 0.12em;
@@ -953,7 +960,7 @@ h1, h2, h3, h4 {
 }
 
 .about-hero-tagline {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Urbanist', sans-serif;
     font-size: 1.1rem;
     font-weight: 500;
     letter-spacing: 0.2em;
@@ -1000,7 +1007,7 @@ h1, h2, h3, h4 {
 }
 
 .about-stat-value {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Urbanist', sans-serif;
     font-size: 2rem;
     font-weight: 700;
     color: var(--primary-color);
@@ -1074,6 +1081,7 @@ h1, h2, h3, h4 {
 }
 
 .about-value-title {
+    font-family: 'Urbanist', sans-serif;
     font-size: 1.15rem;
     color: var(--dark-color);
     margin-bottom: 10px;
@@ -1094,7 +1102,7 @@ h1, h2, h3, h4 {
 
 .about-divider-inner {
     width: 100%;
-    height: clamp(180px, 25vh, 280px);
+    height: clamp(320px, 45vh, 480px);
     overflow: hidden;
 }
 
@@ -1103,6 +1111,9 @@ h1, h2, h3, h4 {
     height: 100%;
     object-fit: cover;
     object-position: center 50%;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: high-quality;
+    -ms-interpolation-mode: bicubic;
 }
 
 /* About Story / Timeline */
@@ -1154,7 +1165,7 @@ h1, h2, h3, h4 {
     justify-content: center;
     font-size: 0.7rem;
     font-weight: 700;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Urbanist', sans-serif;
 }
 
 .timeline-content {
@@ -1282,8 +1293,6 @@ h1, h2, h3, h4 {
 .about-beginning .about-collage-ring .about-collage-item.reveal:nth-child(4) { transition-delay: 0.42s; }
 .about-beginning .about-collage-ring .about-collage-item.reveal:nth-child(5) { transition-delay: 0.48s; }
 .about-beginning .about-collage-ring .about-collage-item.reveal:nth-child(6) { transition-delay: 0.54s; }
-.about-beginning .about-collage-ring .about-collage-item.reveal:nth-child(7) { transition-delay: 0.6s; }
-.about-beginning .about-collage-ring .about-collage-item.reveal:nth-child(8) { transition-delay: 0.66s; }
 .about-story .timeline-item.reveal { transition-delay: 0.1s; }
 .about-story .timeline-photo-grid .about-photo-placeholder.reveal:nth-child(1) { transition-delay: 0.2s; }
 .about-story .timeline-photo-grid .about-photo-placeholder.reveal:nth-child(2) { transition-delay: 0.28s; }
@@ -1366,6 +1375,10 @@ h1, h2, h3, h4 {
     margin-left: auto;
     margin-right: auto;
     max-width: 1920px;
+    /* Center the wheel on the page so rotation center aligns with page center */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Large circle at top-left */
@@ -1443,15 +1456,13 @@ h1, h2, h3, h4 {
     transform: scale(1.06);
 }
 
-/* Ring of images surrounding the centre (8 at 45° intervals), radius 565px */
+/* Ring of images surrounding the centre (6 in hexagon at radius 565px) */
 .about-collage-ring .about-collage-item:nth-child(1) { left: calc(50% + 565px); top: 50%; }
-.about-collage-ring .about-collage-item:nth-child(2) { left: calc(50% + 400px); top: calc(50% - 400px); }
-.about-collage-ring .about-collage-item:nth-child(3) { left: 50%; top: calc(50% - 565px); }
-.about-collage-ring .about-collage-item:nth-child(4) { left: calc(50% - 400px); top: calc(50% - 400px); }
-.about-collage-ring .about-collage-item:nth-child(5) { left: calc(50% - 565px); top: 50%; }
-.about-collage-ring .about-collage-item:nth-child(6) { left: calc(50% - 400px); top: calc(50% + 400px); }
-.about-collage-ring .about-collage-item:nth-child(7) { left: 50%; top: calc(50% + 565px); }
-.about-collage-ring .about-collage-item:nth-child(8) { left: calc(50% + 400px); top: calc(50% + 400px); }
+.about-collage-ring .about-collage-item:nth-child(2) { left: calc(50% + 283px); top: calc(50% - 489px); }
+.about-collage-ring .about-collage-item:nth-child(3) { left: calc(50% - 283px); top: calc(50% - 489px); }
+.about-collage-ring .about-collage-item:nth-child(4) { left: calc(50% - 565px); top: 50%; }
+.about-collage-ring .about-collage-item:nth-child(5) { left: calc(50% - 283px); top: calc(50% + 489px); }
+.about-collage-ring .about-collage-item:nth-child(6) { left: calc(50% + 283px); top: calc(50% + 489px); }
 
 /* Collage lightbox – view image in circular shape */
 .about-collage-lightbox {
@@ -1640,7 +1651,7 @@ h1, h2, h3, h4 {
 
 .philosophy-quote {
     font-size: 1.5rem;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Urbanist', sans-serif;
     font-style: italic;
     color: var(--dark-color);
     line-height: 1.7;
@@ -2661,7 +2672,7 @@ h1, h2, h3, h4 {
 }
 
 .contact-hero-subtitle {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Urbanist', sans-serif;
     font-size: 1.1rem;
     font-weight: 500;
     color: var(--primary-color);
@@ -3278,22 +3289,41 @@ h1, h2, h3, h4 {
         font-size: 3.5rem;
     }
 
+    .hero {
+        padding-top: 70px;
+        padding-bottom: 20px;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        min-height: 100dvh;
+        overflow-y: auto;
+    }
+
     .hero-content {
-        padding-top: 16px;
+        padding-top: 24px;
         padding-left: 20px;
         padding-right: 20px;
+        justify-content: center;
+        align-items: center;
     }
 
     .hero-title-wrap {
-        min-height: 16rem;
+        min-height: 14rem;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        overflow: visible;
     }
 
     .hero-title-logo {
-        height: 20rem;
-        max-width: min(95vw, 520px);
+        height: 18rem;
+        max-width: min(88vw, 480px);
+        width: auto;
         margin-left: auto;
         margin-right: auto;
         display: block;
+        object-fit: contain;
+        object-position: center;
     }
 
     .hero-subtitle {
@@ -3307,6 +3337,8 @@ h1, h2, h3, h4 {
     .hero-cta {
         gap: 12px;
         padding: 0 8px;
+        margin-bottom: 0;
+        padding-bottom: 100px;
     }
 
     body:has(.sticky-cta-mobile) .hero .scroll-indicator {
@@ -3342,20 +3374,35 @@ h1, h2, h3, h4 {
         letter-spacing: 0.15em;
     }
 
+    .about-beginning {
+        overflow-x: hidden;
+    }
+
+    .about-beginning-content {
+        max-width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
     .about-opening-collage--circle {
         min-height: 1435px;
         max-width: 100%;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        transform: scale(0.52);
+        transform-origin: center center;
     }
 
     .about-collage-center {
         width: 630px;
         height: 630px;
-        left: 0;
-        top: 0;
-        transform: translate(0, 0);
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
     }
     .about-collage-center:hover {
-        transform: scale(1.02);
+        transform: translate(-50%, -50%) scale(1.02);
     }
 
     .about-collage-ring .about-collage-item {
@@ -3364,13 +3411,11 @@ h1, h2, h3, h4 {
     }
 
     .about-collage-ring .about-collage-item:nth-child(1) { left: calc(50% + 446px); top: 50%; }
-    .about-collage-ring .about-collage-item:nth-child(2) { left: calc(50% + 315px); top: calc(50% - 315px); }
-    .about-collage-ring .about-collage-item:nth-child(3) { left: 50%; top: calc(50% - 446px); }
-    .about-collage-ring .about-collage-item:nth-child(4) { left: calc(50% - 315px); top: calc(50% - 315px); }
-    .about-collage-ring .about-collage-item:nth-child(5) { left: calc(50% - 446px); top: 50%; }
-    .about-collage-ring .about-collage-item:nth-child(6) { left: calc(50% - 315px); top: calc(50% + 315px); }
-    .about-collage-ring .about-collage-item:nth-child(7) { left: 50%; top: calc(50% + 446px); }
-    .about-collage-ring .about-collage-item:nth-child(8) { left: calc(50% + 315px); top: calc(50% + 315px); }
+    .about-collage-ring .about-collage-item:nth-child(2) { left: calc(50% + 223px); top: calc(50% - 386px); }
+    .about-collage-ring .about-collage-item:nth-child(3) { left: calc(50% - 223px); top: calc(50% - 386px); }
+    .about-collage-ring .about-collage-item:nth-child(4) { left: calc(50% - 446px); top: 50%; }
+    .about-collage-ring .about-collage-item:nth-child(5) { left: calc(50% - 223px); top: calc(50% + 386px); }
+    .about-collage-ring .about-collage-item:nth-child(6) { left: calc(50% + 223px); top: calc(50% + 386px); }
 
     .timeline-item {
         padding-left: 40px;
@@ -3467,7 +3512,7 @@ h1, h2, h3, h4 {
     }
 
     .menu-mains-name {
-        padding-right: 0;
+        padding-right: 75px;
     }
 
     .menu-hero {
@@ -3522,6 +3567,12 @@ h1, h2, h3, h4 {
 }
 
 @media (max-width: 600px) {
+    .hero {
+        padding-top: 70px;
+        min-height: 100vh;
+        min-height: 100dvh;
+    }
+
     .menu-video-hero {
         height: clamp(340px, 45vh, 420px);
     }
@@ -3579,12 +3630,22 @@ h1, h2, h3, h4 {
     }
 
     .hero-title-wrap {
-        min-height: 12rem;
+        min-height: 10rem;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        overflow: visible;
     }
 
     .hero-title-logo {
-        height: 16rem;
-        max-width: min(95vw, 400px);
+        height: 14rem;
+        max-width: min(85vw, 360px);
+        width: auto;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        object-fit: contain;
+        object-position: center;
     }
 
     .section-title {
@@ -3709,17 +3770,19 @@ h1, h2, h3, h4 {
 
     .about-opening-collage--circle {
         min-height: 1260px;
+        transform: scale(0.38);
+        transform-origin: center center;
     }
 
     .about-collage-center {
         width: 535px;
         height: 535px;
-        left: 0;
-        top: 0;
-        transform: translate(0, 0);
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
     }
     .about-collage-center:hover {
-        transform: scale(1.02);
+        transform: translate(-50%, -50%) scale(1.02);
     }
 
     .about-collage-ring .about-collage-item {
@@ -3728,13 +3791,11 @@ h1, h2, h3, h4 {
     }
 
     .about-collage-ring .about-collage-item:nth-child(1) { left: calc(50% + 387px); top: 50%; }
-    .about-collage-ring .about-collage-item:nth-child(2) { left: calc(50% + 274px); top: calc(50% - 274px); }
-    .about-collage-ring .about-collage-item:nth-child(3) { left: 50%; top: calc(50% - 387px); }
-    .about-collage-ring .about-collage-item:nth-child(4) { left: calc(50% - 274px); top: calc(50% - 274px); }
-    .about-collage-ring .about-collage-item:nth-child(5) { left: calc(50% - 387px); top: 50%; }
-    .about-collage-ring .about-collage-item:nth-child(6) { left: calc(50% - 274px); top: calc(50% + 274px); }
-    .about-collage-ring .about-collage-item:nth-child(7) { left: 50%; top: calc(50% + 387px); }
-    .about-collage-ring .about-collage-item:nth-child(8) { left: calc(50% + 274px); top: calc(50% + 274px); }
+    .about-collage-ring .about-collage-item:nth-child(2) { left: calc(50% + 194px); top: calc(50% - 335px); }
+    .about-collage-ring .about-collage-item:nth-child(3) { left: calc(50% - 194px); top: calc(50% - 335px); }
+    .about-collage-ring .about-collage-item:nth-child(4) { left: calc(50% - 387px); top: 50%; }
+    .about-collage-ring .about-collage-item:nth-child(5) { left: calc(50% - 194px); top: calc(50% + 335px); }
+    .about-collage-ring .about-collage-item:nth-child(6) { left: calc(50% + 194px); top: calc(50% + 335px); }
 
     .philosophy-quote {
         font-size: 1.15rem;

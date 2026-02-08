@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600;700&family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
@@ -109,7 +109,8 @@
                     <p class="chef-title">Head Chef & Founder</p>
                     <p class="chef-description">
                         MasterChef Türkiye finalist Kerem Bilginer brought Az Orta to life with his passion for open fire cooking. 
-                        Charcoal-grilled techniques, handcrafted marinades and traditional ocakbaşı culture 
+                        His lifelong goal to run his own restaurant aiming to deliver the best quality food has come to reality. 
+                        Our charcoal-grilled techniques, handcrafted marinades and traditional ocakbaşı culture 
                         come together in a modern setting — a true fireside dining experience in Maslak.
                     </p>
                     <div class="chef-achievement">
@@ -174,9 +175,7 @@
                         <div class="about-collage-item reveal" role="button" tabindex="0" aria-label="Click to view larger"><img src="Images/opening-02.png" alt="Az Orta storefront opening" loading="lazy"></div>
                         <div class="about-collage-item reveal" role="button" tabindex="0" aria-label="Click to view larger"><img src="Images/opening-03.png" alt="Opening ceremony" loading="lazy"></div>
                         <div class="about-collage-item reveal" role="button" tabindex="0" aria-label="Click to view larger"><img src="Images/opening-04.png" alt="Az Orta founding team" loading="lazy"></div>
-                        <div class="about-collage-item reveal" role="button" tabindex="0" aria-label="Click to view larger"><img src="Images/opening-05.png" alt="Az Orta opening day" loading="lazy"></div>
                         <div class="about-collage-item reveal" role="button" tabindex="0" aria-label="Click to view larger"><img src="Images/opening-06.png" alt="Az Orta team" loading="lazy"></div>
-                        <div class="about-collage-item reveal" role="button" tabindex="0" aria-label="Click to view larger"><img src="Images/opening-07.png" alt="Charcoal-grilled flavour" loading="lazy"></div>
                         <div class="about-collage-item reveal" role="button" tabindex="0" aria-label="Click to view larger"><img src="Images/opening-08.png" alt="Az Orta interior" loading="lazy"></div>
                         <div class="about-collage-item reveal" role="button" tabindex="0" aria-label="Click to view larger"><img src="Images/opening-09.png" alt="Chef in the kitchen" loading="lazy"></div>
                     </div>
@@ -250,6 +249,27 @@
         </div>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="script.js"></script>
+    <script>
+    (function() {
+        if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+        var container = document.querySelector('.about-opening-collage--circle');
+        var ring = container && container.querySelector('.about-collage-ring');
+        if (!container || !ring) return;
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.to(ring, {
+            '--ring-rotation': '360deg',
+            ease: 'none',
+            scrollTrigger: {
+                trigger: container,
+                start: 'top bottom',
+                end: 'bottom top',
+                scrub: 1.5
+            }
+        });
+    })();
+    </script>
 </body>
 </html>

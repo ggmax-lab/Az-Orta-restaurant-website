@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600;700&family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
@@ -109,7 +109,8 @@
                     <p class="chef-title">Baş Şef & Kurucu</p>
                     <p class="chef-description">
                         MasterChef Türkiye finalisti Kerem Bilginer, açık ateş mangal tutkusu ile Az Orta'yı hayata geçirdi. 
-                        Közde ızgara tekniği, el işi marineler ve geleneksel ocakbaşı kültürünü 
+                        Kendi restoranını işletme ve en kaliteli yemek sunma hedefi artık gerçeğe dönüştü. 
+                        Bizim közde ızgara tekniğimiz, el işi marineler ve geleneksel ocakbaşı kültürü 
                         modern bir dokunuşla bir araya getirerek, Maslak'ta gerçek bir ateş başı deneyimi sunuyor.
                     </p>
                     <div class="chef-achievement">
@@ -174,9 +175,7 @@
                         <div class="about-collage-item reveal" role="button" tabindex="0" aria-label="Büyütmek için tıklayın"><img src="Images/opening-02.png" alt="Az Orta mağaza önü açılış" loading="lazy"></div>
                         <div class="about-collage-item reveal" role="button" tabindex="0" aria-label="Büyütmek için tıklayın"><img src="Images/opening-03.png" alt="Açılış töreni" loading="lazy"></div>
                         <div class="about-collage-item reveal" role="button" tabindex="0" aria-label="Büyütmek için tıklayın"><img src="Images/opening-04.png" alt="Az Orta kurucu ekibi" loading="lazy"></div>
-                        <div class="about-collage-item reveal" role="button" tabindex="0" aria-label="Büyütmek için tıklayın"><img src="Images/opening-05.png" alt="Az Orta açılış günü" loading="lazy"></div>
                         <div class="about-collage-item reveal" role="button" tabindex="0" aria-label="Büyütmek için tıklayın"><img src="Images/opening-06.png" alt="Az Orta ekibi" loading="lazy"></div>
-                        <div class="about-collage-item reveal" role="button" tabindex="0" aria-label="Büyütmek için tıklayın"><img src="Images/opening-07.png" alt="Közde ızgara lezzet" loading="lazy"></div>
                         <div class="about-collage-item reveal" role="button" tabindex="0" aria-label="Büyütmek için tıklayın"><img src="Images/opening-08.png" alt="Az Orta iç mekan" loading="lazy"></div>
                         <div class="about-collage-item reveal" role="button" tabindex="0" aria-label="Büyütmek için tıklayın"><img src="Images/opening-09.png" alt="Şef mutfakta" loading="lazy"></div>
                     </div>
@@ -250,6 +249,27 @@
         </div>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="script.js"></script>
+    <script>
+    (function() {
+        if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+        var container = document.querySelector('.about-opening-collage--circle');
+        var ring = container && container.querySelector('.about-collage-ring');
+        if (!container || !ring) return;
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.to(ring, {
+            '--ring-rotation': '360deg',
+            ease: 'none',
+            scrollTrigger: {
+                trigger: container,
+                start: 'top bottom',
+                end: 'bottom top',
+                scrub: 1.5
+            }
+        });
+    })();
+    </script>
 </body>
 </html>
