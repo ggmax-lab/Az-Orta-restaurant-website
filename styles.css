@@ -3296,11 +3296,10 @@ h1, h2, h3, h4 {
         justify-content: center;
         min-height: 100vh;
         min-height: 100dvh;
-        overflow-y: auto;
     }
 
     .hero-content {
-        padding-top: 24px;
+        padding-top: 56px;
         padding-left: 20px;
         padding-right: 20px;
         justify-content: center;
@@ -3385,37 +3384,62 @@ h1, h2, h3, h4 {
     }
 
     .about-opening-collage--circle {
-        min-height: 1435px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        min-height: auto;
         max-width: 100%;
         width: 100%;
         margin-left: 0;
         margin-right: 0;
-        transform: scale(0.52);
-        transform-origin: center center;
+        padding: 24px 0;
+        transform: none;
     }
 
     .about-collage-center {
-        width: 630px;
-        height: 630px;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
+        position: static;
+        width: min(70vw, 200px);
+        height: min(70vw, 200px);
+        left: auto;
+        top: auto;
+        transform: none;
     }
     .about-collage-center:hover {
-        transform: translate(-50%, -50%) scale(1.02);
+        transform: scale(1.02);
+    }
+
+    .about-collage-ring {
+        position: static;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        inset: auto;
     }
 
     .about-collage-ring .about-collage-item {
-        width: 263px;
-        height: 263px;
+        position: static;
+        width: min(70vw, 200px);
+        height: min(70vw, 200px);
+        transform: none;
+        left: auto;
+        top: auto;
     }
 
-    .about-collage-ring .about-collage-item:nth-child(1) { left: calc(50% + 446px); top: 50%; }
-    .about-collage-ring .about-collage-item:nth-child(2) { left: calc(50% + 223px); top: calc(50% - 386px); }
-    .about-collage-ring .about-collage-item:nth-child(3) { left: calc(50% - 223px); top: calc(50% - 386px); }
-    .about-collage-ring .about-collage-item:nth-child(4) { left: calc(50% - 446px); top: 50%; }
-    .about-collage-ring .about-collage-item:nth-child(5) { left: calc(50% - 223px); top: calc(50% + 386px); }
-    .about-collage-ring .about-collage-item:nth-child(6) { left: calc(50% + 223px); top: calc(50% + 386px); }
+    .about-collage-ring .about-collage-item:hover {
+        transform: scale(1.08);
+    }
+
+    .about-collage-ring .about-collage-item:nth-child(1),
+    .about-collage-ring .about-collage-item:nth-child(2),
+    .about-collage-ring .about-collage-item:nth-child(3),
+    .about-collage-ring .about-collage-item:nth-child(4),
+    .about-collage-ring .about-collage-item:nth-child(5),
+    .about-collage-ring .about-collage-item:nth-child(6) {
+        left: auto;
+        top: auto;
+    }
 
     .timeline-item {
         padding-left: 40px;
@@ -3568,9 +3592,13 @@ h1, h2, h3, h4 {
 
 @media (max-width: 600px) {
     .hero {
-        padding-top: 70px;
+        padding-top: 90px;
         min-height: 100vh;
         min-height: 100dvh;
+    }
+
+    .hero-content {
+        padding-top: 64px;
     }
 
     .menu-video-hero {
@@ -3769,33 +3797,15 @@ h1, h2, h3, h4 {
     }
 
     .about-opening-collage--circle {
-        min-height: 1260px;
-        transform: scale(0.38);
-        transform-origin: center center;
+        gap: 20px;
+        padding: 20px 0;
     }
 
-    .about-collage-center {
-        width: 535px;
-        height: 535px;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-    }
-    .about-collage-center:hover {
-        transform: translate(-50%, -50%) scale(1.02);
-    }
-
+    .about-collage-center,
     .about-collage-ring .about-collage-item {
-        width: 228px;
-        height: 228px;
+        width: min(65vw, 180px);
+        height: min(65vw, 180px);
     }
-
-    .about-collage-ring .about-collage-item:nth-child(1) { left: calc(50% + 387px); top: 50%; }
-    .about-collage-ring .about-collage-item:nth-child(2) { left: calc(50% + 194px); top: calc(50% - 335px); }
-    .about-collage-ring .about-collage-item:nth-child(3) { left: calc(50% - 194px); top: calc(50% - 335px); }
-    .about-collage-ring .about-collage-item:nth-child(4) { left: calc(50% - 387px); top: 50%; }
-    .about-collage-ring .about-collage-item:nth-child(5) { left: calc(50% - 194px); top: calc(50% + 335px); }
-    .about-collage-ring .about-collage-item:nth-child(6) { left: calc(50% + 194px); top: calc(50% + 335px); }
 
     .philosophy-quote {
         font-size: 1.15rem;

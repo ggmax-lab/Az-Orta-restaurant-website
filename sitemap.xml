@@ -3,6 +3,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <url>
         <loc>https://azorta.com/index.html</loc>
+        <lastmod>2025-02-06</lastmod>
         <xhtml:link rel="alternate" hreflang="tr" href="https://azorta.com/index.html"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://azorta.com/index-en.html"/>
         <xhtml:link rel="alternate" hreflang="x-default" href="https://azorta.com/index.html"/>
@@ -11,6 +12,7 @@
     </url>
     <url>
         <loc>https://azorta.com/index-en.html</loc>
+        <lastmod>2025-02-06</lastmod>
         <xhtml:link rel="alternate" hreflang="tr" href="https://azorta.com/index.html"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://azorta.com/index-en.html"/>
         <xhtml:link rel="alternate" hreflang="x-default" href="https://azorta.com/index.html"/>
@@ -19,6 +21,7 @@
     </url>
     <url>
         <loc>https://azorta.com/about.html</loc>
+        <lastmod>2025-02-06</lastmod>
         <xhtml:link rel="alternate" hreflang="tr" href="https://azorta.com/about.html"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://azorta.com/about-en.html"/>
         <xhtml:link rel="alternate" hreflang="x-default" href="https://azorta.com/about.html"/>
@@ -27,6 +30,7 @@
     </url>
     <url>
         <loc>https://azorta.com/about-en.html</loc>
+        <lastmod>2025-02-06</lastmod>
         <xhtml:link rel="alternate" hreflang="tr" href="https://azorta.com/about.html"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://azorta.com/about-en.html"/>
         <xhtml:link rel="alternate" hreflang="x-default" href="https://azorta.com/about.html"/>
@@ -35,6 +39,7 @@
     </url>
     <url>
         <loc>https://azorta.com/menu.html</loc>
+        <lastmod>2025-02-06</lastmod>
         <xhtml:link rel="alternate" hreflang="tr" href="https://azorta.com/menu.html"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://azorta.com/menu-en.html"/>
         <xhtml:link rel="alternate" hreflang="x-default" href="https://azorta.com/menu.html"/>
@@ -43,6 +48,7 @@
     </url>
     <url>
         <loc>https://azorta.com/menu-en.html</loc>
+        <lastmod>2025-02-06</lastmod>
         <xhtml:link rel="alternate" hreflang="tr" href="https://azorta.com/menu.html"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://azorta.com/menu-en.html"/>
         <xhtml:link rel="alternate" hreflang="x-default" href="https://azorta.com/menu.html"/>
@@ -51,6 +57,7 @@
     </url>
     <url>
         <loc>https://azorta.com/contact.html</loc>
+        <lastmod>2025-02-06</lastmod>
         <xhtml:link rel="alternate" hreflang="tr" href="https://azorta.com/contact.html"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://azorta.com/contact-en.html"/>
         <xhtml:link rel="alternate" hreflang="x-default" href="https://azorta.com/contact.html"/>
@@ -59,6 +66,7 @@
     </url>
     <url>
         <loc>https://azorta.com/contact-en.html</loc>
+        <lastmod>2025-02-06</lastmod>
         <xhtml:link rel="alternate" hreflang="tr" href="https://azorta.com/contact.html"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://azorta.com/contact-en.html"/>
         <xhtml:link rel="alternate" hreflang="x-default" href="https://azorta.com/contact.html"/>
