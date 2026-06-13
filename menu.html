@@ -43,10 +43,10 @@
                 <img src="Images/logo.png" alt="Az Orta" class="nav-logo" width="65" height="65" loading="eager">
             </a>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html" class="nav-link">Ana Sayfa</a></li>
-                <li><a href="about.html" class="nav-link">Hakkımızda</a></li>
-                <li><a href="menu.html" class="nav-link active">Menü</a></li>
-                <li><a href="contact.html" class="nav-link">İletişim</a></li>
+                <li><a href="index.html#home" class="nav-link">Ana Sayfa</a></li>
+                <li><a href="index.html#home-story" class="nav-link">Hakkımızda</a></li>
+                <li><a href="index.html#home-menu" class="nav-link active">Menü</a></li>
+                <li><a href="index.html#home-location" class="nav-link">İletişim</a></li>
             </ul>
             <div class="language-switcher">
                 <a href="menu.html" class="lang-link active">TR</a>
@@ -73,7 +73,6 @@
             <div class="menu-video-overlay"></div>
             <div class="menu-hero-content menu-video-content">
                 <h1>Menümüz</h1>
-                <p>Közde ızgara şiş ve köfteler — Açık ateşte pişen her menü 1 salata ve 1 içecek ile servis edilir</p>
             </div>
             <button type="button" class="menu-video-volume-btn" id="menuVolumeBtn" aria-label="Sesi aç" title="Sesi aç/kapat" data-label-muted="Sesi aç" data-label-unmuted="Sesi kapat">
                 <svg class="icon-muted" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -175,7 +174,6 @@
                             </div>
                         </div>
                     </div>
-                    <img src="Images/salads.png" alt="Salatalar" class="menu-category-img menu-category-img-bottom" loading="lazy">
                 </div>
                 <div class="menu-category menu-category-compact">
                     <div class="menu-category-header">
@@ -196,7 +194,6 @@
                             </div>
                         </div>
                     </div>
-                    <img src="Images/dessert.png" alt="Saye - Tahinli Soslu ve Cevizli İrmik Helvası" class="menu-category-img menu-category-img-bottom menu-category-img-dessert" loading="lazy">
                 </div>
                 <div class="menu-category menu-category-compact">
                     <div class="menu-category-header">
@@ -280,20 +277,20 @@
                 <div class="allergen-disclaimer">
                     <p><strong>Önemli:</strong> Ürünlerimiz alerjen içerebilir. Alerji durumunuz varsa lütfen personelimize danışın. Mutfakta çapraz bulaşma riski bulunmaktadır.</p>
                 </div>
+                <details class="allergen-more">
+                    <summary>Devamını Gör</summary>
+                    <ul class="allergen-more-list">
+                        <li>Gluten içeren tahıllar: ekmek, lavaş, bazı sos ve marinelerde bulunabilir.</li>
+                        <li>Süt ürünleri: ayran, yoğurt bazlı soslar ve bazı tatlılarda bulunabilir.</li>
+                        <li>Yumurta, susam, soya ve sert kabuklu yemiş izleri mutfak hazırlığında bulunabilir.</li>
+                        <li>Alerjiniz varsa sipariş vermeden önce ekibimize bilgi vermenizi rica ederiz.</li>
+                    </ul>
+                </details>
+                <a href="Images/allergen-list.png" class="allergen-image-link" target="_blank" rel="noopener noreferrer">Alerjen Listesini Aç</a>
             </div>
             <div class="menu-note">
                 <p><strong>Önemli Not:</strong> Menülerde yalnızca aynı ürün grubundan ilave şiş eklenebilir. Farklı ürün gruplarıyla değişim veya ekleme yapılamaz. Az Orta menüsüne ekleme yapılamaz.</p>
                 <p style="margin-top: 15px;">Fiyatlarımıza KDV dahildir. Menü Güncellenme Tarihi: 17.11.2025</p>
-                <div class="menu-pdf-download" style="margin-top: 24px; padding-top: 24px; border-top: 1px solid rgba(194, 65, 12, 0.1);">
-                    <a href="pdfs/az-orta-menu.pdf" download="az-orta-menu.pdf" class="btn-pdf-download">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                            <polyline points="7 10 12 15 17 10"></polyline>
-                            <line x1="12" y1="15" x2="12" y2="3"></line>
-                        </svg>
-                        Menüyü PDF Olarak İndir
-                    </a>
-                </div>
             </div>
             <div class="menu-cta-section">
                 <h2>Hazır mısınız?</h2>
@@ -316,6 +313,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
+            <a href="https://www.google.com/maps/search/?api=1&query=Maslak+Dereboyu+2+Cd+No%3A5%2F80+34398+Sarıyer+İstanbul" class="footer-map-address" target="_blank" rel="noopener noreferrer">📍 Maslak, Dereboyu 2 Cd No:5/80, 34398 Sarıyer/İstanbul</a>
             <p>&copy; 2025 Az Orta Restaurant. Tüm hakları saklıdır.</p>
             <p class="footer-credit">MasterChef Türkiye 2024 Finalisti Kerem Bilginer</p>
             <p class="footer-designed">Designed by Max-Aslaner</p>

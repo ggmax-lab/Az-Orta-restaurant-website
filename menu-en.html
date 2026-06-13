@@ -43,10 +43,10 @@
                 <img src="Images/logo.png" alt="Az Orta" class="nav-logo" width="65" height="65" loading="eager">
             </a>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="index-en.html" class="nav-link">Home</a></li>
-                <li><a href="about-en.html" class="nav-link">About</a></li>
-                <li><a href="menu-en.html" class="nav-link active">Menu</a></li>
-                <li><a href="contact-en.html" class="nav-link">Contact</a></li>
+                <li><a href="index-en.html#home" class="nav-link">Home</a></li>
+                <li><a href="index-en.html#home-story" class="nav-link">About</a></li>
+                <li><a href="index-en.html#home-menu" class="nav-link active">Menu</a></li>
+                <li><a href="index-en.html#home-location" class="nav-link">Contact</a></li>
             </ul>
             <div class="language-switcher">
                 <a href="menu.html" class="lang-link">TR</a>
@@ -72,7 +72,6 @@
             <div class="menu-video-overlay"></div>
             <div class="menu-hero-content menu-video-content">
                 <h1>Our Menu</h1>
-                <p>Charcoal-grilled skewers & köfte — Fire-grilled menus served with 1 salad and 1 drink</p>
             </div>
             <button type="button" class="menu-video-volume-btn" id="menuVolumeBtn" aria-label="Unmute" title="Toggle sound" data-label-muted="Unmute" data-label-unmuted="Mute">
                 <svg class="icon-muted" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -173,7 +172,6 @@
                             </div>
                         </div>
                     </div>
-                    <img src="Images/salads.png" alt="Salads" class="menu-category-img menu-category-img-bottom" loading="lazy">
                 </div>
                 <div class="menu-category menu-category-compact">
                     <div class="menu-category-header">
@@ -194,7 +192,6 @@
                             </div>
                         </div>
                     </div>
-                    <img src="Images/dessert.png" alt="Saye - Semolina Halva with Tahini Sauce and Walnuts" class="menu-category-img menu-category-img-bottom menu-category-img-dessert" loading="lazy">
                 </div>
                 <div class="menu-category menu-category-compact">
                     <div class="menu-category-header">
@@ -278,20 +275,20 @@
                 <div class="allergen-disclaimer">
                     <p><strong>Important:</strong> Our products may contain allergens. If you have allergies, please consult our staff. There is a risk of cross-contamination in the kitchen.</p>
                 </div>
+                <details class="allergen-more">
+                    <summary>See More</summary>
+                    <ul class="allergen-more-list">
+                        <li>Cereals containing gluten may be present in bread, lavash, and selected sauces or marinades.</li>
+                        <li>Dairy products may be present in ayran, yogurt-based sauces, and selected desserts.</li>
+                        <li>Egg, sesame, soy, and tree nut traces may be present due to kitchen preparation.</li>
+                        <li>If you have an allergy, please inform our team before ordering.</li>
+                    </ul>
+                </details>
+                <a href="Images/allergen-list.png" class="allergen-image-link" target="_blank" rel="noopener noreferrer">Open Full Allergen List</a>
             </div>
             <div class="menu-note">
                 <p><strong>Important Note:</strong> Only additional skewers from the same product group can be added to menus. Changes or additions with different product groups are not possible. Additions to the Az Orta menu are not possible.</p>
                 <p style="margin-top: 15px;">VAT is included in our prices. Menu Update Date: 17.11.2025</p>
-                <div class="menu-pdf-download" style="margin-top: 24px; padding-top: 24px; border-top: 1px solid rgba(194, 65, 12, 0.1);">
-                    <a href="pdfs/az-orta-menu.pdf" download="az-orta-menu.pdf" class="btn-pdf-download">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                            <polyline points="7 10 12 15 17 10"></polyline>
-                            <line x1="12" y1="15" x2="12" y2="3"></line>
-                        </svg>
-                        Download Menu as PDF
-                    </a>
-                </div>
             </div>
             <div class="menu-cta-section">
                 <h2>Ready to Order?</h2>
@@ -315,6 +312,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
+            <a href="https://www.google.com/maps/search/?api=1&query=Maslak+Dereboyu+2+Cd+No%3A5%2F80+34398+Sarıyer+İstanbul" class="footer-map-address" target="_blank" rel="noopener noreferrer">📍 Maslak, Dereboyu 2 Cd No:5/80, 34398 Sarıyer/Istanbul</a>
             <p>&copy; 2025 Az Orta Restaurant. All rights reserved.</p>
             <p class="footer-credit">MasterChef Türkiye 2024 Finalist Kerem Bilginer</p>
             <p class="footer-designed">Designed by Max-Aslaner</p>

@@ -64,6 +64,41 @@ navLinks.forEach(link => {
     });
 });
 
+// One-page nav: highlight the current homepage section while scrolling
+function setupOnePageNavHighlight() {
+    const sectionLinks = Array.from(document.querySelectorAll('.nav-link[href^="#"]'));
+    if (!sectionLinks.length) return;
+
+    const linkedSections = sectionLinks
+        .map(link => {
+            const id = link.getAttribute('href');
+            return id ? { link, section: document.querySelector(id) } : null;
+        })
+        .filter(item => item?.section);
+
+    if (!linkedSections.length) return;
+
+    function updateActiveLink() {
+        const offset = 130;
+        let activeItem = linkedSections[0];
+
+        linkedSections.forEach(item => {
+            const top = item.section.getBoundingClientRect().top;
+            if (top <= offset) {
+                activeItem = item;
+            }
+        });
+
+        sectionLinks.forEach(link => link.classList.remove('active'));
+        activeItem.link.classList.add('active');
+    }
+
+    updateActiveLink();
+    window.addEventListener('scroll', updateActiveLink, { passive: true });
+    window.addEventListener('resize', updateActiveLink);
+}
+setupOnePageNavHighlight();
+
 // Navbar scroll effect – keep charcoal bar; stronger shadow when scrolled
 let lastScroll = 0;
 window.addEventListener('scroll', () => {
@@ -139,6 +174,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Trust items
     document.querySelectorAll('.trust-item.reveal').forEach(el => revealObserver.observe(el));
+
+    // Homepage redesigned sections
+    document.querySelectorAll('.home-section-header.reveal, .instagram-widget-placeholder.reveal, .home-chef-feature.reveal, .home-story-panel.reveal, .home-map-card.reveal').forEach(el => revealObserver.observe(el));
     
     // About page: slide-up reveal (45px, staggered) - Flavori/Osteria 60 style
     document.querySelectorAll('.about .section-header.reveal').forEach((el) => revealObserver.observe(el));
@@ -284,5 +322,63 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && menuImageLightbox?.classList.contains('is-open')) closeMenuImageLightbox();
+    });
+
+    // Allergen chart: open image in an in-page lightbox with a clear close button
+    const allergenImageLinks = document.querySelectorAll('.allergen-image-link');
+    let allergenLightbox = document.getElementById('allergenImageLightbox');
+
+    if (allergenImageLinks.length > 0 && !allergenLightbox) {
+        allergenLightbox = document.createElement('div');
+        allergenLightbox.id = 'allergenImageLightbox';
+        allergenLightbox.className = 'allergen-lightbox';
+        allergenLightbox.setAttribute('role', 'dialog');
+        allergenLightbox.setAttribute('aria-modal', 'true');
+        allergenLightbox.setAttribute('aria-label', 'Allergen list image');
+        allergenLightbox.hidden = true;
+        allergenLightbox.innerHTML = `
+            <button type="button" class="allergen-lightbox-close" aria-label="Close allergen list">&times;</button>
+            <div class="allergen-lightbox-inner">
+                <img src="" alt="Az Orta allergen list" class="allergen-lightbox-img">
+            </div>
+        `;
+        document.body.appendChild(allergenLightbox);
+    }
+
+    const allergenLightboxImg = allergenLightbox?.querySelector('.allergen-lightbox-img');
+    const allergenLightboxClose = allergenLightbox?.querySelector('.allergen-lightbox-close');
+
+    function openAllergenLightbox(src) {
+        if (!allergenLightbox || !allergenLightboxImg) return;
+        allergenLightboxImg.src = src;
+        allergenLightbox.hidden = false;
+        requestAnimationFrame(() => allergenLightbox.classList.add('is-open'));
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeAllergenLightbox() {
+        if (!allergenLightbox) return;
+        allergenLightbox.classList.remove('is-open');
+        allergenLightbox.hidden = true;
+        document.body.style.overflow = '';
+    }
+
+    allergenImageLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            const href = link.getAttribute('href');
+            if (!href) return;
+            e.preventDefault();
+            openAllergenLightbox(href);
+        });
+    });
+
+    if (allergenLightboxClose) allergenLightboxClose.addEventListener('click', closeAllergenLightbox);
+    if (allergenLightbox) {
+        allergenLightbox.addEventListener('click', (e) => {
+            if (e.target === allergenLightbox) closeAllergenLightbox();
+        });
+    }
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && allergenLightbox?.classList.contains('is-open')) closeAllergenLightbox();
     });
 });
