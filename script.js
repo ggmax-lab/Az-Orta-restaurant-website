@@ -135,17 +135,22 @@ function setupScrollIndicator(selector) {
 setupScrollIndicator('.scroll-indicator-about');
 setupScrollIndicator('.hero .scroll-indicator');
 
-// Sticky View Menu (mobile): hidden at top; show only when hero View Menu button has scrolled out of view
+// Sticky View Menu (mobile): show after hero CTA leaves, hide again once menu is reached
 function setupStickyCtaWhenPastHeroButton() {
     const heroMenuBtn = document.querySelector('.hero .btn-hero-menu');
     const stickyCta = document.querySelector('.sticky-cta-mobile');
+    const menuSection = document.querySelector('#home-menu');
     if (!heroMenuBtn || !stickyCta) return;
 
     stickyCta.classList.remove('sticky-cta-visible');
 
     function updateStickyCta() {
-        const rect = heroMenuBtn.getBoundingClientRect();
-        if (rect.top < 0) {
+        const heroBtnRect = heroMenuBtn.getBoundingClientRect();
+        const menuRect = menuSection?.getBoundingClientRect();
+        const hasScrolledPastHeroButton = heroBtnRect.top < 0;
+        const hasReachedMenu = menuRect ? menuRect.top <= window.innerHeight : false;
+
+        if (hasScrolledPastHeroButton && !hasReachedMenu) {
             stickyCta.classList.add('sticky-cta-visible');
         } else {
             stickyCta.classList.remove('sticky-cta-visible');
