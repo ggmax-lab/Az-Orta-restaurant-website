@@ -3277,6 +3277,17 @@ h1, h2, h3, h4 {
     text-shadow: 0 10px 34px rgba(0, 0, 0, 0.45);
 }
 
+.hero-wordmark-img {
+    display: block;
+    width: min(78vw, 720px);
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+    filter: drop-shadow(0 10px 34px rgba(0, 0, 0, 0.45));
+    pointer-events: none;
+}
+
 .hero-wordmark-tagline {
     color: rgba(255, 255, 255, 0.9);
     font-size: clamp(0.95rem, 2vw, 1.25rem);
@@ -3938,6 +3949,10 @@ h1, h2, h3, h4 {
         font-size: clamp(3.5rem, 18vw, 6rem);
     }
 
+    .hero-wordmark-img {
+        width: min(88vw, 540px);
+    }
+
     .hero-title-logo {
         height: 18rem;
         max-width: min(88vw, 480px);
@@ -4267,6 +4282,10 @@ h1, h2, h3, h4 {
 
     .hero-wordmark {
         font-size: clamp(3rem, 20vw, 4.8rem);
+    }
+
+    .hero-wordmark-img {
+        width: min(92vw, 420px);
     }
 
     .hero-wordmark-tagline {
