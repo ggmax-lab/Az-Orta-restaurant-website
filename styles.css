@@ -2049,10 +2049,9 @@ h1, h2, h3, h4 {
 }
 
 .menu-mains-card-body .menu-item-badge {
-    position: absolute;
-    top: 20px;
-    right: 22px;
-    margin: 0;
+    display: inline-flex;
+    width: fit-content;
+    margin: 0 0 12px;
 }
 
 .menu-mains-name {
@@ -2061,7 +2060,6 @@ h1, h2, h3, h4 {
     margin-bottom: 8px;
     line-height: 1.35;
     font-weight: 600;
-    padding-right: 70px;
 }
 
 .menu-mains-description {
@@ -2416,6 +2414,51 @@ h1, h2, h3, h4 {
     border-radius: 1px;
 }
 
+.menu-addon-strip {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 8px;
+    width: fit-content;
+    max-width: 100%;
+    margin: -14px auto 48px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: menuSlideUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.78s forwards;
+}
+
+.menu-addon-label,
+.menu-addon-prices {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    background: rgba(17, 17, 17, 0.92);
+    color: var(--white);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.24);
+}
+
+.menu-addon-label {
+    padding: 10px 18px;
+    font-size: clamp(1.05rem, 2vw, 1.35rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+.menu-addon-prices {
+    padding: 10px 24px;
+    font-size: clamp(0.98rem, 1.7vw, 1.18rem);
+    color: rgba(255, 255, 255, 0.88);
+    line-height: 1.45;
+    text-align: center;
+}
+
+.menu-addon-prices strong {
+    color: var(--primary-color);
+    font-weight: 800;
+}
+
 /* Menu note - refined */
 .menu-note {
     text-align: center;
@@ -2476,6 +2519,20 @@ h1, h2, h3, h4 {
 }
 
 @media (max-width: 768px) {
+    .menu-addon-strip {
+        width: 100%;
+        flex-direction: column;
+        gap: 6px;
+        margin: -12px auto 36px;
+    }
+
+    .menu-addon-label,
+    .menu-addon-prices {
+        width: 100%;
+        min-height: auto;
+        padding: 12px 16px;
+    }
+
     .btn-pdf-download {
         padding: 12px 24px;
         font-size: 0.9rem;
@@ -4139,10 +4196,6 @@ h1, h2, h3, h4 {
     .menu-mains-card .menu-item-img {
         object-fit: cover;
         object-position: center center;
-    }
-
-    .menu-mains-name {
-        padding-right: 75px;
     }
 
     .menu-hero {
