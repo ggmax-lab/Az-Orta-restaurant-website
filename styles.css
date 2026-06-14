@@ -3521,6 +3521,7 @@ h1, h2, h3, h4 {
 .menu-mains-title,
 .menu-section-title,
 .category-title,
+.menu-mains-name,
 .menu-item-name {
     color: var(--white);
 }
