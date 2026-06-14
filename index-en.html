@@ -8,7 +8,11 @@
     <meta name="description" content="Az Orta open fire Turkish grill in Maslak, Istanbul. MasterChef Türkiye 2024 Finalist Kerem Bilginer. Charcoal-grilled skewers, köfte, ocakbaşı experience.">
     <meta name="keywords" content="Az Orta, Maslak restaurant, Kerem Bilginer, MasterChef Turkey, charcoal grill, Turkish grill, Istanbul restaurant">
     <meta name="author" content="Az Orta Restaurant">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="geo.region" content="TR-34">
+    <meta name="geo.placename" content="Maslak, Sarıyer, Istanbul">
+    <meta name="geo.position" content="41.1129768;29.0222225">
+    <meta name="ICBM" content="41.1129768, 29.0222225">
     <link rel="canonical" href="https://azorta.com/index-en.html">
     <link rel="alternate" hreflang="tr" href="https://azorta.com/index.html">
     <link rel="alternate" hreflang="en" href="https://azorta.com/index-en.html">
@@ -39,10 +43,17 @@
     {
         "@context": "https://schema.org",
         "@type": "Restaurant",
+        "@id": "https://azorta.com/#restaurant",
         "name": "Az Orta",
         "description": "MasterChef Türkiye 2024 Finalist Kerem Bilginer. Charcoal-grilled skewers & köfte. Ocakbaşı experience in Maslak.",
-        "url": "https://azorta.com",
-        "image": ["https://azorta.com/Images/logo.png", "https://azorta.com/Images/az-orta-logo.png"],
+        "url": "https://azorta.com/",
+        "logo": "https://azorta.com/Images/logo.png",
+        "image": [
+            "https://azorta.com/Images/logo.png",
+            "https://azorta.com/Images/nav-logo.png",
+            "https://azorta.com/Images/az-orta-menu.png",
+            "https://azorta.com/Images/contact-street.png"
+        ],
         "telephone": "+905552009999",
         "address": {
             "@type": "PostalAddress",
@@ -52,25 +63,34 @@
             "postalCode": "34398",
             "addressCountry": "TR"
         },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 41.1129768,
+            "longitude": 29.0222225
+        },
+        "hasMap": "https://www.google.com/maps/place/Az+Orta/@41.1117787,29.0198673,18z/data=!4m6!3m5!1s0x14cab563ac25a895:0xb5ea3354e65655e5!8m2!3d41.1129768!4d29.0222225!16s%2Fg%2F11ylspvg56",
+        "sameAs": ["https://www.instagram.com/az.orta/"],
+        "hasMenu": "https://azorta.com/menu-en.html",
         "openingHoursSpecification": [
             { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "11:30", "closes": "21:00" },
             { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday","Sunday"], "opens": "12:00", "closes": "21:00" }
         ],
-        "servesCuisine": "Turkish",
-        "priceRange": "₺₺"
+        "servesCuisine": ["Turkish", "Charcoal Grill", "Kebab"],
+        "priceRange": "₺₺",
+        "acceptsReservations": true
     }
     </script>
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"WebSite","name":"Az Orta","url":"https://azorta.com","description":"Az Orta – MasterChef Kerem Bilginer's charcoal grill restaurant in Maslak, Istanbul"}
+    {"@context":"https://schema.org","@type":"WebSite","@id":"https://azorta.com/#website","name":"Az Orta","url":"https://azorta.com/","inLanguage":"en","publisher":{"@id":"https://azorta.com/#restaurant"},"description":"Az Orta – MasterChef Kerem Bilginer's charcoal grill restaurant in Maslak, Istanbul"}
     </script>
-    <link rel="preload" href="Images/az-orta-logo.png" as="image">
+    <link rel="preload" href="Images/hero-wordmark.png" as="image">
 </head>
 <body>
     <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
     <nav class="navbar">
         <div class="container">
             <a href="index-en.html" class="nav-brand">
-                <img src="Images/logo.png" alt="Az Orta" class="nav-logo" width="65" height="65" loading="eager">
+                <img src="Images/nav-logo.png" alt="Az Orta" class="nav-logo" width="65" height="65" loading="eager">
             </a>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#home" class="nav-link active">Home</a></li>
