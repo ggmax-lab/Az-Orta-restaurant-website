@@ -202,7 +202,9 @@ h1, h2, h3, h4 {
 
 .nav-link:focus-visible,
 .btn:focus-visible,
-.cta-button-nav:focus-visible {
+.cta-button-nav:focus-visible,
+.nav-toggle:focus-visible,
+.sticky-cta-button:focus-visible {
     outline: 2px solid var(--primary-color);
     outline-offset: 3px;
 }
@@ -760,7 +762,9 @@ h1, h2, h3, h4 {
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 12px 20px;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
     padding-bottom: max(12px, env(safe-area-inset-bottom));
     background: rgba(20, 20, 20, 0.98);
     backdrop-filter: blur(14px);
@@ -770,9 +774,12 @@ h1, h2, h3, h4 {
 }
 
 .sticky-cta-button {
-    display: block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    padding: 16px 24px;
+    min-height: 48px;
+    padding: 12px 14px;
     background: var(--ember-glow);
     color: var(--white);
     text-align: center;
@@ -784,9 +791,18 @@ h1, h2, h3, h4 {
     transition: var(--transition-smooth);
 }
 
+.sticky-cta-button-secondary {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+}
+
 .sticky-cta-button:hover {
     background: var(--flame-amber);
     transform: scale(1.01);
+}
+
+.sticky-cta-button-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
 }
 
 @keyframes slideUpIn {
@@ -4261,7 +4277,7 @@ h1, h2, h3, h4 {
     }
 
     .sticky-cta-mobile.sticky-cta-visible {
-        display: block;
+        display: flex;
     }
 }
 

@@ -14,9 +14,9 @@
     <meta name="geo.position" content="41.1129768;29.0222225">
     <meta name="ICBM" content="41.1129768, 29.0222225">
     <link rel="canonical" href="https://azorta.com/index-en.html">
-    <link rel="alternate" hreflang="tr" href="https://azorta.com/index.html">
+    <link rel="alternate" hreflang="tr" href="https://azorta.com/">
     <link rel="alternate" hreflang="en" href="https://azorta.com/index-en.html">
-    <link rel="alternate" hreflang="x-default" href="https://azorta.com/index.html">
+    <link rel="alternate" hreflang="x-default" href="https://azorta.com/">
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Az Orta">
@@ -35,7 +35,7 @@
     <meta name="twitter:image:alt" content="Az Orta Logo">
     <link rel="icon" type="image/png" href="Images/logo.png">
     <link rel="apple-touch-icon" href="Images/logo.png">
-    <link rel="stylesheet" href="styles.css?v=20260614-3">
+    <link rel="stylesheet" href="styles.css?v=20260616-1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600;700&family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -89,7 +89,7 @@
     <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
     <nav class="navbar">
         <div class="container">
-            <a href="index-en.html" class="nav-brand">
+            <a href="index-en.html" class="nav-brand" aria-label="Az Orta home">
                 <img src="Images/nav-logo.png" alt="Az Orta" class="nav-logo" width="65" height="65" loading="eager">
             </a>
             <ul class="nav-menu" id="navMenu">
@@ -103,7 +103,7 @@
                 <span class="lang-separator">|</span>
                 <a href="index-en.html" class="lang-link active">EN</a>
             </div>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-controls="navMenu" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -186,7 +186,7 @@
                                 <span class="allergen-badge" title="Cereals Containing Gluten">🌾</span>
                                 <span class="allergen-badge" title="Dairy Products">🥛</span>
                             </div>
-                            <span class="menu-mains-price">650₺</span>
+                            <span class="menu-mains-price">660₺</span>
                         </div>
                     </div>
                     <div class="menu-mains-card">
@@ -414,7 +414,9 @@
 
     <!-- Sticky Mobile CTA -->
     <div class="sticky-cta-mobile">
-        <a href="#home-menu" class="sticky-cta-button">View Menu</a>
+        <a href="tel:+905552009999" class="sticky-cta-button sticky-cta-button-secondary">Call</a>
+        <a href="#home-menu" class="sticky-cta-button">Menu</a>
+        <a href="https://www.google.com/maps/place/Az+Orta/@41.1117787,29.0198673,18z/data=!4m6!3m5!1s0x14cab563ac25a895:0xb5ea3354e65655e5!8m2!3d41.1129768!4d29.0222225!16s%2Fg%2F11ylspvg56?entry=ttu&amp;g_ep=EgoyMDI2MDYxMC4wIKXMDSoASAFQAw%3D%3D" class="sticky-cta-button sticky-cta-button-secondary" target="_blank" rel="noopener noreferrer">Directions</a>
     </div>
 
     <!-- Footer -->
@@ -451,6 +453,6 @@
         </div>
     </footer>
 
-    <script src="script.js?v=20260614-2"></script>
+    <script src="script.js?v=20260616-1"></script>
 </body>
 </html>

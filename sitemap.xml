@@ -3,11 +3,11 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
     <url>
-        <loc>https://azorta.com/index.html</loc>
+        <loc>https://azorta.com/</loc>
         <lastmod>2026-06-14</lastmod>
-        <xhtml:link rel="alternate" hreflang="tr" href="https://azorta.com/index.html"/>
+        <xhtml:link rel="alternate" hreflang="tr" href="https://azorta.com/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://azorta.com/index-en.html"/>
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://azorta.com/index.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://azorta.com/"/>
         <image:image>
             <image:loc>https://azorta.com/Images/hero-wordmark.png</image:loc>
             <image:title>Az Orta logo</image:title>
@@ -22,9 +22,9 @@
     <url>
         <loc>https://azorta.com/index-en.html</loc>
         <lastmod>2026-06-14</lastmod>
-        <xhtml:link rel="alternate" hreflang="tr" href="https://azorta.com/index.html"/>
+        <xhtml:link rel="alternate" hreflang="tr" href="https://azorta.com/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://azorta.com/index-en.html"/>
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://azorta.com/index.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://azorta.com/"/>
         <image:image>
             <image:loc>https://azorta.com/Images/hero-wordmark.png</image:loc>
             <image:title>Az Orta logo</image:title>

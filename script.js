@@ -1,21 +1,37 @@
 // Page load transition
 document.body.classList.add('page-loading');
-window.addEventListener('load', () => {
+let pageRevealComplete = false;
+
+function revealPage() {
+    if (pageRevealComplete) return;
+    pageRevealComplete = true;
     requestAnimationFrame(() => {
         document.body.classList.remove('page-loading');
         document.body.classList.add('page-loaded');
     });
-});
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', revealPage, { once: true });
+} else {
+    revealPage();
+}
+window.addEventListener('load', revealPage, { once: true });
+setTimeout(revealPage, 1200);
 
 // Mobile Navigation
 const navToggle = document.getElementById('navToggle');
 const navMenu = document.getElementById('navMenu');
 const navLinks = document.querySelectorAll('.nav-link');
 const navOverlay = document.getElementById('navOverlay');
+const navToggleOpenLabel = navToggle?.getAttribute('aria-label') || 'Open menu';
+const navToggleCloseLabel = document.documentElement.lang === 'tr' ? 'Menüyü kapat' : 'Close menu';
 
 function openMobileMenu() {
     navMenu?.classList.add('active');
     navToggle?.classList.add('active');
+    navToggle?.setAttribute('aria-expanded', 'true');
+    navToggle?.setAttribute('aria-label', navToggleCloseLabel);
     navOverlay?.classList.add('active');
     document.body.style.overflow = 'hidden';
 }
@@ -23,6 +39,8 @@ function openMobileMenu() {
 function closeMobileMenu() {
     navMenu?.classList.remove('active');
     navToggle?.classList.remove('active');
+    navToggle?.setAttribute('aria-expanded', 'false');
+    navToggle?.setAttribute('aria-label', navToggleOpenLabel);
     navOverlay?.classList.remove('active');
     document.body.style.overflow = '';
 }
@@ -140,9 +158,16 @@ function setupStickyCtaWhenPastHeroButton() {
     const heroMenuBtn = document.querySelector('.hero .btn-hero-menu');
     const stickyCta = document.querySelector('.sticky-cta-mobile');
     const menuSection = document.querySelector('#home-menu');
-    if (!heroMenuBtn || !stickyCta) return;
+    if (!stickyCta) return;
 
     stickyCta.classList.remove('sticky-cta-visible');
+
+    if (!heroMenuBtn) {
+        if (stickyCta.classList.contains('sticky-cta-mobile-page')) {
+            stickyCta.classList.add('sticky-cta-visible');
+        }
+        return;
+    }
 
     function updateStickyCta() {
         const heroBtnRect = heroMenuBtn.getBoundingClientRect();
@@ -161,6 +186,14 @@ function setupStickyCtaWhenPastHeroButton() {
     window.addEventListener('resize', updateStickyCta);
 }
 document.addEventListener('DOMContentLoaded', setupStickyCtaWhenPastHeroButton);
+
+// Allergen emoji badges should be meaningful for assistive tech too.
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.allergen-badge[title]').forEach(badge => {
+        badge.setAttribute('role', 'img');
+        badge.setAttribute('aria-label', badge.getAttribute('title'));
+    });
+});
 
 // Scroll reveal animation - unified observer
 const revealObserver = new IntersectionObserver((entries) => {

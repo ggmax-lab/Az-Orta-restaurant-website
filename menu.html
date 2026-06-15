@@ -33,7 +33,7 @@
     <meta name="twitter:image:alt" content="Az Orta Menü">
     <link rel="icon" type="image/png" href="Images/logo.png">
     <link rel="apple-touch-icon" href="Images/logo.png">
-    <link rel="stylesheet" href="styles.css?v=20260614-3">
+    <link rel="stylesheet" href="styles.css?v=20260616-1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600;700&family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -74,6 +74,7 @@
                     {"@type":"MenuItem","name":"Ekstra Çalkalanmış Yanık Ayran","offers":{"@type":"Offer","price":"100","priceCurrency":"TRY"}},
                     {"@type":"MenuItem","name":"Coca Cola / Zero","offers":{"@type":"Offer","price":"90","priceCurrency":"TRY"}},
                     {"@type":"MenuItem","name":"Fanta / Sprite","offers":{"@type":"Offer","price":"90","priceCurrency":"TRY"}},
+                    {"@type":"MenuItem","name":"Fuse Tea Şeftali / Limon","offers":{"@type":"Offer","price":"90","priceCurrency":"TRY"}},
                     {"@type":"MenuItem","name":"Sade Ayran","offers":{"@type":"Offer","price":"90","priceCurrency":"TRY"}},
                     {"@type":"MenuItem","name":"Maden Suyu","offers":{"@type":"Offer","price":"50","priceCurrency":"TRY"}},
                     {"@type":"MenuItem","name":"Su","offers":{"@type":"Offer","price":"40","priceCurrency":"TRY"}}
@@ -87,7 +88,7 @@
     <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
     <nav class="navbar">
         <div class="container">
-            <a href="index.html" class="nav-brand">
+            <a href="index.html" class="nav-brand" aria-label="Az Orta ana sayfa">
                 <img src="Images/nav-logo.png" alt="Az Orta" class="nav-logo" width="65" height="65" loading="eager">
             </a>
             <ul class="nav-menu" id="navMenu">
@@ -101,7 +102,7 @@
                 <span class="lang-separator">|</span>
                 <a href="menu-en.html" class="lang-link">EN</a>
             </div>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <button class="nav-toggle" id="navToggle" aria-label="Menüyü aç" aria-controls="navMenu" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -113,7 +114,7 @@
     <section id="menu" class="menu" style="padding-top: 120px;">
         <!-- Menu Video Hero -->
         <div class="menu-video-hero">
-            <video class="menu-hero-video" autoplay loop muted playsinline preload="auto"
+            <video class="menu-hero-video" autoplay loop muted playsinline preload="metadata"
                    poster="Images/menu1.jpg"
                    aria-label="Az Orta açık ateş mangal">
                 <source src="videos/restaurant-edit.mp4" type="video/mp4">
@@ -271,6 +272,12 @@
                         </div>
                         <div class="menu-item">
                             <div class="menu-item-header">
+                                <h4 class="menu-item-name">Fuse Tea Şeftali / Limon <span class="menu-item-size">(300ml)</span></h4>
+                                <span class="menu-item-price">90₺</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-header">
                                 <h4 class="menu-item-name">Sade Ayran <span class="menu-item-size">(245ml)</span></h4>
                                 <span class="menu-item-price">90₺</span>
                             </div>
@@ -363,6 +370,12 @@
         </div>
     </div>
 
+    <!-- Sticky Mobile CTA -->
+    <div class="sticky-cta-mobile sticky-cta-mobile-page">
+        <a href="tel:+905552009999" class="sticky-cta-button">Ara</a>
+        <a href="https://www.google.com/maps/place/Az+Orta/@41.1117787,29.0198673,18z/data=!4m6!3m5!1s0x14cab563ac25a895:0xb5ea3354e65655e5!8m2!3d41.1129768!4d29.0222225!16s%2Fg%2F11ylspvg56?entry=ttu&amp;g_ep=EgoyMDI2MDYxMC4wIKXMDSoASAFQAw%3D%3D" class="sticky-cta-button sticky-cta-button-secondary" target="_blank" rel="noopener noreferrer">Konum</a>
+    </div>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -373,6 +386,6 @@
         </div>
     </footer>
 
-    <script src="script.js?v=20260614"></script>
+    <script src="script.js?v=20260616-1"></script>
 </body>
 </html>
