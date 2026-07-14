@@ -377,7 +377,7 @@ document.addEventListener('DOMContentLoaded', () => {
         allergenLightbox.innerHTML = `
             <button type="button" class="allergen-lightbox-close" aria-label="Close allergen list">&times;</button>
             <div class="allergen-lightbox-inner">
-                <img src="" alt="Az Orta allergen list" class="allergen-lightbox-img">
+                <img alt="Az Orta allergen list" class="allergen-lightbox-img">
             </div>
         `;
         document.body.appendChild(allergenLightbox);
