@@ -214,7 +214,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.trust-item.reveal').forEach(el => revealObserver.observe(el));
 
     // Homepage redesigned sections
-    document.querySelectorAll('.home-section-header.reveal, .instagram-widget-placeholder.reveal, .home-chef-feature.reveal, .home-story-panel.reveal, .home-map-card.reveal').forEach(el => revealObserver.observe(el));
+    document.querySelectorAll('.home-section-header.reveal, .instagram-widget-placeholder.reveal, .home-instagram-cta.reveal, .home-chef-feature.reveal, .home-story-panel.reveal, .chef-scroll-media-inner.reveal, .chef-block.reveal, .home-map-card.reveal').forEach(el => revealObserver.observe(el));
     
     // About page: slide-up reveal (45px, staggered) - Flavori/Osteria 60 style
     document.querySelectorAll('.about .section-header.reveal').forEach((el) => revealObserver.observe(el));
@@ -420,3 +420,143 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.key === 'Escape' && allergenLightbox?.classList.contains('is-open')) closeAllergenLightbox();
     });
 });
+
+// Konum (location) modal – translucent centered card, closable via X / click-outside / Esc, focus-trapped
+(function setupKonumModal() {
+    const modal = document.getElementById('konumModal');
+    const triggers = document.querySelectorAll('[data-konum-open]');
+    if (!modal || !triggers.length) return;
+
+    const closeEls = modal.querySelectorAll('[data-konum-close]');
+    const googleLink = modal.querySelector('#konumGoogleLink');
+
+    // Reuse the Google Maps link already present in the footer address (avoid duplicating the URL)
+    const footerMapLink = document.querySelector('.footer-map-address');
+    if (googleLink && footerMapLink) {
+        const footerHref = footerMapLink.getAttribute('href');
+        if (footerHref) googleLink.setAttribute('href', footerHref);
+    }
+
+    let lastFocused = null;
+
+    function getFocusable() {
+        return Array.from(modal.querySelectorAll(
+            'a[href], button:not([disabled]), iframe, [tabindex]:not([tabindex="-1"])'
+        )).filter(el => el.offsetWidth > 0 || el.offsetHeight > 0 || el === document.activeElement);
+    }
+
+    function openModal(trigger) {
+        lastFocused = trigger || document.activeElement;
+        modal.hidden = false;
+        document.body.style.overflow = 'hidden';
+        requestAnimationFrame(() => {
+            modal.classList.add('is-open');
+            const focusables = getFocusable();
+            (focusables[0] || modal).focus();
+        });
+    }
+
+    function closeModal() {
+        if (!modal.classList.contains('is-open') && modal.hidden) return;
+        modal.classList.remove('is-open');
+        document.body.style.overflow = '';
+        const finish = () => { modal.hidden = true; };
+        const onEnd = (e) => {
+            if (e.target !== modal) return;
+            modal.removeEventListener('transitionend', onEnd);
+            finish();
+        };
+        modal.addEventListener('transitionend', onEnd);
+        setTimeout(() => {
+            if (!modal.classList.contains('is-open')) finish();
+        }, 320);
+        if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
+    }
+
+    triggers.forEach(btn => btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        openModal(btn);
+    }));
+
+    closeEls.forEach(el => el.addEventListener('click', closeModal));
+
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (!modal.classList.contains('is-open')) return;
+        if (e.key === 'Escape') {
+            closeModal();
+            return;
+        }
+        if (e.key === 'Tab') {
+            const focusables = getFocusable();
+            if (!focusables.length) return;
+            const first = focusables[0];
+            const last = focusables[focusables.length - 1];
+            if (e.shiftKey && document.activeElement === first) {
+                e.preventDefault();
+                last.focus();
+            } else if (!e.shiftKey && document.activeElement === last) {
+                e.preventDefault();
+                first.focus();
+            }
+        }
+    });
+})();
+
+/* Chef story: pin the photo + scrub bio text with page scroll, then release to footer */
+(function initChefScrollScrub() {
+    const section = document.querySelector('.chef-scroll-section');
+    if (!section) return;
+
+    const pin = section.querySelector('.chef-scroll-pin');
+    const text = section.querySelector('.chef-scroll-text');
+    const viewport = section.querySelector('.chef-scroll-text-viewport');
+    if (!pin || !text || !viewport) return;
+
+    const mq = window.matchMedia('(max-width: 968px)');
+    const STICKY_TOP = 92;
+    let frame = 0;
+
+    function desktopEnabled() {
+        return !mq.matches;
+    }
+
+    function measureAndPaint() {
+        if (!desktopEnabled()) {
+            section.style.height = '';
+            text.style.transform = '';
+            section.classList.remove('is-complete');
+            return;
+        }
+
+        section.querySelectorAll('.chef-block.reveal').forEach((el) => el.classList.add('visible'));
+
+        const overflow = Math.max(0, text.scrollHeight - viewport.clientHeight);
+        const pinH = pin.offsetHeight;
+        section.style.height = `${Math.round(pinH + overflow)}px`;
+
+        const distance = Math.max(1, section.offsetHeight - pinH);
+        const scrolled = Math.min(distance, Math.max(0, STICKY_TOP - section.getBoundingClientRect().top));
+        const progress = scrolled / distance;
+        text.style.transform = `translate3d(0, ${-overflow * progress}px, 0)`;
+        section.classList.toggle('is-complete', progress >= 0.98);
+    }
+
+    function onScrollOrResize() {
+        cancelAnimationFrame(frame);
+        frame = requestAnimationFrame(measureAndPaint);
+    }
+
+    measureAndPaint();
+    window.addEventListener('scroll', onScrollOrResize, { passive: true });
+    window.addEventListener('resize', onScrollOrResize);
+    if (typeof mq.addEventListener === 'function') {
+        mq.addEventListener('change', onScrollOrResize);
+    } else if (typeof mq.addListener === 'function') {
+        mq.addListener(onScrollOrResize);
+    }
+    window.addEventListener('load', onScrollOrResize, { once: true });
+})();

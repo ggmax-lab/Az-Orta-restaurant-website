@@ -35,7 +35,7 @@
     <meta name="twitter:image:alt" content="Az Orta Logo">
     <link rel="icon" type="image/png" href="Images/logo.png">
     <link rel="apple-touch-icon" href="Images/logo.png">
-    <link rel="stylesheet" href="styles.css?v=20260616-1">
+    <link rel="stylesheet" href="styles.css?v=20260716-7">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600;700&family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -70,7 +70,7 @@
         },
         "hasMap": "https://www.google.com/maps/place/Az+Orta/@41.1117787,29.0198673,18z/data=!4m6!3m5!1s0x14cab563ac25a895:0xb5ea3354e65655e5!8m2!3d41.1129768!4d29.0222225!16s%2Fg%2F11ylspvg56",
         "sameAs": ["https://www.instagram.com/az.orta/"],
-        "hasMenu": "https://azorta.com/#home-menu",
+        "hasMenu": "https://azorta.com/menu.html",
         "openingHoursSpecification": [
             { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "11:30", "closes": "21:00" },
             { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday","Sunday"], "opens": "12:00", "closes": "21:00" }
@@ -97,9 +97,10 @@
     
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#home" class="nav-link active">Ana Sayfa</a></li>
+                <!-- FLAG: Hakkımızda behavior assumed as same-page scroll, confirm with client -->
                 <li><a href="#home-story" class="nav-link">Hakkımızda</a></li>
-                <li><a href="#home-menu" class="nav-link">Menü</a></li>
-                <li><a href="#home-location" class="nav-link">İletişim</a></li>
+                <li><a href="menu.html" class="nav-link">Menü</a></li>
+                <li><a href="#contact" class="nav-link">İletişim</a></li>
             </ul>
             <div class="language-switcher">
                 <a href="index.html" class="lang-link active">TR</a>
@@ -125,9 +126,9 @@
             </div>
             <p class="hero-subtitle">Maslak, İstanbul</p>
             <div class="hero-cta">
-                <a href="#home-menu" class="btn btn-primary btn-hero-menu">Menüyü Gör</a>
-                <a href="#home-location" class="btn btn-secondary">Konum Bul</a>
-                <a href="#page-bottom" class="btn btn-secondary">Bize Ulaşın</a>
+                <a href="menu.html" class="btn btn-primary btn-hero-menu">Menüyü Gör</a>
+                <button type="button" class="btn btn-secondary" data-konum-open>Konum Bul</button>
+                <a href="#contact" class="btn btn-secondary">Bize Ulaşın</a>
             </div>
         </div>
         <div class="scroll-indicator">
@@ -135,282 +136,87 @@
         </div>
     </section>
 
-    <!-- Story Section -->
-    <section id="home-story" class="home-story-section">
+    <!-- Opening Hours Section -->
+    <section id="hours" class="home-cta-band home-hours-section">
         <div class="container">
-            <div class="home-chef-feature reveal">
-                <img src="Images/Kerem.png" alt="Kerem Bilginer - MasterChef Türkiye 2024 Finalisti" loading="lazy">
-                <div>
-                    <span class="home-section-eyebrow">Şefimiz</span>
-                    <h2>Kerem Bilginer</h2>
-                    <p>MasterChef Türkiye 2024 Finalisti</p>
+            <div class="home-section-header reveal">
+                <h2>ÇALIŞMA SAATLERİMİZ</h2>
+            </div>
+            <div class="home-hours-panel">
+                <div class="home-hours-grid">
+                    <div class="home-hours-row">
+                        <span class="home-hours-days">Pazartesi - Cuma</span>
+                        <span class="home-hours-time">11:30 - 21:00</span>
+                    </div>
+                    <div class="home-hours-row">
+                        <span class="home-hours-days">Cumartesi - Pazar</span>
+                        <span class="home-hours-time">12:00 - 21:00</span>
+                    </div>
                 </div>
             </div>
-            <div class="home-story-panel reveal">
-                <span class="home-section-eyebrow">Şefimiz & Kuruluş</span>
-                <h2>Az Orta'nın Hikayesi</h2>
-                <p>MasterChef Türkiye 2024 finalisti Kerem Bilginer, açık ateş mangal tutkusunu Az Orta'da Maslak ile buluşturdu. Kendi restoranını işletme ve en kaliteli yemeği sunma hedefi, közde ızgara lezzetleriyle gerçeğe dönüştü.</p>
-                <details class="home-read-more">
-                    <summary>Devamını Oku</summary>
-                    <p>El işi marineler, geleneksel ocakbaşı kültürü ve taze malzemelerle hazırlanan şiş ve köftelerimiz, Az Orta'nın ateş başı sofrasını oluşturur. Misafirlerimize sade, kaliteli ve hatırlanan bir yemek deneyimi sunmayı hedefliyoruz.</p>
-                </details>
+            <div class="home-cta-actions">
+                <button type="button" class="btn btn-orange-fill" data-konum-open>KONUM</button>
+                <a href="#contact" class="btn btn-orange-fill">İLETİŞİM</a>
             </div>
         </div>
     </section>
 
-    <!-- Menu Preview -->
-    <section id="home-menu" class="home-menu-preview">
-        <div class="menu-video-hero home-menu-video">
-            <video class="menu-hero-video" autoplay loop muted playsinline preload="metadata"
-                   poster="Images/menu1.jpg"
-                   aria-label="Az Orta açık ateş mangal">
-                <source src="videos/restaurant-edit.mp4" type="video/mp4">
-            </video>
-            <div class="menu-video-overlay"></div>
-            <div class="menu-hero-content menu-video-content">
+    <!-- Menu CTA Section -->
+    <section id="menu-cta" class="home-cta-band home-cta-video">
+        <video class="home-cta-video-bg" autoplay loop muted playsinline preload="metadata" poster="Images/menu1.jpg" aria-hidden="true">
+            <source src="videos/restaurant-edit.mp4" type="video/mp4">
+        </video>
+        <div class="home-cta-video-overlay"></div>
+        <div class="container">
+            <div class="home-section-header reveal">
                 <h2>Menümüz</h2>
             </div>
-        </div>
-        <div class="container home-inline-menu">
-            <section class="menu-mains-section">
-                <div class="menu-mains-header">
-                    <span class="menu-mains-label">Közde Izgara</span>
-                    <h2 class="menu-mains-title">Az Orta Menü</h2>
-                    <p class="menu-mains-subtitle">Her menü 1 salata ve 1 içecek ile servis edilir</p>
-                </div>
-                <div class="menu-mains-grid">
-                    <div class="menu-mains-card">
-                        <img src="Images/az-orta-menu.png" alt="Az Orta Menü" class="menu-item-img menu-item-img-az-orta" loading="lazy">
-                        <div class="menu-mains-card-body">
-                            <span class="menu-item-badge popular">Popüler</span>
-                            <h3 class="menu-mains-name">Az Orta Menü <span class="menu-item-size">(250g)</span></h3>
-                            <p class="menu-mains-description">Salata Seçiminiz + İçecek / 2 Şiş Tavuk, 1 Şiş Köfte ve 1 Şiş Kuzu ile servis edilir</p>
-                            <div class="menu-item-allergens">
-                                <span class="allergen-badge" title="Gluten İçeren Tahıllar">🌾</span>
-                                <span class="allergen-badge" title="Süt Ürünleri">🥛</span>
-                            </div>
-                            <span class="menu-mains-price">660₺</span>
-                        </div>
-                    </div>
-                    <div class="menu-mains-card">
-                        <img src="Images/chicken-skewer-menu.png" alt="Lokum Tavuk Şiş Menü" class="menu-item-img" loading="lazy">
-                        <div class="menu-mains-card-body">
-                            <span class="menu-item-badge popular">Popüler</span>
-                            <h3 class="menu-mains-name">Lokum Tavuk Şiş Menü <span class="menu-item-size">(200g)</span></h3>
-                            <p class="menu-mains-description">Salata Seçiminiz + İçecek / +1 Şiş Tavuk 110₺</p>
-                            <div class="menu-item-allergens">
-                                <span class="allergen-badge" title="Gluten İçeren Tahıllar">🌾</span>
-                                <span class="allergen-badge" title="Süt Ürünleri">🥛</span>
-                            </div>
-                            <span class="menu-mains-price">500₺</span>
-                        </div>
-                    </div>
-                    <div class="menu-mains-card">
-                        <img src="Images/meatball-menu.png" alt="Şiş Köfte Menü" class="menu-item-img menu-item-img-meatball" loading="lazy">
-                        <div class="menu-mains-card-body">
-                            <h3 class="menu-mains-name">Şiş Köfte Menü <span class="menu-item-size">(150g)</span></h3>
-                            <p class="menu-mains-description">Salata Seçiminiz + İçecek / +1 Şiş Köfte 135₺</p>
-                            <div class="menu-item-allergens">
-                                <span class="allergen-badge" title="Gluten İçeren Tahıllar">🌾</span>
-                            </div>
-                            <span class="menu-mains-price">540₺</span>
-                        </div>
-                    </div>
-                    <div class="menu-mains-card">
-                        <img src="Images/lamb-skewer.png" alt="Trakya Kuzu Şiş Menü" class="menu-item-img menu-item-img-lamb" loading="lazy">
-                        <div class="menu-mains-card-body">
-                            <h3 class="menu-mains-name">Trakya Kuzu Şiş Menü <span class="menu-item-size">(150g)</span></h3>
-                            <p class="menu-mains-description">Salata Seçiminiz + İçecek / +1 Şiş Kuzu 195₺</p>
-                            <div class="menu-item-allergens">
-                                <span class="allergen-badge" title="Gluten İçeren Tahıllar">🌾</span>
-                                <span class="allergen-badge" title="Süt Ürünleri">🥛</span>
-                            </div>
-                            <span class="menu-mains-price">730₺</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <div class="menu-section-divider"><span></span></div>
-            <h2 class="menu-section-title menu-section-title-sides">Salata, Tatlı & İçecekler</h2>
-
-            <div class="menu-grid menu-sides-grid">
-                <div class="menu-category menu-category-compact">
-                    <div class="menu-category-header">
-                        <h3 class="category-title">Salatalar <span class="menu-size-option">(az / tam)</span></h3>
-                    </div>
-                    <div class="menu-items">
-                        <div class="menu-item">
-                            <div class="menu-item-header">
-                                <h4 class="menu-item-name">Antalya Piyazı</h4>
-                                <span class="menu-item-price">130₺ / 260₺</span>
-                            </div>
-                            <p class="menu-item-description">Tahinli soslu kuru fasulye, domates ve yumurta</p>
-                            <div class="menu-item-allergens">
-                                <span class="allergen-badge" title="Susam Tohumu Ürünleri">🌰</span>
-                                <span class="allergen-badge" title="Yumurta Ürünleri">🥚</span>
-                            </div>
-                        </div>
-                        <div class="menu-item">
-                            <div class="menu-item-header">
-                                <h4 class="menu-item-name">İstanbul Salatası</h4>
-                                <span class="menu-item-price">130₺ / 260₺</span>
-                            </div>
-                            <p class="menu-item-description">Domates, salatalık, kırmızı soğan, biber ve ev harmanı sos</p>
-                            <div class="menu-item-allergens">
-                                <span class="allergen-badge" title="Soya Fasulyesi Ürünleri">🫛</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="menu-category menu-category-compact">
-                    <div class="menu-category-header">
-                        <h3 class="category-title">Tatlı</h3>
-                    </div>
-                    <div class="menu-items">
-                        <div class="menu-item">
-                            <div class="menu-item-header">
-                                <h4 class="menu-item-name">Saye</h4>
-                                <span class="menu-item-price">110₺</span>
-                            </div>
-                            <p class="menu-item-description">Tahinli Soslu ve Cevizli İrmik Helvası</p>
-                            <div class="menu-item-allergens">
-                                <span class="allergen-badge" title="Gluten İçeren Tahıllar">🌾</span>
-                                <span class="allergen-badge" title="Süt Ürünleri">🥛</span>
-                                <span class="allergen-badge" title="Susam Tohumu Ürünleri">🌰</span>
-                                <span class="allergen-badge" title="Sert Kabuklu Meyveler">🥜</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="menu-category menu-category-compact">
-                    <div class="menu-category-header">
-                        <h3 class="category-title">İçecekler</h3>
-                    </div>
-                    <div class="menu-items">
-                        <div class="menu-item">
-                            <div class="menu-item-header">
-                                <h4 class="menu-item-name">Ekstra Çalkalanmış Yanık Ayran <span class="menu-item-size">(300ml)</span> <span class="menu-item-badge spicy">Acılı</span></h4>
-                                <span class="menu-item-price">100₺</span>
-                            </div>
-                            <div class="menu-item-allergens">
-                                <span class="allergen-badge" title="Süt Ürünleri">🥛</span>
-                            </div>
-                        </div>
-                        <div class="menu-item">
-                            <div class="menu-item-header">
-                                <h4 class="menu-item-name">Coca Cola / Zero <span class="menu-item-size">(300ml)</span></h4>
-                                <span class="menu-item-price">90₺</span>
-                            </div>
-                        </div>
-                        <div class="menu-item">
-                            <div class="menu-item-header">
-                                <h4 class="menu-item-name">Fanta / Sprite <span class="menu-item-size">(300ml)</span></h4>
-                                <span class="menu-item-price">90₺</span>
-                            </div>
-                        </div>
-                        <div class="menu-item">
-                            <div class="menu-item-header">
-                                <h4 class="menu-item-name">Fuse Tea Şeftali / Limon <span class="menu-item-size">(300ml)</span></h4>
-                                <span class="menu-item-price">90₺</span>
-                            </div>
-                        </div>
-                        <div class="menu-item">
-                            <div class="menu-item-header">
-                                <h4 class="menu-item-name">Sade Ayran <span class="menu-item-size">(245ml)</span></h4>
-                                <span class="menu-item-price">90₺</span>
-                            </div>
-                            <div class="menu-item-allergens">
-                                <span class="allergen-badge" title="Süt Ürünleri">🥛</span>
-                            </div>
-                        </div>
-                        <div class="menu-item">
-                            <div class="menu-item-header">
-                                <h4 class="menu-item-name">Maden Suyu <span class="menu-item-size">(200ml)</span></h4>
-                                <span class="menu-item-price">50₺</span>
-                            </div>
-                        </div>
-                        <div class="menu-item">
-                            <div class="menu-item-header">
-                                <h4 class="menu-item-name">Su <span class="menu-item-size">(500ml)</span></h4>
-                                <span class="menu-item-price">40₺</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="menu-addon-strip" aria-label="İlave şiş fiyatları">
-                <span class="menu-addon-label">+1 Şiş</span>
-                <span class="menu-addon-prices">Tavuk <strong>110₺</strong> - Köfte <strong>135₺</strong> - Kuzu <strong>195₺</strong></span>
-            </div>
-
-            <div class="menu-allergen-section">
-                <h3 class="allergen-section-title">Alerjen Bilgisi</h3>
-                <div class="allergen-legend">
-                    <div class="allergen-item"><span class="allergen-symbol">🌾</span><span class="allergen-name">Gluten İçeren Tahıllar</span></div>
-                    <div class="allergen-item"><span class="allergen-symbol">🥛</span><span class="allergen-name">Süt Ürünleri</span></div>
-                    <div class="allergen-item"><span class="allergen-symbol">🥚</span><span class="allergen-name">Yumurta Ürünleri</span></div>
-                    <div class="allergen-item"><span class="allergen-symbol">🌰</span><span class="allergen-name">Susam Tohumu Ürünleri</span></div>
-                    <div class="allergen-item"><span class="allergen-symbol">🫛</span><span class="allergen-name">Soya Fasulyesi Ürünleri</span></div>
-                    <div class="allergen-item"><span class="allergen-symbol">🥜</span><span class="allergen-name">Sert Kabuklu Meyveler</span></div>
-                </div>
-                <div class="allergen-disclaimer">
-                    <p><strong>Önemli:</strong> Ürünlerimiz alerjen içerebilir. Alerji durumunuz varsa lütfen personelimize danışın. Mutfakta çapraz bulaşma riski bulunmaktadır.</p>
-                </div>
-                <details class="allergen-more">
-                    <summary>Devamını Gör</summary>
-                    <ul class="allergen-more-list">
-                        <li>Gluten içeren tahıllar: ekmek, lavaş, bazı sos ve marinelerde bulunabilir.</li>
-                        <li>Süt ürünleri: ayran, yoğurt bazlı soslar ve bazı tatlılarda bulunabilir.</li>
-                        <li>Yumurta, susam, soya ve sert kabuklu yemiş izleri mutfak hazırlığında bulunabilir.</li>
-                        <li>Alerjiniz varsa sipariş vermeden önce ekibimize bilgi vermenizi rica ederiz.</li>
-                    </ul>
-                </details>
-                <a href="Images/allergen-list.png" class="allergen-image-link" target="_blank" rel="noopener noreferrer">Alerjen Listesini Aç</a>
-            </div>
-            <div class="menu-note">
-                <p style="margin-top: 15px;">Fiyatlarımıza KDV dahildir. Menü Güncellenme Tarihi: 19.03.2026</p>
+            <div class="home-cta-actions">
+                <a href="menu.html" class="btn btn-orange-fill">Menü</a>
+                <a href="menu.html#alerjen" class="btn btn-orange-fill">Alerjen Bilgisi</a>
             </div>
         </div>
     </section>
 
-    <!-- Menu Image Lightbox -->
-    <div id="menuImageLightbox" class="menu-image-lightbox" role="dialog" aria-modal="true" aria-label="Menü fotoğrafı görüntüle" hidden>
-        <button type="button" class="menu-image-lightbox-close" aria-label="Kapat">&times;</button>
-        <div class="menu-image-lightbox-inner">
-            <img alt="" class="menu-image-lightbox-img">
-        </div>
-    </div>
-
-    <!-- Instagram Section -->
-    <section id="instagram" class="home-instagram-section">
-        <div class="container">
-            <div class="home-section-header reveal">
-                <span class="home-section-eyebrow">Sosyal Medya</span>
-                <h2>Instagram'da Bizi Takip Edin</h2>
-            </div>
-            <div id="instagram-feed" class="instagram-widget-placeholder reveal">
-                <!-- Elfsight Instagram Feed | Untitled Instagram Feed -->
-                <script src="https://elfsightcdn.com/platform.js" async></script>
-                <div class="elfsight-app-c8384ad9-87bc-47eb-913b-f71150fec0ae" data-elfsight-app-lazy></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Location Section -->
-    <section id="home-location" class="home-location-section">
-        <div class="container">
-            <div class="home-section-header reveal">
-                <span class="home-section-eyebrow">İletişim</span>
-                <h2>Konum & Çalışma Saatleri</h2>
-            </div>
-            <div class="home-location-grid">
-                <a id="home-address" href="https://www.google.com/maps/place/Az+Orta/@41.1117787,29.0198673,18z/data=!4m6!3m5!1s0x14cab563ac25a895:0xb5ea3354e65655e5!8m2!3d41.1129768!4d29.0222225!16s%2Fg%2F11ylspvg56?entry=ttu&amp;g_ep=EgoyMDI2MDYxMC4wIKXMDSoASAFQAw%3D%3D" class="home-map-card reveal" target="_blank" rel="noopener noreferrer" aria-label="Google Maps ile Az Orta konumunu aç">
-                    <img src="Images/contact-street.png" alt="Az Orta Maslak konumu" loading="lazy">
-                    <span class="home-map-address-badge">Maslak, Dereboyu 2 Cd No:5/80, 34398 Sarıyer/İstanbul</span>
-                    <span class="home-map-btn">Google Maps ile Konumu Aç</span>
-                </a>
+    <!-- Story Section: Chef Kerem – photo pinned; page scroll scrubs bio text, then releases -->
+    <section id="home-story" class="home-story-section chef-scroll-section">
+        <div class="chef-scroll-pin">
+            <div class="container">
+                <div class="chef-scroll">
+                    <div class="chef-scroll-media">
+                        <div class="chef-scroll-media-inner chef-scroll-media-inner--cutout reveal">
+                            <img src="Images/kerem-cutout.png" alt="Kerem Bilginer - MasterChef Türkiye 2024 Finalisti" loading="lazy">
+                            <div class="chef-scroll-caption">
+                                <span class="home-section-eyebrow">Şefimiz</span>
+                                <h2>Kerem Bilginer</h2>
+                                <p>MasterChef Türkiye 2024 Finalisti</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chef-scroll-text-viewport">
+                        <div class="chef-scroll-text">
+                            <div class="chef-block reveal">
+                                <p>Kerem Bilginer, Yıldız Teknik Üniversitesi Mekatronik Mühendisliği eğitiminin ardından tutkusu olan gastronomi alanına yönelerek MSA (Mutfak Sanatları Akademisi) mezunu olmuştur.</p>
+                                <p>Profesyonel mutfak kariyerine Türkiye'de seçkin bir İtalyan restoranında yaptığı stajla başlayan Kerem Bilginer, ardından Amerika Birleşik Devletleri'nin Georgia eyaletindeki prestijli bir otelde görev almış; stajyer olarak başladığı kariyerinde kısa sürede Sous Chef pozisyonuna yükselmiştir.</p>
+                            </div>
+                            <div class="chef-block reveal">
+                                <p>Kendini sürekli geliştirmeyi ilke edinen Kerem Bilginer, kariyerinde yeni bir meydan okumayı tercih ederek New York'a taşınmış ve Michelin yıldızlı Le Coucou restoranında Sous Chef olarak görev yapmıştır.</p>
+                                <p>2024 yılında MasterChef Türkiye finalisti olarak geniş kitleler tarafından tanınan Kerem Bilginer, bugün Az Orta'nın kurucusu ve şefi olarak gastronomi yolculuğunu sürdürmektedir.</p>
+                            </div>
+                            <div class="chef-block reveal">
+                                <p>Michelin yıldızlı restoranlarda edindiği deneyim, Kerem Bilginer'e mutfağın en önemli gerçeğini öğretti: İyi yemek, gösterişten değil; fikirden, teknikteki ustalıktan ve malzemeye duyulan saygıdan doğar.</p>
+                                <p>Bu anlayışla kurulan Az Orta, sadece bir restoran değil; her detayının özenle tasarlandığı modern bir gastronomi deneyimidir. 'Etin Şiş Hali' mottosuyla yola çıkan Az Orta, açık mutfak konsepti, özenle seçilen kaliteli malzemeleri, şef dokunuşuyla yeniden yorumlanan tabakları, hızlı ve samimi servisiyle misafirlerine keyifli bir deneyim sunmayı hedefler. Türkiye'nin ilk Ayran Barı da bu deneyimin en özgün parçalarından biridir. Az Orta'da amaç, misafirlerin restorandan yalnızca iyi yemek yemiş olarak değil, güzel bir deneyim yaşamış olarak ayrılmasıdır.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <aside class="chef-indicator" aria-hidden="true">
+                        <span class="chef-indicator-label">BİLGİ</span>
+                        <svg class="chef-indicator-arrow" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M12 5v14M5 12l7 7 7-7" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span class="chef-indicator-label">Yazı Devamı</span>
+                    </aside>
+                </div>
             </div>
         </div>
     </section>
@@ -418,12 +224,12 @@
     <!-- Sticky Mobile CTA -->
     <div class="sticky-cta-mobile">
         <a href="tel:+905552009999" class="sticky-cta-button sticky-cta-button-secondary">Ara</a>
-        <a href="#home-menu" class="sticky-cta-button">Menü</a>
-        <a href="https://www.google.com/maps/place/Az+Orta/@41.1117787,29.0198673,18z/data=!4m6!3m5!1s0x14cab563ac25a895:0xb5ea3354e65655e5!8m2!3d41.1129768!4d29.0222225!16s%2Fg%2F11ylspvg56?entry=ttu&amp;g_ep=EgoyMDI2MDYxMC4wIKXMDSoASAFQAw%3D%3D" class="sticky-cta-button sticky-cta-button-secondary" target="_blank" rel="noopener noreferrer">Konum</a>
+        <a href="menu.html" class="sticky-cta-button">Menü</a>
+        <button type="button" class="sticky-cta-button sticky-cta-button-secondary" data-konum-open>Konum</button>
     </div>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer id="contact" class="footer">
         <div class="container">
             <a href="https://www.google.com/maps/place/Az+Orta/@41.1117787,29.0198673,18z/data=!4m6!3m5!1s0x14cab563ac25a895:0xb5ea3354e65655e5!8m2!3d41.1129768!4d29.0222225!16s%2Fg%2F11ylspvg56?entry=ttu&amp;g_ep=EgoyMDI2MDYxMC4wIKXMDSoASAFQAw%3D%3D" class="footer-map-address" target="_blank" rel="noopener noreferrer">📍 Maslak, Dereboyu 2 Cd No:5/80, 34398 Sarıyer/İstanbul</a>
             <div class="footer-content footer-content-centered">
@@ -456,6 +262,21 @@
         </div>
     </footer>
 
-    <script src="script.js?v=20260714-1"></script>
+    <!-- Konum Modal -->
+    <div class="konum-modal" id="konumModal" hidden>
+        <div class="konum-modal-card" role="dialog" aria-modal="true" aria-labelledby="konumModalTitle">
+            <button type="button" class="konum-modal-close" data-konum-close aria-label="Kapat">&times;</button>
+            <h2 class="konum-modal-title" id="konumModalTitle">Konum</h2>
+            <div class="konum-modal-map">
+                <iframe title="Az Orta Google Harita" src="https://maps.google.com/maps?q=Az%20Orta%20Maslak%20Dereboyu%202%20Cd%20No%205&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="konum-modal-actions">
+                <a class="btn btn-secondary konum-modal-btn" id="konumGoogleLink" href="#" target="_blank" rel="noopener noreferrer">Google Haritalar</a>
+                <a class="btn btn-secondary konum-modal-btn" href="https://maps.apple/p/8dGMwwgb0NaVmw" target="_blank" rel="noopener noreferrer">Apple Haritalar</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js?v=20260716-6"></script>
 </body>
 </html>

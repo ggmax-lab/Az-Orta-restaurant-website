@@ -35,7 +35,7 @@
     <meta name="twitter:image:alt" content="Az Orta Logo">
     <link rel="icon" type="image/png" href="Images/logo.png">
     <link rel="apple-touch-icon" href="Images/logo.png">
-    <link rel="stylesheet" href="styles.css?v=20260616-1">
+    <link rel="stylesheet" href="styles.css?v=20260716-7">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600;700&family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -94,9 +94,10 @@
             </a>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#home" class="nav-link active">Home</a></li>
+                <!-- FLAG: Hakkımızda behavior assumed as same-page scroll, confirm with client -->
                 <li><a href="#home-story" class="nav-link">About</a></li>
-                <li><a href="#home-menu" class="nav-link">Menu</a></li>
-                <li><a href="#home-location" class="nav-link">Contact</a></li>
+                <li><a href="menu-en.html" class="nav-link">Menu</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
             <div class="language-switcher">
                 <a href="index.html" class="lang-link">TR</a>
@@ -122,9 +123,9 @@
             </div>
             <p class="hero-subtitle">Maslak, Istanbul</p>
             <div class="hero-cta">
-                <a href="#home-menu" class="btn btn-primary btn-hero-menu">View Menu</a>
-                <a href="#home-location" class="btn btn-secondary">Find Location</a>
-                <a href="#page-bottom" class="btn btn-secondary">Contact Us</a>
+                <a href="menu-en.html" class="btn btn-primary btn-hero-menu">View Menu</a>
+                <button type="button" class="btn btn-secondary" data-konum-open>Find Location</button>
+                <a href="#contact" class="btn btn-secondary">Contact Us</a>
             </div>
         </div>
         <div class="scroll-indicator">
@@ -132,282 +133,88 @@
         </div>
     </section>
 
-    <!-- Story Section -->
-    <section id="home-story" class="home-story-section">
+    <!-- Opening Hours Section -->
+    <section id="hours" class="home-cta-band home-hours-section">
         <div class="container">
-            <div class="home-chef-feature reveal">
-                <img src="Images/Kerem.png" alt="Kerem Bilginer - MasterChef Türkiye 2024 Finalist" loading="lazy">
-                <div>
-                    <span class="home-section-eyebrow">Our Chef</span>
-                    <h2>Kerem Bilginer</h2>
-                    <p>MasterChef Türkiye 2024 Finalist</p>
+            <div class="home-section-header reveal">
+                <h2>OPENING HOURS</h2>
+            </div>
+            <div class="home-hours-panel">
+                <div class="home-hours-grid">
+                    <div class="home-hours-row">
+                        <span class="home-hours-days">Monday - Friday</span>
+                        <span class="home-hours-time">11:30 - 21:00</span>
+                    </div>
+                    <div class="home-hours-row">
+                        <span class="home-hours-days">Saturday - Sunday</span>
+                        <span class="home-hours-time">12:00 - 21:00</span>
+                    </div>
                 </div>
             </div>
-            <div class="home-story-panel reveal">
-                <span class="home-section-eyebrow">Our Chef & Founding Story</span>
-                <h2>The Az Orta Story</h2>
-                <p>MasterChef Türkiye 2024 finalist Kerem Bilginer brought his open-fire grill passion to Maslak through Az Orta. His lifelong goal of running his own restaurant and serving the best quality food has become reality through charcoal-grilled flavours.</p>
-                <details class="home-read-more">
-                    <summary>Read More</summary>
-                    <p>House marinades, ocakbaşı tradition, and fresh ingredients shape our skewers and köfte. Az Orta is built around a simple goal: a warm fire-side table with memorable food and sincere hospitality.</p>
-                </details>
+            <div class="home-cta-actions">
+                <button type="button" class="btn btn-orange-fill" data-konum-open>LOCATION</button>
+                <a href="#contact" class="btn btn-orange-fill">CONTACT</a>
             </div>
         </div>
     </section>
 
-    <!-- Menu Preview -->
-    <section id="home-menu" class="home-menu-preview">
-        <div class="menu-video-hero home-menu-video">
-            <video class="menu-hero-video" autoplay loop muted playsinline preload="metadata"
-                   poster="Images/menu1.jpg"
-                   aria-label="Az Orta open fire grill">
-                <source src="videos/restaurant-edit.mp4" type="video/mp4">
-            </video>
-            <div class="menu-video-overlay"></div>
-            <div class="menu-hero-content menu-video-content">
+    <!-- Menu CTA Section -->
+    <section id="menu-cta" class="home-cta-band home-cta-video">
+        <video class="home-cta-video-bg" autoplay loop muted playsinline preload="metadata" poster="Images/menu1.jpg" aria-hidden="true">
+            <source src="videos/restaurant-edit.mp4" type="video/mp4">
+        </video>
+        <div class="home-cta-video-overlay"></div>
+        <div class="container">
+            <div class="home-section-header reveal">
                 <h2>Our Menu</h2>
             </div>
-        </div>
-        <div class="container home-inline-menu">
-            <section class="menu-mains-section">
-                <div class="menu-mains-header">
-                    <span class="menu-mains-label">Charcoal Grilled</span>
-                    <h2 class="menu-mains-title">Az Orta Meal Menu</h2>
-                    <p class="menu-mains-subtitle">Every menu served with 1 salad and 1 drink</p>
-                </div>
-                <div class="menu-mains-grid">
-                    <div class="menu-mains-card">
-                        <img src="Images/az-orta-menu.png" alt="Az Orta Mixed Skewer Meal" class="menu-item-img menu-item-img-az-orta" loading="lazy">
-                        <div class="menu-mains-card-body">
-                            <span class="menu-item-badge popular">Popular</span>
-                            <h3 class="menu-mains-name">Az Orta Mixed Skewer Meal <span class="menu-item-size">(250g)</span></h3>
-                            <p class="menu-mains-description">Your choice of salad + drink / 2 Chicken Skewers, 1 Meatball Skewer, 1 Lamb Skewer</p>
-                            <div class="menu-item-allergens">
-                                <span class="allergen-badge" title="Cereals Containing Gluten">🌾</span>
-                                <span class="allergen-badge" title="Dairy Products">🥛</span>
-                            </div>
-                            <span class="menu-mains-price">660₺</span>
-                        </div>
-                    </div>
-                    <div class="menu-mains-card">
-                        <img src="Images/chicken-skewer-menu.png" alt="Lokum Chicken Skewer Meal" class="menu-item-img" loading="lazy">
-                        <div class="menu-mains-card-body">
-                            <span class="menu-item-badge popular">Popular</span>
-                            <h3 class="menu-mains-name">Lokum Chicken Skewer Meal <span class="menu-item-size">(200g)</span></h3>
-                            <p class="menu-mains-description">Your choice of salad + drink / +1 Chicken Skewer 110₺</p>
-                            <div class="menu-item-allergens">
-                                <span class="allergen-badge" title="Cereals Containing Gluten">🌾</span>
-                                <span class="allergen-badge" title="Dairy Products">🥛</span>
-                            </div>
-                            <span class="menu-mains-price">500₺</span>
-                        </div>
-                    </div>
-                    <div class="menu-mains-card">
-                        <img src="Images/meatball-menu.png" alt="Meatball Skewer Meal" class="menu-item-img menu-item-img-meatball" loading="lazy">
-                        <div class="menu-mains-card-body">
-                            <h3 class="menu-mains-name">Meatball Skewer Meal <span class="menu-item-size">(150g)</span></h3>
-                            <p class="menu-mains-description">Your choice of salad + drink / +1 Meatball Skewer 135₺</p>
-                            <div class="menu-item-allergens">
-                                <span class="allergen-badge" title="Cereals Containing Gluten">🌾</span>
-                            </div>
-                            <span class="menu-mains-price">540₺</span>
-                        </div>
-                    </div>
-                    <div class="menu-mains-card">
-                        <img src="Images/lamb-skewer.png" alt="Trakya Lamb Skewer Meal" class="menu-item-img menu-item-img-lamb" loading="lazy">
-                        <div class="menu-mains-card-body">
-                            <h3 class="menu-mains-name">Trakya Lamb Skewer Meal <span class="menu-item-size">(150g)</span></h3>
-                            <p class="menu-mains-description">Your choice of salad + drink / +1 Lamb Skewer 195₺</p>
-                            <div class="menu-item-allergens">
-                                <span class="allergen-badge" title="Cereals Containing Gluten">🌾</span>
-                                <span class="allergen-badge" title="Dairy Products">🥛</span>
-                            </div>
-                            <span class="menu-mains-price">730₺</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <div class="menu-section-divider"><span></span></div>
-            <h2 class="menu-section-title menu-section-title-sides">Salads, Desserts & Drinks</h2>
-
-            <div class="menu-grid menu-sides-grid">
-                <div class="menu-category menu-category-compact">
-                    <div class="menu-category-header">
-                        <h3 class="category-title">Salads <span class="menu-size-option">(single / double portion)</span></h3>
-                    </div>
-                    <div class="menu-items">
-                        <div class="menu-item">
-                            <div class="menu-item-header">
-                                <h4 class="menu-item-name">Antalya Bean Salad</h4>
-                                <span class="menu-item-price">130₺ / 260₺</span>
-                            </div>
-                            <p class="menu-item-description">White beans, tomatoes and egg with tahini dressing</p>
-                            <div class="menu-item-allergens">
-                                <span class="allergen-badge" title="Sesame Seed Products">🌰</span>
-                                <span class="allergen-badge" title="Egg Products">🥚</span>
-                            </div>
-                        </div>
-                        <div class="menu-item">
-                            <div class="menu-item-header">
-                                <h4 class="menu-item-name">Istanbul Salad</h4>
-                                <span class="menu-item-price">130₺ / 260₺</span>
-                            </div>
-                            <p class="menu-item-description">Tomatoes, cucumbers, red onions, peppers and house blend dressing</p>
-                            <div class="menu-item-allergens">
-                                <span class="allergen-badge" title="Soybean Products">🫛</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="menu-category menu-category-compact">
-                    <div class="menu-category-header">
-                        <h3 class="category-title">Dessert</h3>
-                    </div>
-                    <div class="menu-items">
-                        <div class="menu-item">
-                            <div class="menu-item-header">
-                                <h4 class="menu-item-name">Saye</h4>
-                                <span class="menu-item-price">110₺</span>
-                            </div>
-                            <p class="menu-item-description">Semolina Halva with Tahini Sauce and Walnuts</p>
-                            <div class="menu-item-allergens">
-                                <span class="allergen-badge" title="Cereals Containing Gluten">🌾</span>
-                                <span class="allergen-badge" title="Dairy Products">🥛</span>
-                                <span class="allergen-badge" title="Sesame Seed Products">🌰</span>
-                                <span class="allergen-badge" title="Tree Nuts">🥜</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="menu-category menu-category-compact">
-                    <div class="menu-category-header">
-                        <h3 class="category-title">Drinks</h3>
-                    </div>
-                    <div class="menu-items">
-                        <div class="menu-item">
-                            <div class="menu-item-header">
-                                <h4 class="menu-item-name">Extra Shaken Spicy Ayran <span class="menu-item-size">(300ml)</span> <span class="menu-item-badge spicy">Spicy</span></h4>
-                                <span class="menu-item-price">100₺</span>
-                            </div>
-                            <div class="menu-item-allergens">
-                                <span class="allergen-badge" title="Dairy Products">🥛</span>
-                            </div>
-                        </div>
-                        <div class="menu-item">
-                            <div class="menu-item-header">
-                                <h4 class="menu-item-name">Coca Cola / Zero <span class="menu-item-size">(300ml)</span></h4>
-                                <span class="menu-item-price">90₺</span>
-                            </div>
-                        </div>
-                        <div class="menu-item">
-                            <div class="menu-item-header">
-                                <h4 class="menu-item-name">Fanta / Sprite <span class="menu-item-size">(300ml)</span></h4>
-                                <span class="menu-item-price">90₺</span>
-                            </div>
-                        </div>
-                        <div class="menu-item">
-                            <div class="menu-item-header">
-                                <h4 class="menu-item-name">Fuse Tea Peach/Lemon <span class="menu-item-size">(300ml)</span></h4>
-                                <span class="menu-item-price">90₺</span>
-                            </div>
-                        </div>
-                        <div class="menu-item">
-                            <div class="menu-item-header">
-                                <h4 class="menu-item-name">Plain Ayran <span class="menu-item-size">(245ml)</span></h4>
-                                <span class="menu-item-price">90₺</span>
-                            </div>
-                            <div class="menu-item-allergens">
-                                <span class="allergen-badge" title="Dairy Products">🥛</span>
-                            </div>
-                        </div>
-                        <div class="menu-item">
-                            <div class="menu-item-header">
-                                <h4 class="menu-item-name">Sparkling Water <span class="menu-item-size">(200ml)</span></h4>
-                                <span class="menu-item-price">50₺</span>
-                            </div>
-                        </div>
-                        <div class="menu-item">
-                            <div class="menu-item-header">
-                                <h4 class="menu-item-name">Water <span class="menu-item-size">(500ml)</span></h4>
-                                <span class="menu-item-price">40₺</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="menu-addon-strip" aria-label="Additional skewer prices">
-                <span class="menu-addon-label">+1 Skewer</span>
-                <span class="menu-addon-prices">Chicken <strong>110₺</strong> - Meatball <strong>135₺</strong> - Lamb <strong>195₺</strong></span>
-            </div>
-
-            <div class="menu-allergen-section">
-                <h3 class="allergen-section-title">Allergen Information</h3>
-                <div class="allergen-legend">
-                    <div class="allergen-item"><span class="allergen-symbol">🌾</span><span class="allergen-name">Cereals Containing Gluten</span></div>
-                    <div class="allergen-item"><span class="allergen-symbol">🥛</span><span class="allergen-name">Dairy Products</span></div>
-                    <div class="allergen-item"><span class="allergen-symbol">🥚</span><span class="allergen-name">Egg Products</span></div>
-                    <div class="allergen-item"><span class="allergen-symbol">🌰</span><span class="allergen-name">Sesame Seed Products</span></div>
-                    <div class="allergen-item"><span class="allergen-symbol">🫛</span><span class="allergen-name">Soybean Products</span></div>
-                    <div class="allergen-item"><span class="allergen-symbol">🥜</span><span class="allergen-name">Tree Nuts</span></div>
-                </div>
-                <div class="allergen-disclaimer">
-                    <p><strong>Important:</strong> Our products may contain allergens. If you have allergies, please consult our staff. There is a risk of cross-contamination in the kitchen.</p>
-                </div>
-                <details class="allergen-more">
-                    <summary>See More</summary>
-                    <ul class="allergen-more-list">
-                        <li>Cereals containing gluten may be present in bread, lavash, and selected sauces or marinades.</li>
-                        <li>Dairy products may be present in ayran, yogurt-based sauces, and selected desserts.</li>
-                        <li>Egg, sesame, soy, and tree nut traces may be present due to kitchen preparation.</li>
-                        <li>If you have an allergy, please inform our team before ordering.</li>
-                    </ul>
-                </details>
-                <a href="Images/allergen-list.png" class="allergen-image-link" target="_blank" rel="noopener noreferrer">Open Full Allergen List</a>
-            </div>
-            <div class="menu-note">
-                <p style="margin-top: 15px;">Taxes included. Menu Update Date: 19.03.2026</p>
+            <div class="home-cta-actions">
+                <a href="menu-en.html" class="btn btn-orange-fill">Menu</a>
+                <a href="menu-en.html#allergens" class="btn btn-orange-fill">Allergen Info</a>
             </div>
         </div>
     </section>
 
-    <!-- Menu Image Lightbox -->
-    <div id="menuImageLightbox" class="menu-image-lightbox" role="dialog" aria-modal="true" aria-label="View menu photo" hidden>
-        <button type="button" class="menu-image-lightbox-close" aria-label="Close">&times;</button>
-        <div class="menu-image-lightbox-inner">
-            <img alt="" class="menu-image-lightbox-img">
-        </div>
-    </div>
-
-    <!-- Instagram Section -->
-    <section id="instagram" class="home-instagram-section">
-        <div class="container">
-            <div class="home-section-header reveal">
-                <span class="home-section-eyebrow">Social Media</span>
-                <h2>Follow Us On Instagram</h2>
-            </div>
-            <div id="instagram-feed" class="instagram-widget-placeholder reveal">
-                <!-- Elfsight Instagram Feed | Untitled Instagram Feed -->
-                <script src="https://elfsightcdn.com/platform.js" async></script>
-                <div class="elfsight-app-c8384ad9-87bc-47eb-913b-f71150fec0ae" data-elfsight-app-lazy></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Location Section -->
-    <section id="home-location" class="home-location-section">
-        <div class="container">
-            <div class="home-section-header reveal">
-                <span class="home-section-eyebrow">Contact</span>
-                <h2>Location & Opening Hours</h2>
-            </div>
-            <div class="home-location-grid">
-                <a id="home-address" href="https://www.google.com/maps/place/Az+Orta/@41.1117787,29.0198673,18z/data=!4m6!3m5!1s0x14cab563ac25a895:0xb5ea3354e65655e5!8m2!3d41.1129768!4d29.0222225!16s%2Fg%2F11ylspvg56?entry=ttu&amp;g_ep=EgoyMDI2MDYxMC4wIKXMDSoASAFQAw%3D%3D" class="home-map-card reveal" target="_blank" rel="noopener noreferrer" aria-label="Open Az Orta location with Google Maps">
-                    <img src="Images/contact-street.png" alt="Az Orta Maslak location" loading="lazy">
-                    <span class="home-map-address-badge">Maslak, Dereboyu 2 Cd No:5/80, 34398 Sarıyer/Istanbul</span>
-                    <span class="home-map-btn">Open Location with Google Maps</span>
-                </a>
+    <!-- Story Section: Chef Kerem – photo pinned; page scroll scrubs bio text, then releases -->
+    <!-- FLAG: EN chef bio pending client sign-off -->
+    <section id="home-story" class="home-story-section chef-scroll-section">
+        <div class="chef-scroll-pin">
+            <div class="container">
+                <div class="chef-scroll">
+                    <div class="chef-scroll-media">
+                        <div class="chef-scroll-media-inner chef-scroll-media-inner--cutout reveal">
+                            <img src="Images/kerem-cutout.png" alt="Kerem Bilginer - MasterChef Türkiye 2024 Finalist" loading="lazy">
+                            <div class="chef-scroll-caption">
+                                <span class="home-section-eyebrow">Our Chef</span>
+                                <h2>Kerem Bilginer</h2>
+                                <p>MasterChef Türkiye 2024 Finalist</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chef-scroll-text-viewport">
+                        <div class="chef-scroll-text">
+                            <div class="chef-block reveal">
+                                <p>After studying Mechatronics Engineering at Yıldız Technical University, Kerem Bilginer followed his true passion — gastronomy — and graduated from the Culinary Arts Academy (MSA).</p>
+                                <p>He began his professional kitchen career with an internship at a distinguished Italian restaurant in Turkey, then took a role at a prestigious hotel in Georgia, USA, rising from intern to Sous Chef in a short time.</p>
+                            </div>
+                            <div class="chef-block reveal">
+                                <p>Committed to constant growth, Kerem chose a new challenge and moved to New York, serving as Sous Chef at the Michelin-starred restaurant Le Coucou.</p>
+                                <p>Widely recognised as a 2024 MasterChef Türkiye finalist, he today continues his gastronomic journey as the founder and chef of Az Orta.</p>
+                            </div>
+                            <div class="chef-block reveal">
+                                <p>His time in Michelin-starred kitchens taught him the most important truth about cooking: great food comes not from showmanship, but from ideas, mastery of technique, and respect for the ingredient.</p>
+                                <p>Built on that belief, Az Orta is not just a restaurant but a modern gastronomy experience where every detail is carefully considered. Guided by its motto 'Etin Şiş Hali', Az Orta offers an open-kitchen concept, carefully sourced quality ingredients, dishes reinterpreted with a chef's touch, and fast, warm service. Turkey's first Ayran Bar is one of the most original parts of this experience. The aim at Az Orta is for guests to leave not just having eaten well, but having lived a memorable experience.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <aside class="chef-indicator" aria-hidden="true">
+                        <span class="chef-indicator-label">INFO</span>
+                        <svg class="chef-indicator-arrow" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M12 5v14M5 12l7 7 7-7" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span class="chef-indicator-label">Continue Reading</span>
+                    </aside>
+                </div>
             </div>
         </div>
     </section>
@@ -415,12 +222,12 @@
     <!-- Sticky Mobile CTA -->
     <div class="sticky-cta-mobile">
         <a href="tel:+905552009999" class="sticky-cta-button sticky-cta-button-secondary">Call</a>
-        <a href="#home-menu" class="sticky-cta-button">Menu</a>
-        <a href="https://www.google.com/maps/place/Az+Orta/@41.1117787,29.0198673,18z/data=!4m6!3m5!1s0x14cab563ac25a895:0xb5ea3354e65655e5!8m2!3d41.1129768!4d29.0222225!16s%2Fg%2F11ylspvg56?entry=ttu&amp;g_ep=EgoyMDI2MDYxMC4wIKXMDSoASAFQAw%3D%3D" class="sticky-cta-button sticky-cta-button-secondary" target="_blank" rel="noopener noreferrer">Directions</a>
+        <a href="menu-en.html" class="sticky-cta-button">Menu</a>
+        <button type="button" class="sticky-cta-button sticky-cta-button-secondary" data-konum-open>Directions</button>
     </div>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer id="contact" class="footer">
         <div class="container">
             <a href="https://www.google.com/maps/place/Az+Orta/@41.1117787,29.0198673,18z/data=!4m6!3m5!1s0x14cab563ac25a895:0xb5ea3354e65655e5!8m2!3d41.1129768!4d29.0222225!16s%2Fg%2F11ylspvg56?entry=ttu&amp;g_ep=EgoyMDI2MDYxMC4wIKXMDSoASAFQAw%3D%3D" class="footer-map-address" target="_blank" rel="noopener noreferrer">📍 Maslak, Dereboyu 2 Cd No:5/80, 34398 Sarıyer/Istanbul</a>
             <div class="footer-content footer-content-centered">
@@ -453,6 +260,21 @@
         </div>
     </footer>
 
-    <script src="script.js?v=20260714-1"></script>
+    <!-- Konum Modal -->
+    <div class="konum-modal" id="konumModal" hidden>
+        <div class="konum-modal-card" role="dialog" aria-modal="true" aria-labelledby="konumModalTitle">
+            <button type="button" class="konum-modal-close" data-konum-close aria-label="Close">&times;</button>
+            <h2 class="konum-modal-title" id="konumModalTitle">Location</h2>
+            <div class="konum-modal-map">
+                <iframe title="Az Orta Google Map" src="https://maps.google.com/maps?q=Az%20Orta%20Maslak%20Dereboyu%202%20Cd%20No%205&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="konum-modal-actions">
+                <a class="btn btn-secondary konum-modal-btn" id="konumGoogleLink" href="#" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
+                <a class="btn btn-secondary konum-modal-btn" href="https://maps.apple/p/8dGMwwgb0NaVmw" target="_blank" rel="noopener noreferrer">Open in Apple Maps</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js?v=20260716-6"></script>
 </body>
 </html>

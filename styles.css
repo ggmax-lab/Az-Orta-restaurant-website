@@ -11,6 +11,11 @@
     --secondary-color: #9A2B0A;
     --flame-amber: #E85D04;
     --ember-glow: #EA580C;
+    /* Solid CTA fill — the single source of truth for every .btn-orange-fill */
+    --cta-accent: #D95A34;
+    --cta-accent-hover: #E46A44;
+    --cta-glow: 0 4px 18px rgba(217, 90, 52, 0.38);
+    --cta-glow-hover: 0 6px 24px rgba(217, 90, 52, 0.5);
     --charcoal: #141414;
     --charcoal-mid: #1a1a1a;
     --charcoal-light: #2a2a2a;
@@ -46,7 +51,12 @@ html {
 #instagram,
 #home-story,
 #home-menu,
-#home-location {
+#home-location,
+#hours,
+#menu-cta,
+#contact,
+#alerjen,
+#allergens {
     scroll-margin-top: 92px;
 }
 
@@ -67,7 +77,10 @@ body {
     font-family: 'Urbanist', sans-serif;
     color: var(--text-color);
     line-height: 1.6;
-    overflow-x: hidden;
+    /* clip (not hidden) prevents horizontal scroll WITHOUT turning body into a
+       scroll container — hidden makes overflow-y compute to auto, which breaks
+       the chef photo's position: sticky (it would bind to body instead of the viewport). */
+    overflow-x: clip;
     position: relative;
     background: var(--bg-warm);
     letter-spacing: var(--letter-tight);
@@ -2562,11 +2575,13 @@ h1, h2, h3, h4 {
 }
 
 /* Allergen Information Section */
+/* Reference table, subordinate to the menu board — matches its 800px measure */
 .menu-allergen-section {
     background: var(--white);
     border-radius: 14px;
-    padding: 40px 32px;
-    margin-top: 56px;
+    max-width: 800px;
+    padding: 26px 22px;
+    margin: 40px auto 0;
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.04);
     border: 1px solid rgba(194, 65, 12, 0.06);
     opacity: 0;
@@ -2575,9 +2590,9 @@ h1, h2, h3, h4 {
 }
 
 .allergen-section-title {
-    font-size: clamp(1.3rem, 3vw, 1.5rem);
+    font-size: clamp(1rem, 2vw, 1.15rem);
     color: var(--dark-color);
-    margin: 0 0 28px;
+    margin: 0 0 16px;
     text-align: center;
     font-weight: 600;
     position: relative;
@@ -2586,10 +2601,10 @@ h1, h2, h3, h4 {
 .allergen-section-title::after {
     content: '';
     display: block;
-    width: 50px;
+    width: 40px;
     height: 2px;
     background: linear-gradient(90deg, var(--primary-color), var(--flame-amber));
-    margin: 12px auto 0;
+    margin: 8px auto 0;
     border-radius: 1px;
 }
 
@@ -2649,6 +2664,146 @@ h1, h2, h3, h4 {
 .allergen-disclaimer strong {
     color: var(--dark-color);
     font-weight: 600;
+}
+
+/* Mains as typographic list (menu pages) */
+.menu-mains-list-grid {
+    grid-template-columns: 1fr;
+    max-width: 760px;
+    margin: 0 auto 50px;
+}
+
+.menu-mains-list-grid .menu-items {
+    padding-top: 28px;
+}
+
+/* Full allergen matrix table (menu pages) */
+.allergen-intro {
+    max-width: 100%;
+    margin: 0 auto 18px;
+    text-align: center;
+    font-size: 0.72rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.allergen-table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.allergen-table {
+    width: 100%;
+    min-width: 620px;
+    border-collapse: collapse;
+    color: var(--white);
+}
+
+.allergen-table th,
+.allergen-table td {
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 6px 7px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 0.72rem;
+}
+
+.allergen-table thead th {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.allergen-table .allergen-cell-name {
+    text-align: left;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.allergen-table thead .allergen-th-product {
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.allergen-col-head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.54rem;
+    font-weight: 500;
+    line-height: 1.25;
+    color: rgba(255, 255, 255, 0.82);
+}
+
+.allergen-col-head .allergen-symbol {
+    font-size: 1rem;
+}
+
+.allergen-table .allergen-group th {
+    text-align: left;
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: var(--letter-tight);
+    background: rgba(232, 93, 4, 0.14);
+    color: var(--white);
+}
+
+.allergen-yes {
+    color: var(--flame-amber);
+    font-weight: 700;
+}
+
+.allergen-no {
+    color: rgba(255, 255, 255, 0.32);
+}
+
+.allergen-note {
+    max-width: 100%;
+    margin: 14px auto 0;
+    padding: 10px 14px;
+    text-align: center;
+    font-size: 0.68rem;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.allergen-warning {
+    max-width: 100%;
+    margin: 12px auto 0;
+    text-align: center;
+    font-size: 0.7rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Relax the print-tight scale on small screens, matching the board's breakpoint */
+@media (max-width: 760px) {
+    .allergen-table th,
+    .allergen-table td {
+        padding: 9px 6px;
+        font-size: 0.85rem;
+    }
+    .allergen-col-head {
+        font-size: 0.58rem;
+    }
+    .allergen-col-head .allergen-symbol {
+        font-size: 1.05rem;
+    }
+    .allergen-table .allergen-group th {
+        font-size: 0.9rem;
+    }
+    .allergen-intro {
+        font-size: 0.85rem;
+        line-height: 1.7;
+    }
+    .allergen-note,
+    .allergen-warning {
+        font-size: 0.8rem;
+    }
 }
 
 @media (max-width: 768px) {
@@ -3315,13 +3470,204 @@ h1, h2, h3, h4 {
 
 .home-instagram-section,
 .home-story-section,
-.home-location-section {
+.home-location-section,
+.home-cta-band {
     background: linear-gradient(180deg, rgba(20, 20, 20, 0.98), rgba(12, 12, 12, 0.96)),
                 url('Images/charcoal-embers.png') center center / cover no-repeat;
     color: var(--white);
     padding: 96px 0;
     position: relative;
+}
+
+/* overflow:hidden clips decorative bleed on bands — but NOT on .home-story-section,
+   where it would create a scroll container and break the chef photo's position:sticky */
+.home-instagram-section,
+.home-location-section,
+.home-cta-band {
     overflow: hidden;
+}
+
+/* Homepage CTA bands: Opening Hours + Menu */
+#menu-cta.home-cta-band {
+    padding-top: 72px;
+}
+
+.home-cta-actions {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 4px;
+}
+
+/* #1 Opening Hours — client model: full-bleed coal bed (wide FOV asset), banner chrome */
+#hours.home-cta-band {
+    background-color: #0e0e0e;
+    background-image:
+        linear-gradient(180deg, rgba(8, 8, 8, 0.42) 0%, rgba(8, 8, 8, 0.5) 55%, rgba(8, 8, 8, 0.62) 100%),
+        url('Images/coal-bg-wide.jpg');
+    background-position: center center;
+    /* cover, not 100% 100%: max-height caps the band wider than its 2.8/1 ratio on large
+       viewports, and a forced 100% 100% fit would stretch the banner to match */
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    /* Banner proportion (100/2.8 = 35.71vw) as a FLOOR, not a fixed height: a hard
+       aspect-ratio pins the band to ~134px on a phone and the content spills out of
+       both edges. cover keeps the art undistorted at whatever height content needs. */
+    min-height: min(35.71vw, 480px);
+    height: auto;
+    padding-top: clamp(36px, 5vw, 64px);
+    padding-bottom: clamp(36px, 5vw, 64px);
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+#hours .container {
+    width: 100%;
+}
+
+#hours .home-section-header {
+    margin-bottom: 22px;
+}
+
+#hours .home-section-header h2 {
+    letter-spacing: 0.08em;
+    font-size: clamp(1.35rem, 4vw, 2.2rem);
+    margin-bottom: 0;
+}
+
+#hours .home-hours-panel {
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto 32px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.85);
+}
+
+.home-hours-grid {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 0;
+    flex-wrap: nowrap;
+    text-align: center;
+    margin: 0;
+    width: fit-content;
+    max-width: 100%;
+}
+
+.home-hours-row {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 4px clamp(14px, 4vw, 52px);
+    justify-content: center;
+}
+
+.home-hours-row + .home-hours-row {
+    border-left: 1px solid rgba(255, 255, 255, 0.85);
+}
+
+.home-hours-days {
+    color: rgba(255, 255, 255, 0.92);
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-size: clamp(0.62rem, 2.1vw, 0.78rem);
+}
+
+.home-hours-time {
+    color: var(--white);
+    font-family: 'Urbanist', sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.35rem, 4vw, 2.45rem);
+    line-height: 1;
+}
+
+#hours .home-cta-actions {
+    gap: 12px;
+    margin-top: 0;
+}
+
+/* Hours band CTAs: size and casing only — colour comes from .btn-orange-fill */
+#hours .btn-orange-fill {
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+    font-size: clamp(0.82rem, 2.4vw, 0.95rem);
+    min-width: clamp(112px, 32vw, 148px);
+    padding: 12px 22px;
+}
+
+/* Solid CTA buttons — KONUM, İLETİŞİM, Menü, Alerjen Bilgisi */
+.btn-orange-fill {
+    background: var(--cta-accent);
+    color: var(--white);
+    border: 2px solid var(--cta-accent);
+    box-shadow: var(--cta-glow);
+}
+
+.btn-orange-fill:hover {
+    background: var(--cta-accent-hover);
+    border-color: var(--cta-accent-hover);
+    color: var(--white);
+    transform: translateY(-3px);
+    box-shadow: var(--cta-glow-hover);
+}
+
+/* #3 Menu CTA — looping muted video background with dark overlay */
+#menu-cta.home-cta-video {
+    background: var(--charcoal);
+}
+
+.home-cta-video {
+    position: relative;
+    overflow: hidden;
+}
+
+.home-cta-video-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.home-cta-video-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(180deg, rgba(20, 20, 20, 0.72) 0%, rgba(12, 12, 12, 0.82) 100%);
+    pointer-events: none;
+}
+
+.home-cta-video .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* #4 Chef cutout — transparent PNG sits on the section background, no photo-card rectangle.
+   Doubled class raises specificity so it wins over the later .chef-scroll-media-inner base rules. */
+.chef-scroll-media-inner.chef-scroll-media-inner--cutout {
+    padding: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+.chef-scroll-media-inner.chef-scroll-media-inner--cutout img {
+    aspect-ratio: 4 / 5;
+    object-fit: contain;
+    object-position: center bottom;
+    border-radius: 0;
+    box-shadow: none;
+    filter: drop-shadow(0 22px 40px rgba(0, 0, 0, 0.5));
 }
 
 .home-instagram-section .container {
@@ -3419,8 +3765,11 @@ h1, h2, h3, h4 {
 
 .home-section-header.reveal,
 .instagram-widget-placeholder.reveal,
+.home-instagram-cta.reveal,
 .home-chef-feature.reveal,
 .home-story-panel.reveal,
+.chef-scroll-media-inner.reveal,
+.chef-block.reveal,
 .home-map-card.reveal {
     opacity: 0;
     transform: translateY(28px);
@@ -3429,8 +3778,11 @@ h1, h2, h3, h4 {
 
 .home-section-header.reveal.visible,
 .instagram-widget-placeholder.reveal.visible,
+.home-instagram-cta.reveal.visible,
 .home-chef-feature.reveal.visible,
 .home-story-panel.reveal.visible,
+.chef-scroll-media-inner.reveal.visible,
+.chef-block.reveal.visible,
 .home-map-card.reveal.visible {
     opacity: 1;
     transform: translateY(0);
@@ -3513,6 +3865,223 @@ h1, h2, h3, h4 {
     margin: 24px auto 0;
 }
 
+/* Chef bio: section stays pinned; page scroll scrubs text past a fixed photo */
+.home-story-section.chef-scroll-section {
+    overflow: visible;
+    padding: 0;
+}
+
+.chef-scroll-pin {
+    position: sticky;
+    top: 92px;
+    height: calc(100vh - 92px);
+    height: calc(100dvh - 92px);
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 32px 0;
+}
+
+.chef-scroll-section .container {
+    overflow: visible;
+    width: 100%;
+}
+
+.chef-scroll {
+    display: grid;
+    grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.1fr) auto;
+    gap: clamp(28px, 5vw, 60px);
+    align-items: center;
+    max-width: 1180px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.chef-scroll-media {
+    position: relative;
+    align-self: center;
+    z-index: 2;
+}
+
+/* Chef section: "BİLGİ / Yazı Devamı" scroll indicator.
+   Carries the brand warmth so it reads as the "keep scrolling" affordance rather
+   than dissolving into the dark panel behind it. */
+.chef-indicator {
+    align-self: center;
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 26px 10px;
+    width: 62px;
+    border: 1px solid rgba(234, 88, 12, 0.6);
+    border-radius: 14px;
+    background: linear-gradient(180deg, rgba(234, 88, 12, 0.16), rgba(234, 88, 12, 0.07));
+    box-shadow: 0 0 22px rgba(234, 88, 12, 0.22);
+    color: var(--white);
+    z-index: 2;
+    transition: opacity 0.35s ease;
+}
+
+.chef-scroll-section.is-complete .chef-indicator {
+    opacity: 0.35;
+}
+
+.chef-indicator-label {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 0.78rem;
+    font-weight: 700;
+    white-space: nowrap;
+    font-family: 'Urbanist', sans-serif;
+}
+
+.chef-indicator-arrow {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    stroke: var(--flame-amber);
+    fill: none;
+    stroke-width: 2.5;
+    filter: drop-shadow(0 0 6px rgba(234, 88, 12, 0.55));
+    animation: chefIndicatorBounce 1.6s ease-in-out infinite;
+}
+
+@keyframes chefIndicatorBounce {
+    0%, 100% { transform: translateY(-3px); opacity: 0.75; }
+    50% { transform: translateY(5px); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .chef-indicator-arrow {
+        animation: none;
+    }
+}
+
+.chef-scroll-media-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.055);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: var(--shadow-charcoal);
+}
+
+.chef-scroll-media-inner img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 18px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.28);
+}
+
+.chef-scroll-caption {
+    text-align: center;
+}
+
+.chef-scroll-caption h2 {
+    color: var(--white);
+    font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+    margin: 6px 0;
+}
+
+.chef-scroll-caption p {
+    color: rgba(255, 255, 255, 0.74);
+    font-size: 1rem;
+}
+
+/* The bio text scrolls THROUGH these fade bands, so the bands do the erasing —
+   each line dissolves as it passes, one line at a time, with no per-block masking.
+   174deg rather than 180deg tips the bands ~6deg off horizontal, so a line's left
+   edge clears ~2 lines before its right: it deletes from the left as it goes.
+   The top band is ~14% (~2 lines) deep so a line fades gradually, not in one wipe. */
+.chef-scroll-text-viewport {
+    position: relative;
+    height: min(64vh, 520px);
+    overflow: hidden;
+    mask-image: linear-gradient(174deg, transparent 0%, #000 14%, #000 90%, transparent 100%);
+    -webkit-mask-image: linear-gradient(174deg, transparent 0%, #000 14%, #000 90%, transparent 100%);
+}
+
+.chef-scroll-text {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(28px, 5vw, 52px);
+    padding: 12px 0 48px;
+    will-change: transform;
+}
+
+.chef-scroll-section .chef-block.reveal {
+    opacity: 1;
+    transform: none;
+}
+
+/* Lighter than a panel: a single warm rule keeps blocks separated without the box */
+.chef-block {
+    padding: 2px 0 2px clamp(18px, 2vw, 26px);
+    border-radius: 0;
+    background: none;
+    border: 0;
+    border-left: 2px solid rgba(234, 88, 12, 0.45);
+    box-shadow: none;
+}
+
+
+.chef-block p {
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 1.08rem;
+    line-height: 1.85;
+}
+
+.chef-block p + p {
+    margin-top: 18px;
+}
+
+/* Instagram: single icon link (replaces the live feed widget/API embed) */
+.home-instagram-cta {
+    display: flex;
+    justify-content: center;
+}
+
+.home-instagram-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 34px;
+    border-radius: 999px;
+    text-decoration: none;
+    color: var(--white);
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.025));
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow: 0 18px 60px rgba(0, 0, 0, 0.32);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+}
+
+.home-instagram-link:hover {
+    transform: translateY(-4px);
+    border-color: #E4405F;
+    background: linear-gradient(145deg, rgba(228, 64, 95, 0.18), rgba(228, 64, 95, 0.06));
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.42), 0 0 40px rgba(228, 64, 95, 0.18);
+}
+
+.home-instagram-icon {
+    flex-shrink: 0;
+}
+
+.home-instagram-handle {
+    font-family: 'Urbanist', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+}
+
 .home-menu-preview {
     background: var(--charcoal);
 }
@@ -3524,6 +4093,281 @@ h1, h2, h3, h4 {
 .home-inline-menu {
     padding-top: 72px;
     padding-bottom: 96px;
+}
+
+/* Print-style menu board (matches client PDF structure, charcoal palette) */
+.menu-print-board {
+    max-width: 800px;
+    margin: 0 auto 64px;
+    color: var(--white);
+}
+
+.menu-print-header {
+    text-align: center;
+    margin-bottom: clamp(28px, 3.5vw, 40px);
+}
+
+.menu-print-wordmark {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: lowercase;
+    color: var(--white);
+    margin: 0;
+}
+
+.menu-print-rule {
+    width: min(220px, 55%);
+    height: 1px;
+    margin: 18px auto 22px;
+    border: 0;
+    background: rgba(255, 255, 255, 0.45);
+}
+
+.menu-print-heading {
+    font-family: 'Urbanist', sans-serif;
+    font-size: clamp(2.4rem, 6vw, 3.6rem);
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--white);
+    margin: 0;
+    line-height: 1;
+}
+
+.menu-print-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(16px, 2.4vw, 22px);
+    align-items: start;
+}
+
+.menu-print-col {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(20px, 2.8vw, 26px);
+}
+
+.menu-print-box {
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    background: rgba(255, 255, 255, 0.03);
+    /* top padding clears the title chip straddling the top border */
+    padding: clamp(24px, 3vw, 30px) clamp(14px, 2vw, 20px) clamp(14px, 2vw, 20px);
+}
+
+/* Section title: a bordered chip centred on the box's top border (legend style) */
+.menu-print-box-title {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    font-family: 'Urbanist', sans-serif;
+    font-size: clamp(0.78rem, 1.5vw, 0.9rem);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: var(--white);
+    margin: 0;
+    padding: 5px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    background: var(--charcoal);
+}
+
+.menu-print-box-title .menu-size-option {
+    font-weight: 500;
+    font-size: 0.85em;
+    letter-spacing: 0;
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.menu-print-box-note {
+    font-size: 0.72rem;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.55);
+    margin: 0 0 12px;
+    line-height: 1.5;
+}
+
+.menu-print-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.menu-print-item-row {
+    display: flex;
+    align-items: baseline;
+}
+
+.menu-print-item-name {
+    flex: 0 1 auto;
+    min-width: 0;
+    font-weight: 600;
+    color: var(--white);
+    font-size: 0.82rem;
+    line-height: 1.35;
+}
+
+/* Dotted leader filling the gap between item name and price */
+.menu-print-leader {
+    flex: 1 1 auto;
+    min-width: 14px;
+    margin: 0 6px;
+    border-bottom: 1px dotted rgba(255, 255, 255, 0.35);
+    transform: translateY(-3px);
+}
+
+.menu-print-item-price {
+    flex: 0 0 auto;
+    font-weight: 700;
+    color: var(--white);
+    font-size: 0.82rem;
+    font-variant-numeric: tabular-nums;
+}
+
+.menu-print-item-desc {
+    margin: 3px 0 0;
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.45;
+}
+
+.menu-print-addon {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    width: fit-content;
+    max-width: 100%;
+    margin: clamp(28px, 4vw, 40px) auto;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.menu-print-addon-label,
+.menu-print-addon-prices {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 18px;
+    color: var(--white);
+}
+
+.menu-print-addon-label {
+    font-size: 0.85rem;
+    font-weight: 800;
+    border-right: 1px solid rgba(255, 255, 255, 0.28);
+}
+
+.menu-print-addon-prices {
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.88);
+}
+
+.menu-print-addon-prices strong {
+    color: var(--white);
+    font-weight: 800;
+}
+
+.menu-print-meta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(16px, 2.4vw, 22px);
+}
+
+/* Meta boxes keep an in-box centred title + rule, not the chip treatment */
+.menu-print-meta-box {
+    text-align: center;
+    padding: clamp(14px, 2vw, 18px);
+}
+
+.menu-print-meta-box .menu-print-box-title {
+    position: static;
+    transform: none;
+    white-space: normal;
+    border: 0;
+    background: none;
+    padding: 0 0 8px;
+    margin: 0 0 8px;
+    font-size: clamp(0.85rem, 1.7vw, 0.98rem);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.menu-print-allergen-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    font-size: 1.55rem;
+    line-height: 1;
+    margin-top: 6px;
+}
+
+.menu-print-date {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--white);
+    margin: 6px 0 4px;
+}
+
+.menu-print-tax {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin: 0;
+}
+
+/* Monochrome badge — the model's board carries no accent colour */
+.menu-print-item-name .menu-item-badge {
+    background: none;
+    color: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    font-size: 0.62rem;
+    padding: 1px 6px;
+    vertical-align: middle;
+}
+
+@media (max-width: 760px) {
+    .menu-print-columns,
+    .menu-print-meta {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-print-addon {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .menu-print-addon-label {
+        border-right: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.28);
+    }
+
+    /* Print density is too tight to read on a phone — step type back up */
+    .menu-print-item-name,
+    .menu-print-item-price {
+        font-size: 0.95rem;
+    }
+
+    .menu-print-item-desc {
+        font-size: 0.82rem;
+    }
+
+    .menu-print-box-note {
+        font-size: 0.82rem;
+    }
+
+    .menu-print-list {
+        gap: 14px;
+    }
+
+    .menu-print-addon-label,
+    .menu-print-addon-prices {
+        font-size: 0.95rem;
+    }
 }
 
 .home-location-grid {
@@ -3764,6 +4608,121 @@ h1, h2, h3, h4 {
     display: block;
     width: 100%;
     height: auto;
+}
+
+/* Normalize <button> elements that reuse anchor button styles */
+button.btn,
+button.sticky-cta-button {
+    font-family: 'Urbanist', sans-serif;
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+/* Konum (location) modal – translucent, centered card over a blurred backdrop */
+.konum-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 2500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(18px, 4vw, 48px);
+    background: rgba(10, 10, 10, 0.72);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.konum-modal[hidden] {
+    display: none !important;
+}
+
+.konum-modal.is-open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.konum-modal-card {
+    position: relative;
+    width: min(94vw, 460px);
+    max-height: 90vh;
+    overflow: auto;
+    padding: clamp(22px, 4vw, 32px);
+    border-radius: 20px;
+    background: #1c1c1c;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.55);
+    transform: translateY(14px) scale(0.98);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.konum-modal.is-open .konum-modal-card {
+    transform: none;
+}
+
+.konum-modal-title {
+    color: var(--white);
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 0 0 18px;
+    padding: 0 36px;
+}
+
+.konum-modal-map {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    margin-bottom: 18px;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.konum-modal-map iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.konum-modal-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.konum-modal-btn {
+    width: 100%;
+    padding: 13px 18px;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.konum-modal-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 2;
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    border-radius: 50%;
+    background: rgba(20, 20, 20, 0.86);
+    color: var(--white);
+    font-size: 1.6rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.konum-modal-close:hover {
+    background: var(--ember-glow);
+    border-color: var(--ember-glow);
+    transform: scale(1.05);
 }
 
 .contact-hero,
@@ -4032,6 +4991,53 @@ h1, h2, h3, h4 {
         margin: 0 auto;
         width: min(72vw, 240px);
         height: min(72vw, 240px);
+    }
+
+    /* Chef bio: stack with photo on top; disable pin/scrub on small screens */
+    .chef-scroll-section {
+        height: auto !important;
+        padding: 72px 0;
+    }
+
+    .chef-scroll-pin {
+        position: static;
+        height: auto;
+        overflow: visible;
+        padding: 0;
+    }
+
+    .chef-scroll {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        max-width: 580px;
+        align-items: start;
+    }
+
+    .chef-scroll-media {
+        position: static;
+    }
+
+    .chef-scroll-text-viewport {
+        height: auto;
+        overflow: visible;
+        mask-image: none;
+        -webkit-mask-image: none;
+    }
+
+    .chef-scroll-text {
+        transform: none !important;
+    }
+
+    .chef-indicator {
+        display: none;
+    }
+
+    .chef-scroll-media-inner img {
+        aspect-ratio: 4 / 3;
+    }
+
+    .home-instagram-link {
+        padding: 18px 28px;
     }
 
     body:has(.sticky-cta-mobile.sticky-cta-visible) .hero .scroll-indicator {
