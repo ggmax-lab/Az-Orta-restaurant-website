@@ -26,3 +26,6 @@ desktop.ini
 *.tmp
 *.log
 .claude/
+
+# Local project notes (never publish)
+NOTES.md

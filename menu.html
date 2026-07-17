@@ -35,10 +35,7 @@
     <meta name="twitter:image:alt" content="Az Orta Logo">
     <link rel="icon" type="image/png" href="Images/logo.png">
     <link rel="apple-touch-icon" href="Images/logo.png">
-    <link rel="stylesheet" href="styles.css?v=20260716-7">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600;700&family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=20260717-1">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -199,7 +196,6 @@
                     <div class="menu-print-col">
                         <section class="menu-print-box">
                             <h2 class="menu-print-box-title">İçecekler</h2>
-                            <!-- FLAG: TR menu missing Fuse Tea Peach/Lemon — confirm with client -->
                             <ul class="menu-print-list">
                                 <li class="menu-print-item">
                                     <div class="menu-print-item-row">
@@ -271,12 +267,30 @@
                     <section class="menu-print-box menu-print-meta-box">
                         <h2 class="menu-print-box-title">Alerjen Listesi</h2>
                         <div class="menu-print-allergen-icons" aria-label="Alerjen simgeleri">
-                            <span title="Gluten İçeren Tahıllar">🌾</span>
-                            <span title="Süt Ürünleri">🥛</span>
-                            <span title="Yumurta Ürünleri">🥚</span>
-                            <span title="Susam Tohumu Ürünleri">🌰</span>
-                            <span title="Soya Fasulyesi Ürünleri">🫛</span>
-                            <span title="Sert Kabuklu Meyveler">🥜</span>
+                            <figure class="allergen-icon">
+                                <img class="allergen-icon-img" src="Images/allergens/gluten.png" alt="" width="72" height="72" loading="lazy" decoding="async">
+                                <figcaption class="allergen-icon-caption"><span class="allergen-icon-tr" lang="tr">Gluten İçeren Tahıllar</span><span class="allergen-icon-en" lang="en">Gluten-Containing Cereals</span></figcaption>
+                            </figure>
+                            <figure class="allergen-icon">
+                                <img class="allergen-icon-img" src="Images/allergens/milk.png" alt="" width="72" height="72" loading="lazy" decoding="async">
+                                <figcaption class="allergen-icon-caption"><span class="allergen-icon-tr" lang="tr">Süt Ürünleri</span><span class="allergen-icon-en" lang="en">Dairy Products</span></figcaption>
+                            </figure>
+                            <figure class="allergen-icon">
+                                <img class="allergen-icon-img" src="Images/allergens/egg.png" alt="" width="72" height="72" loading="lazy" decoding="async">
+                                <figcaption class="allergen-icon-caption"><span class="allergen-icon-tr" lang="tr">Yumurta Ürünleri</span><span class="allergen-icon-en" lang="en">Eggs</span></figcaption>
+                            </figure>
+                            <figure class="allergen-icon">
+                                <img class="allergen-icon-img" src="Images/allergens/sesame.png" alt="" width="72" height="72" loading="lazy" decoding="async">
+                                <figcaption class="allergen-icon-caption"><span class="allergen-icon-tr" lang="tr">Susam Tohumu Ürünleri</span><span class="allergen-icon-en" lang="en">Sesame Seeds</span></figcaption>
+                            </figure>
+                            <figure class="allergen-icon">
+                                <img class="allergen-icon-img" src="Images/allergens/soy.png" alt="" width="72" height="72" loading="lazy" decoding="async">
+                                <figcaption class="allergen-icon-caption"><span class="allergen-icon-tr" lang="tr">Soya Fasulyesi Ürünleri</span><span class="allergen-icon-en" lang="en">Soybeans</span></figcaption>
+                            </figure>
+                            <figure class="allergen-icon">
+                                <img class="allergen-icon-img" src="Images/allergens/tree-nuts.png" alt="" width="72" height="72" loading="lazy" decoding="async">
+                                <figcaption class="allergen-icon-caption"><span class="allergen-icon-tr" lang="tr">Sert Kabuklu Meyveler</span><span class="allergen-icon-en" lang="en">Tree Nuts</span></figcaption>
+                            </figure>
                         </div>
                     </section>
                     <section class="menu-print-box menu-print-meta-box">
@@ -295,12 +309,12 @@
                         <thead>
                             <tr>
                                 <th scope="col" class="allergen-th-product allergen-cell-name">Ürünler</th>
-                                <th scope="col"><span class="allergen-col-head"><span class="allergen-symbol">🌾</span>Gluten İçeren Tahıllar</span></th>
-                                <th scope="col"><span class="allergen-col-head"><span class="allergen-symbol">🥛</span>Süt Ürünleri</span></th>
-                                <th scope="col"><span class="allergen-col-head"><span class="allergen-symbol">🥚</span>Yumurta Ürünleri</span></th>
-                                <th scope="col"><span class="allergen-col-head"><span class="allergen-symbol">🌰</span>Susam Tohumu Ürünleri</span></th>
-                                <th scope="col"><span class="allergen-col-head"><span class="allergen-symbol">🫛</span>Soya Fasulyesi Ürünleri</span></th>
-                                <th scope="col"><span class="allergen-col-head"><span class="allergen-symbol">🥜</span>Sert Kabuklu Meyveler</span></th>
+                                <th scope="col"><span class="allergen-col-head"><img class="allergen-symbol allergen-symbol-img" src="Images/allergens/gluten.png" alt="" width="72" height="72" loading="lazy" decoding="async">Gluten İçeren Tahıllar</span></th>
+                                <th scope="col"><span class="allergen-col-head"><img class="allergen-symbol allergen-symbol-img" src="Images/allergens/milk.png" alt="" width="72" height="72" loading="lazy" decoding="async">Süt Ürünleri</span></th>
+                                <th scope="col"><span class="allergen-col-head"><img class="allergen-symbol allergen-symbol-img" src="Images/allergens/egg.png" alt="" width="72" height="72" loading="lazy" decoding="async">Yumurta Ürünleri</span></th>
+                                <th scope="col"><span class="allergen-col-head"><img class="allergen-symbol allergen-symbol-img" src="Images/allergens/sesame.png" alt="" width="72" height="72" loading="lazy" decoding="async">Susam Tohumu Ürünleri</span></th>
+                                <th scope="col"><span class="allergen-col-head"><img class="allergen-symbol allergen-symbol-img" src="Images/allergens/soy.png" alt="" width="72" height="72" loading="lazy" decoding="async">Soya Fasulyesi Ürünleri</span></th>
+                                <th scope="col"><span class="allergen-col-head"><img class="allergen-symbol allergen-symbol-img" src="Images/allergens/tree-nuts.png" alt="" width="72" height="72" loading="lazy" decoding="async">Sert Kabuklu Meyveler</span></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -383,6 +397,7 @@
             <div id="page-bottom" class="footer-bottom">
                 <p>&copy; 2026 Az Orta Restaurant. Tüm hakları saklıdır.</p>
                 <p class="footer-credit">MasterChef Türkiye 2024 Finalisti Kerem Bilginer</p>
+                <p class="footer-legal"><a href="kvkk.html">Gizlilik / KVKK</a></p>
                 <p class="footer-designed">Designed by Max-Aslaner</p>
             </div>
         </div>

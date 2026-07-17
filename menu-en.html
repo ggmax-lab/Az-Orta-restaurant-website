@@ -35,10 +35,7 @@
     <meta name="twitter:image:alt" content="Az Orta Logo">
     <link rel="icon" type="image/png" href="Images/logo.png">
     <link rel="apple-touch-icon" href="Images/logo.png">
-    <link rel="stylesheet" href="styles.css?v=20260716-7">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600;700&family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=20260717-1">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -276,12 +273,30 @@
                     <section class="menu-print-box menu-print-meta-box">
                         <h2 class="menu-print-box-title">Allergen List</h2>
                         <div class="menu-print-allergen-icons" aria-label="Allergen icons">
-                            <span title="Cereals Containing Gluten">🌾</span>
-                            <span title="Dairy Products">🥛</span>
-                            <span title="Egg Products">🥚</span>
-                            <span title="Sesame Seed Products">🌰</span>
-                            <span title="Soybean Products">🫛</span>
-                            <span title="Tree Nuts">🥜</span>
+                            <figure class="allergen-icon">
+                                <img class="allergen-icon-img" src="Images/allergens/gluten.png" alt="" width="72" height="72" loading="lazy" decoding="async">
+                                <figcaption class="allergen-icon-caption"><span class="allergen-icon-tr" lang="tr">Gluten İçeren Tahıllar</span><span class="allergen-icon-en" lang="en">Gluten-Containing Cereals</span></figcaption>
+                            </figure>
+                            <figure class="allergen-icon">
+                                <img class="allergen-icon-img" src="Images/allergens/milk.png" alt="" width="72" height="72" loading="lazy" decoding="async">
+                                <figcaption class="allergen-icon-caption"><span class="allergen-icon-tr" lang="tr">Süt Ürünleri</span><span class="allergen-icon-en" lang="en">Dairy Products</span></figcaption>
+                            </figure>
+                            <figure class="allergen-icon">
+                                <img class="allergen-icon-img" src="Images/allergens/egg.png" alt="" width="72" height="72" loading="lazy" decoding="async">
+                                <figcaption class="allergen-icon-caption"><span class="allergen-icon-tr" lang="tr">Yumurta Ürünleri</span><span class="allergen-icon-en" lang="en">Eggs</span></figcaption>
+                            </figure>
+                            <figure class="allergen-icon">
+                                <img class="allergen-icon-img" src="Images/allergens/sesame.png" alt="" width="72" height="72" loading="lazy" decoding="async">
+                                <figcaption class="allergen-icon-caption"><span class="allergen-icon-tr" lang="tr">Susam Tohumu Ürünleri</span><span class="allergen-icon-en" lang="en">Sesame Seeds</span></figcaption>
+                            </figure>
+                            <figure class="allergen-icon">
+                                <img class="allergen-icon-img" src="Images/allergens/soy.png" alt="" width="72" height="72" loading="lazy" decoding="async">
+                                <figcaption class="allergen-icon-caption"><span class="allergen-icon-tr" lang="tr">Soya Fasulyesi Ürünleri</span><span class="allergen-icon-en" lang="en">Soybeans</span></figcaption>
+                            </figure>
+                            <figure class="allergen-icon">
+                                <img class="allergen-icon-img" src="Images/allergens/tree-nuts.png" alt="" width="72" height="72" loading="lazy" decoding="async">
+                                <figcaption class="allergen-icon-caption"><span class="allergen-icon-tr" lang="tr">Sert Kabuklu Meyveler</span><span class="allergen-icon-en" lang="en">Tree Nuts</span></figcaption>
+                            </figure>
                         </div>
                     </section>
                     <section class="menu-print-box menu-print-meta-box">
@@ -294,19 +309,18 @@
 
             <div id="allergens" class="menu-allergen-section">
                 <h3 class="allergen-section-title">Allergen List</h3>
-                <!-- FLAG: EN allergen intro/notes are a draft translation — awaiting client sign-off -->
                 <p class="allergen-intro">Some ingredients used in the products served at our restaurant may contain allergens. This notice has been prepared in accordance with the Turkish Food Codex Regulation on Food Labelling and Informing Consumers. One or more of the allergens listed below may be present in the items on our menu. In the table below, the allergens each menu item contains are marked with (+), and those it does not contain are marked with (−). If you have any allergen sensitivity, please consult our team before consuming.</p>
                 <div class="allergen-table-wrap">
                     <table class="allergen-table">
                         <thead>
                             <tr>
                                 <th scope="col" class="allergen-th-product allergen-cell-name">Products</th>
-                                <th scope="col"><span class="allergen-col-head"><span class="allergen-symbol">🌾</span>Cereals Containing Gluten</span></th>
-                                <th scope="col"><span class="allergen-col-head"><span class="allergen-symbol">🥛</span>Dairy Products</span></th>
-                                <th scope="col"><span class="allergen-col-head"><span class="allergen-symbol">🥚</span>Egg Products</span></th>
-                                <th scope="col"><span class="allergen-col-head"><span class="allergen-symbol">🌰</span>Sesame Seed Products</span></th>
-                                <th scope="col"><span class="allergen-col-head"><span class="allergen-symbol">🫛</span>Soybean Products</span></th>
-                                <th scope="col"><span class="allergen-col-head"><span class="allergen-symbol">🥜</span>Tree Nuts</span></th>
+                                <th scope="col"><span class="allergen-col-head"><img class="allergen-symbol allergen-symbol-img" src="Images/allergens/gluten.png" alt="" width="72" height="72" loading="lazy" decoding="async">Cereals Containing Gluten</span></th>
+                                <th scope="col"><span class="allergen-col-head"><img class="allergen-symbol allergen-symbol-img" src="Images/allergens/milk.png" alt="" width="72" height="72" loading="lazy" decoding="async">Dairy Products</span></th>
+                                <th scope="col"><span class="allergen-col-head"><img class="allergen-symbol allergen-symbol-img" src="Images/allergens/egg.png" alt="" width="72" height="72" loading="lazy" decoding="async">Egg Products</span></th>
+                                <th scope="col"><span class="allergen-col-head"><img class="allergen-symbol allergen-symbol-img" src="Images/allergens/sesame.png" alt="" width="72" height="72" loading="lazy" decoding="async">Sesame Seed Products</span></th>
+                                <th scope="col"><span class="allergen-col-head"><img class="allergen-symbol allergen-symbol-img" src="Images/allergens/soy.png" alt="" width="72" height="72" loading="lazy" decoding="async">Soybean Products</span></th>
+                                <th scope="col"><span class="allergen-col-head"><img class="allergen-symbol allergen-symbol-img" src="Images/allergens/tree-nuts.png" alt="" width="72" height="72" loading="lazy" decoding="async">Tree Nuts</span></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -389,6 +403,7 @@
             <div id="page-bottom" class="footer-bottom">
                 <p>&copy; 2026 Az Orta Restaurant. All rights reserved.</p>
                 <p class="footer-credit">MasterChef Türkiye 2024 Finalist Kerem Bilginer</p>
+                <p class="footer-legal"><a href="kvkk-en.html">Privacy / KVKK</a></p>
                 <p class="footer-designed">Designed by Max-Aslaner</p>
             </div>
         </div>

@@ -1,3 +1,76 @@
+/* Self-hosted fonts: Latin Extended is required for Turkish characters. */
+@font-face {
+    font-family: 'Urbanist';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('fonts/urbanist-latin-ext-400-normal.woff2') format('woff2');
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+    font-family: 'Urbanist';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('fonts/urbanist-latin-400-normal.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: 'Urbanist';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('fonts/urbanist-latin-ext-600-normal.woff2') format('woff2');
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+    font-family: 'Urbanist';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('fonts/urbanist-latin-600-normal.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: 'Urbanist';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('fonts/urbanist-latin-ext-700-normal.woff2') format('woff2');
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+    font-family: 'Urbanist';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('fonts/urbanist-latin-700-normal.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('fonts/playfair-display-latin-ext-400-normal.woff2') format('woff2');
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('fonts/playfair-display-latin-400-normal.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 /* Reset and Base Styles */
 * {
     margin: 0;
@@ -12,10 +85,10 @@
     --flame-amber: #E85D04;
     --ember-glow: #EA580C;
     /* Solid CTA fill — the single source of truth for every .btn-orange-fill */
-    --cta-accent: #D95A34;
-    --cta-accent-hover: #E46A44;
-    --cta-glow: 0 4px 18px rgba(217, 90, 52, 0.38);
-    --cta-glow-hover: 0 6px 24px rgba(217, 90, 52, 0.5);
+    --cta-accent: #C2410C;
+    --cta-accent-hover: #9A2B0A;
+    --cta-glow: 0 4px 18px rgba(194, 65, 12, 0.38);
+    --cta-glow-hover: 0 6px 24px rgba(154, 43, 10, 0.5);
     --charcoal: #141414;
     --charcoal-mid: #1a1a1a;
     --charcoal-light: #2a2a2a;
@@ -214,9 +287,11 @@ h1, h2, h3, h4 {
 }
 
 .nav-link:focus-visible,
+.lang-link:focus-visible,
 .btn:focus-visible,
 .cta-button-nav:focus-visible,
 .nav-toggle:focus-visible,
+.konum-modal-close:focus-visible,
 .sticky-cta-button:focus-visible {
     outline: 2px solid var(--primary-color);
     outline-offset: 3px;
@@ -2740,6 +2815,13 @@ h1, h2, h3, h4 {
     font-size: 1rem;
 }
 
+.allergen-symbol-img {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: block;
+}
+
 .allergen-table .allergen-group th {
     text-align: left;
     font-weight: 700;
@@ -4301,10 +4383,50 @@ h1, h2, h3, h4 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 12px;
-    font-size: 1.55rem;
-    line-height: 1;
-    margin-top: 6px;
+    gap: 14px 12px;
+    margin-top: 10px;
+}
+
+.allergen-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    margin: 0;
+    width: 84px;
+    text-align: center;
+}
+
+/* Client icon artwork: white ring + glyph on the coal circle. border-radius clips the
+   square PNG corners to transparent so the dark circle sits cleanly on any background. */
+.allergen-icon-img {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    display: block;
+}
+
+.allergen-icon-caption {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    line-height: 1.2;
+}
+
+.allergen-icon-tr,
+.allergen-icon-en {
+    font-size: 0.62rem;
+    font-weight: 600;
+    color: var(--white);
+}
+
+/* Show only the caption matching the current page language. */
+html[lang="tr"] .allergen-icon-en {
+    display: none;
+}
+
+html[lang="en"] .allergen-icon-tr {
+    display: none;
 }
 
 .menu-print-date {
@@ -4679,6 +4801,39 @@ button.sticky-cta-button {
     border-radius: 14px;
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.konum-map-consent {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 24px;
+    text-align: center;
+    color: var(--white);
+    background:
+        radial-gradient(circle at center, rgba(194, 65, 12, 0.2), transparent 60%),
+        var(--charcoal-mid);
+}
+
+.konum-map-consent p {
+    max-width: 300px;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 0.95rem;
+    line-height: 1.45;
+}
+
+.konum-map-pin {
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.konum-map-load {
+    padding: 11px 20px;
+    font-size: 1rem;
 }
 
 .konum-modal-map iframe {
@@ -5549,4 +5704,120 @@ button.sticky-cta-button {
     .about-values-grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* Legal / KVKK content page */
+.legal-page {
+    background: var(--bg-warm);
+    padding: calc(92px + clamp(40px, 8vw, 80px)) 0 clamp(60px, 10vw, 100px);
+}
+
+.legal-header {
+    text-align: center;
+    margin-bottom: clamp(36px, 6vw, 56px);
+}
+
+.legal-header h1 {
+    font-family: 'Urbanist', sans-serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--dark-color);
+    margin-bottom: 0.75rem;
+    letter-spacing: var(--letter-tight);
+}
+
+.legal-updated {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    font-style: italic;
+}
+
+.legal-content {
+    max-width: 820px;
+    margin: 0 auto;
+}
+
+.legal-block {
+    margin-bottom: clamp(32px, 5vw, 44px);
+}
+
+.legal-block h2 {
+    font-family: 'Urbanist', sans-serif;
+    font-size: clamp(1.3rem, 3vw, 1.6rem);
+    color: var(--primary-color);
+    margin-bottom: 16px;
+    letter-spacing: var(--letter-tight);
+}
+
+.legal-block p {
+    color: var(--text-color);
+    line-height: 1.8;
+    margin-bottom: 14px;
+}
+
+.legal-block ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 14px;
+}
+
+.legal-block ul li {
+    position: relative;
+    padding-left: 26px;
+    margin-bottom: 12px;
+    color: var(--text-color);
+    line-height: 1.7;
+}
+
+.legal-block ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.65em;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: linear-gradient(90deg, var(--flame-amber), var(--primary-color));
+}
+
+.legal-block a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.legal-block a:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+.legal-contact-card {
+    background: var(--white);
+    border: 1px solid rgba(194, 65, 12, 0.15);
+    border-radius: var(--radius-lg);
+    padding: clamp(20px, 4vw, 28px);
+    box-shadow: var(--shadow-sm);
+}
+
+.legal-contact-card p {
+    margin-bottom: 8px;
+}
+
+.legal-contact-card p:last-child {
+    margin-bottom: 0;
+}
+
+/* Footer legal link */
+.footer-legal {
+    margin-top: 6px;
+}
+
+.footer-legal a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-legal a:hover {
+    color: var(--ember-glow);
 }

@@ -429,12 +429,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const closeEls = modal.querySelectorAll('[data-konum-close]');
     const googleLink = modal.querySelector('#konumGoogleLink');
+    const mapLoadButton = modal.querySelector('[data-map-load]');
 
     // Reuse the Google Maps link already present in the footer address (avoid duplicating the URL)
     const footerMapLink = document.querySelector('.footer-map-address');
     if (googleLink && footerMapLink) {
         const footerHref = footerMapLink.getAttribute('href');
         if (footerHref) googleLink.setAttribute('href', footerHref);
+    }
+
+    if (mapLoadButton) {
+        mapLoadButton.addEventListener('click', () => {
+            const mapContainer = mapLoadButton.closest('.konum-modal-map');
+            const mapSrc = mapLoadButton.dataset.mapSrc;
+            if (!mapContainer || !mapSrc) return;
+
+            const iframe = document.createElement('iframe');
+            iframe.title = mapLoadButton.dataset.mapTitle || 'Google Map';
+            iframe.src = mapSrc;
+            iframe.referrerPolicy = 'no-referrer';
+            iframe.setAttribute('allowfullscreen', '');
+            mapContainer.replaceChildren(iframe);
+            closeEls[0]?.focus();
+        }, { once: true });
     }
 
     let lastFocused = null;

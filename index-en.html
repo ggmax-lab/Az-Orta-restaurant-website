@@ -35,10 +35,7 @@
     <meta name="twitter:image:alt" content="Az Orta Logo">
     <link rel="icon" type="image/png" href="Images/logo.png">
     <link rel="apple-touch-icon" href="Images/logo.png">
-    <link rel="stylesheet" href="styles.css?v=20260716-7">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600;700&family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=20260717-1">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -94,7 +91,6 @@
             </a>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#home" class="nav-link active">Home</a></li>
-                <!-- FLAG: Hakkımızda behavior assumed as same-page scroll, confirm with client -->
                 <li><a href="#home-story" class="nav-link">About</a></li>
                 <li><a href="menu-en.html" class="nav-link">Menu</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
@@ -176,7 +172,6 @@
     </section>
 
     <!-- Story Section: Chef Kerem – photo pinned; page scroll scrubs bio text, then releases -->
-    <!-- FLAG: EN chef bio pending client sign-off -->
     <section id="home-story" class="home-story-section chef-scroll-section">
         <div class="chef-scroll-pin">
             <div class="container">
@@ -255,6 +250,7 @@
             <div id="page-bottom" class="footer-bottom">
                 <p>&copy; 2026 Az Orta Restaurant. All rights reserved.</p>
                 <p class="footer-credit">MasterChef Türkiye 2024 Finalist Kerem Bilginer</p>
+                <p class="footer-legal"><a href="kvkk-en.html">Privacy / KVKK</a></p>
                 <p class="footer-designed">Designed by Max-Aslaner</p>
             </div>
         </div>
@@ -266,7 +262,11 @@
             <button type="button" class="konum-modal-close" data-konum-close aria-label="Close">&times;</button>
             <h2 class="konum-modal-title" id="konumModalTitle">Location</h2>
             <div class="konum-modal-map">
-                <iframe title="Az Orta Google Map" src="https://maps.google.com/maps?q=Az%20Orta%20Maslak%20Dereboyu%202%20Cd%20No%205&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="konum-map-consent">
+                    <span class="konum-map-pin" aria-hidden="true">📍</span>
+                    <p>Loading Google Maps shares data with Google.</p>
+                    <button type="button" class="btn btn-orange-fill konum-map-load" data-map-load data-map-title="Az Orta Google Map" data-map-src="https://maps.google.com/maps?q=Az%20Orta%20Maslak%20Dereboyu%202%20Cd%20No%205&amp;output=embed">Load Map</button>
+                </div>
             </div>
             <div class="konum-modal-actions">
                 <a class="btn btn-secondary konum-modal-btn" id="konumGoogleLink" href="#" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
@@ -275,6 +275,6 @@
         </div>
     </div>
 
-    <script src="script.js?v=20260716-6"></script>
+    <script src="script.js?v=20260717-1"></script>
 </body>
 </html>
