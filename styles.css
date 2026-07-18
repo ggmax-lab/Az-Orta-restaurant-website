@@ -3469,6 +3469,15 @@ h1, h2, h3, h4 {
     font-weight: 500;
 }
 
+.footer-operator {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-top: -2px;
+}
+
 .footer-designed {
     font-size: 0.8rem;
     color: rgba(255, 255, 255, 0.5);
@@ -3995,13 +4004,6 @@ h1, h2, h3, h4 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 16px;
-    padding: 26px 10px;
-    width: 62px;
-    border: 1px solid rgba(234, 88, 12, 0.6);
-    border-radius: 14px;
-    background: linear-gradient(180deg, rgba(234, 88, 12, 0.16), rgba(234, 88, 12, 0.07));
-    box-shadow: 0 0 22px rgba(234, 88, 12, 0.22);
     color: var(--white);
     z-index: 2;
     transition: opacity 0.35s ease;
@@ -4011,36 +4013,85 @@ h1, h2, h3, h4 {
     opacity: 0.35;
 }
 
-.chef-indicator-label {
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    font-size: 0.78rem;
-    font-weight: 700;
-    white-space: nowrap;
-    font-family: 'Urbanist', sans-serif;
+/* Allergen table: custom horizontal scroll indicator, shown on mobile below
+   the table in place of the native grey scrollbar. Hidden on desktop, where
+   the 6-column table fits without horizontal overflow. JS sets the thumb's
+   width + left from the table's scroll ratio (see initAllergenHScroll). */
+.allergen-hscroll {
+    display: none;
 }
 
-.chef-indicator-arrow {
-    width: 28px;
-    height: 28px;
+@media (max-width: 968px) {
+    /* Hide the native grey scrollbar — replaced by .allergen-hscroll below. */
+    .allergen-table-wrap {
+        scrollbar-width: none;      /* Firefox */
+        -ms-overflow-style: none;   /* legacy Edge */
+    }
+    .allergen-table-wrap::-webkit-scrollbar {
+        display: none;              /* Chrome / Safari */
+    }
+
+    .allergen-hscroll {
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 6px;
+        margin: 12px auto 4px;
+        border-radius: 999px;
+        background: rgba(0, 0, 0, 0.12);
+        overflow: hidden;
+    }
+
+    .allergen-hscroll-thumb {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 30%;                 /* JS overrides width + left */
+        border-radius: 999px;
+        background: var(--ember-glow);
+        box-shadow: 0 0 8px rgba(234, 88, 12, 0.45);
+        transition: left 0.08s linear;
+    }
+}
+
+/* Scroll-position indicator (About Us): a rounded track with a thumb that
+   travels top -> bottom as the pinned bio is scrubbed, like a slim scrollbar.
+   --p is the 0..1 scroll fraction, updated from script.js. */
+.scroll-progress {
+    --track: rgba(90, 90, 90, 0.45);
+    --thumb: var(--ember-glow);
+    --thumb-h: 40px;
+    --travel: 86px; /* track inner height (132 - 2*1.5 border) - thumb-h - 3px inset */
+    position: relative;
+    width: 15px;
+    height: 132px;
     flex-shrink: 0;
-    stroke: var(--flame-amber);
-    fill: none;
-    stroke-width: 2.5;
-    filter: drop-shadow(0 0 6px rgba(234, 88, 12, 0.55));
-    animation: chefIndicatorBounce 1.6s ease-in-out infinite;
+    border: 1.5px solid var(--track);
+    border-radius: 999px;
 }
 
-@keyframes chefIndicatorBounce {
-    0%, 100% { transform: translateY(-3px); opacity: 0.75; }
-    50% { transform: translateY(5px); opacity: 1; }
+.scroll-progress-thumb {
+    position: absolute;
+    left: 50%;
+    top: 3px;
+    width: 9px;
+    height: var(--thumb-h);
+    border-radius: 999px;
+    background: var(--thumb);
+    transform: translate(-50%, calc(var(--p, 0) * var(--travel)));
+    box-shadow: 0 0 8px rgba(234, 88, 12, 0.45);
+    transition: transform 0.12s ease-out;
+}
+
+/* About Us sits on a dark background — lighten the track outline there. */
+.chef-indicator .scroll-progress {
+    --track: rgba(255, 255, 255, 0.32);
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .chef-indicator-arrow {
-        animation: none;
+    .scroll-progress-thumb {
+        transition: none;
     }
 }
 
@@ -4938,6 +4989,24 @@ button.sticky-cta-button {
 
 .footer-content-centered .footer-social-icons {
     justify-content: center;
+}
+
+/* B4: keep every Contact CTA row and the footer contact block explicitly
+   centred, independent of the flex defaults, so the Contact button cannot
+   drift left on any breakpoint. */
+.hero-cta,
+.home-cta-actions {
+    justify-content: center;
+    text-align: center;
+}
+
+.footer-content-centered .footer-section {
+    text-align: center;
+}
+
+.footer-content-centered .footer-section .btn {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Responsive Design */

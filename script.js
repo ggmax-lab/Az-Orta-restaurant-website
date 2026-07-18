@@ -533,6 +533,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const viewport = section.querySelector('.chef-scroll-text-viewport');
     if (!pin || !text || !viewport) return;
 
+    const progressEl = section.querySelector('.chef-indicator .scroll-progress');
+
     const mq = window.matchMedia('(max-width: 968px)');
     const STICKY_TOP = 92;
     let frame = 0;
@@ -560,6 +562,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const progress = scrolled / distance;
         text.style.transform = `translate3d(0, ${-overflow * progress}px, 0)`;
         section.classList.toggle('is-complete', progress >= 0.98);
+        if (progressEl) progressEl.style.setProperty('--p', progress.toFixed(4));
     }
 
     function onScrollOrResize() {
@@ -576,4 +579,37 @@ document.addEventListener('DOMContentLoaded', () => {
         mq.addListener(onScrollOrResize);
     }
     window.addEventListener('load', onScrollOrResize, { once: true });
+})();
+
+/* Allergen table (mobile): render a custom horizontal scroll indicator that
+   tracks the table's horizontal scroll, replacing the native grey scrollbar.
+   Thumb width is proportional to the visible fraction, position to scrollLeft. */
+(function initAllergenHScroll() {
+    const wrap = document.querySelector('.menu-allergen-section .allergen-table-wrap');
+    const bar = document.querySelector('.menu-allergen-section .allergen-hscroll');
+    if (!wrap || !bar) return;
+    const thumb = bar.querySelector('.allergen-hscroll-thumb');
+    if (!thumb) return;
+
+    let frame = 0;
+    function paint() {
+        const max = wrap.scrollWidth - wrap.clientWidth;
+        if (max <= 1) {
+            bar.style.visibility = 'hidden';
+            return;
+        }
+        bar.style.visibility = 'visible';
+        const widthPct = Math.max(12, (wrap.clientWidth / wrap.scrollWidth) * 100);
+        const p = Math.min(1, Math.max(0, wrap.scrollLeft / max));
+        thumb.style.width = widthPct.toFixed(2) + '%';
+        thumb.style.left = (p * (100 - widthPct)).toFixed(2) + '%';
+    }
+    function onScroll() {
+        cancelAnimationFrame(frame);
+        frame = requestAnimationFrame(paint);
+    }
+    paint();
+    wrap.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    window.addEventListener('load', paint, { once: true });
 })();
