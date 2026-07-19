@@ -1838,13 +1838,6 @@ h1, h2, h3, h4 {
     z-index: 2;
 }
 
-.menu-video-content h1 {
-    font-size: clamp(2rem, 5vw, 2.8rem);
-    margin-bottom: 0.5rem;
-    text-shadow: 0 2px 16px rgba(0, 0, 0, 0.6);
-    letter-spacing: 0.02em;
-}
-
 .menu-video-content p {
     font-size: clamp(0.95rem, 2vw, 1.1rem);
     opacity: 0.95;
@@ -1921,12 +1914,6 @@ h1, h2, h3, h4 {
     text-align: center;
     color: var(--white);
     margin-bottom: 50px;
-}
-
-.menu-hero-content h1 {
-    font-size: 2.8rem;
-    margin-bottom: 0.5rem;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .menu-hero-content p {
@@ -3803,7 +3790,7 @@ h1, h2, h3, h4 {
 
 .home-section-header h2,
 .home-story-panel h2,
-.menu-video-content h2 {
+.menu-video-content h1 {
     color: var(--white);
     font-size: clamp(2rem, 5vw, 3rem);
     line-height: 1.05;
