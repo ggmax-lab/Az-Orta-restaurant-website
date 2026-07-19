@@ -35,7 +35,7 @@
     <meta name="twitter:image:alt" content="Az Orta Logo">
     <link rel="icon" type="image/png" href="Images/logo.png">
     <link rel="apple-touch-icon" href="Images/logo.png">
-    <link rel="stylesheet" href="styles.css?v=20260718-5">
+    <link rel="stylesheet" href="styles.css?v=20260719-2">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -129,6 +129,13 @@
         </div>
     </section>
 
+    <!-- Merged Hours + Menu band: ONE shared looping video background spanning both sections -->
+    <div class="home-video-band">
+        <video class="home-cta-video-bg" autoplay loop muted playsinline preload="metadata" poster="Images/menu1.jpg" aria-hidden="true">
+            <source src="videos/restaurant-edit.mp4" type="video/mp4">
+        </video>
+        <div class="home-cta-video-overlay"></div>
+
     <!-- Opening Hours Section -->
     <section id="hours" class="home-cta-band home-hours-section">
         <div class="container">
@@ -156,10 +163,6 @@
 
     <!-- Menu CTA Section -->
     <section id="menu-cta" class="home-cta-band home-cta-video">
-        <video class="home-cta-video-bg" autoplay loop muted playsinline preload="metadata" poster="Images/menu1.jpg" aria-hidden="true">
-            <source src="videos/restaurant-edit.mp4" type="video/mp4">
-        </video>
-        <div class="home-cta-video-overlay"></div>
         <div class="container">
             <div class="home-section-header reveal">
                 <h2>Our Menu</h2>
@@ -170,6 +173,8 @@
             </div>
         </div>
     </section>
+    </div>
+    <!-- /.home-video-band -->
 
     <!-- Story Section: Chef Kerem – photo pinned; page scroll scrubs bio text, then releases -->
     <section id="home-story" class="home-story-section chef-scroll-section">
